@@ -6,6 +6,8 @@ await translator.setup();
 
 document.querySelectorAll("#app p").forEach((element) => {
   element.addEventListener("click", async (event) => {
-    element.innerHTML += await translator.translate(element.textContent ?? "");
+    element.innerHTML += `<p>${await translator.translate(
+      element.textContent ?? ""
+    )}</p>`;
   });
 });
