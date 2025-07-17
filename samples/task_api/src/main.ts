@@ -2,10 +2,10 @@ import "./style.css";
 import { TranslatorHelper } from "./TranslatorWrapper";
 
 const translator = new TranslatorHelper(document.querySelector("#logElement")!);
-translator.setup();
+await translator.setup();
 
-document.querySelectorAll("#app > p").forEach((element) => {
-  element.addEventListener("mouseover", (event) => {
-    element;
+document.querySelectorAll("#app p").forEach((element) => {
+  element.addEventListener("click", async (event) => {
+    element.innerHTML += await translator.translate(element.textContent ?? "");
   });
 });

@@ -52,5 +52,10 @@ export class TranslatorHelper {
     return true;
   }
 
-  translate(message: String) {}
+  async translate(message: String): Promise<string> {
+    if (!this.#translator) {
+      return "Translator not initialized or not available.";
+    }
+    return await this.#translator.translate(message);
+  }
 }
