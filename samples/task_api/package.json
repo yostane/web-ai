@@ -11,8 +11,5 @@
   "devDependencies": {
     "typescript": "~5.8.3",
     "vite": "^7.0.4"
-  },
-  "dependencies": {
-    "@vitejs/plugin-basic-ssl": "^2.1.0"
   }
 }
