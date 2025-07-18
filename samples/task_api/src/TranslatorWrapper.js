@@ -1,19 +1,15 @@
 export class TranslatorHelper {
   #sourceLang = "fr";
   #destinationLang = "en";
-  #translator: Translator | null = null;
-  #logElement: Element;
-  constructor(
-    logElement: Element,
-    sourceLang: string = "en",
-    destinationLang: string = "fr"
-  ) {
+  #translator = null;
+  #logElement;
+  constructor(logElement, sourceLang = "en", destinationLang = "fr") {
     this.#logElement = logElement;
     this.#sourceLang = sourceLang;
     this.#destinationLang = destinationLang;
   }
 
-  async setup(): Promise<boolean> {
+  async setup() {
     if (!("Translator" in self)) {
       return false;
     }
@@ -52,7 +48,7 @@ export class TranslatorHelper {
     return true;
   }
 
-  async translate(message: String): Promise<string> {
+  async translate(message) {
     if (!this.#translator) {
       return "Translator not initialized or not available.";
     }
