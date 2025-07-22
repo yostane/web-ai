@@ -3,17 +3,15 @@ import { WriterHelper } from "./WriterHelper";
 
 let writerHelper;
 
-window.addEventListener("DOMContentLoaded", () => {
-  const submitButton = document.querySelector('#submit');
-  submitButton.addEventListener('click', async () => {
-    if (!writerHelper) {
-      writerHelper = new WriterHelper();
-    }
+const submitButton = document.querySelector('#submit');
+submitButton.addEventListener('click', async () => {
+  if (!writerHelper) {
+    writerHelper = new WriterHelper();
     await writerHelper.init();
-    const prompt = document.querySelector('#input').value;
-    const document = await writerHelper.createDocument(prompt);
-    console.log(document);
-  });
+  }
+  const prompt = document.querySelector('#input').value;
+  const doc = await writerHelper.write(prompt);
+  console.log(doc);
 });
 
 

@@ -1,6 +1,6 @@
 export class WriterHelper {
   constructor() {
-    this.logElement = document.querySelector('#log');
+    this.logElement = window.document.querySelector('#logs');
     this.writer = null;
   }
 
@@ -21,10 +21,10 @@ export class WriterHelper {
       }
       if (available === 'available') {
         // The Writer API can be used immediately .
-        writer = await Writer.create(options);
+        this.writer = await Writer.create(options);
       } else {
         // The Writer can be used after the model is downloaded.
-        const writer = await Writer.create({
+        this.writer = await Writer.create({
           ...options,
           monitor(m) {
             m.addEventListener("downloadprogress", e => {
@@ -38,18 +38,19 @@ export class WriterHelper {
     }
   }
 
-  async createDocument(content) {
+  async write(content, streaming = false) {
     if (!this.writer) {
-      this.writer = await this.init();
+      await this.init();
     }
-    const writer = await this.init();
-    return writer.createDocument(content);
-  }
-
-  async getSuggestions(documentId) {
-    if (!this.writer) {
-      this.writer = await this.init();
+    const options = {
+      context: "I'm a customer asking a question"
+    };
+    if (streaming) {
+      return this.writer.write(content, options);
+    } else {
+      for await (const chunk of stream) {
+        composeTextbox.append(chunk);
+      }
     }
-    return this.writer.getSuggestions(documentId);
   }
 }
