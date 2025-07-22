@@ -1,0 +1,28 @@
+name: publish pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: build websites
+        run: |
+          cd slides/draft && bun install && bun run build
+          cd ../../sample/translator_api && bun install && bun run build
+          cd ../../
+      - name: Copy static files
+        run: |
+          mv slides/draft/dist public/slides_draft
+          mv sample/translator_api/dist public/sample_translator_api
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
