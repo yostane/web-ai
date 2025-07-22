@@ -20,8 +20,8 @@ jobs:
           cd ../../
       - name: Copy static files
         run: |
-          mv slides/draft/dist public/slides_draft
-          mv samples/translator_api/dist public/sample_translator_api
+          mv slides/draft/dist public/slides-draft
+          mv samples/translator_api/dist public/translator-api-demo
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
