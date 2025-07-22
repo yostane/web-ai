@@ -45,6 +45,9 @@ export class TranslatorHelper {
       },
     });
     this.#logElement.innerHTML += "Translator ready!";
+    const downloadButton = document.querySelector("#downloadButton");
+    downloadButton.innerHTML = "Translator ready!";
+    downloadButton.disabled = true;
     return true;
   }
 

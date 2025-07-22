@@ -8,6 +8,9 @@
     },
     {
       "path": "samples/writer-api-demo"
+    },
+    {
+      "path": "public"
     }
   ],
   "settings": {}

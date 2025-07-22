@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-    <base href="/web-ai/translator-demo/" />
-  </head>
 
-  <body>
-    <div id="app">
-      <button id="downloadButton" style="visibility: hidden">
-        Download Translator
-      </button>
-      <aside id="logElement"></aside>
-      <article>
-        <h1>
-          What is a LLM (source
-          <a href="https://wikipedia.org/wiki/Large_language_model">Wikipedia</a
-          >)
-        </h1>
-        <p>
-          A large language model (LLM) is a language model trained with
-          self-supervised machine learning on a vast amount of text, designed
-          for natural language processing tasks, especially language generation.
-        </p>
-        <p>
-          The largest and most capable LLMs are generative pretrained
-          transformers (GPTs), which are largely used in generative chatbots
-          such as ChatGPT, Gemini or Claude. LLMs can be fine-tuned for specific
-          tasks or guided by prompt engineering.[1] These models acquire
-          predictive power regarding syntax, semantics, and ontologies[2]
-          inherent in human language corpora, but they also inherit inaccuracies
-          and biases present in the data they are trained in.
-        </p>
-      </article>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+  <base href="/web-ai/translator-api-demo/" />
+</head>
+
+<body>
+  <div id="app">
+    <button id="downloadButton" style="visibility: hidden">
+      Download Translator
+    </button>
+    <article>
+      <h1>
+        What is a LLM (source
+        <a href="https://wikipedia.org/wiki/Large_language_model">Wikipedia</a>)
+      </h1>
+      <p>
+        A large language model (LLM) is a language model trained with
+        self-supervised machine learning on a vast amount of text, designed
+        for natural language processing tasks, especially language generation.
+      </p>
+      <p>
+        The largest and most capable LLMs are generative pretrained
+        transformers (GPTs), which are largely used in generative chatbots
+        such as ChatGPT, Gemini or Claude. LLMs can be fine-tuned for specific
+        tasks or guided by prompt engineering.[1] These models acquire
+        predictive power regarding syntax, semantics, and ontologies[2]
+        inherent in human language corpora, but they also inherit inaccuracies
+        and biases present in the data they are trained in.
+      </p>
+    </article>
+    <aside id="logElement"></aside>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
