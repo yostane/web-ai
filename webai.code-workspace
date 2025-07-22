@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "slides/draft"
+    },
+    {
+      "path": "samples/translator_api"
+    },
+    {
+      "path": "samples/writer-api-demo"
+    }
+  ],
+  "settings": {}
+}
