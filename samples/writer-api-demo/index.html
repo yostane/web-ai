@@ -12,11 +12,20 @@
   <div id="app" visibility="hidden">
     <h1>Writer API Demo to generate order inquiry email</h1>
     <p>Enter a description of your question.</p>
-    <input type="text" id="input" placeholder="I haven't received my order number 42" />
-    <button id="submit">Submit</button>
-  </div>
-  <div id="logs"></div>
-  <script type="module" src="/src/main.js"></script>
+    <div class="form-row"><input type="text" id="input" placeholder="I haven't received my order number 42"
+        value="I haven't received my order number 42" /> </div>
+    <div class="form-row">
+      <label for="streaming">Enable streaming</label><input type="checkbox" name="streaming" id="streaming"> <br>
+    </div>
+    <div class="form-row">
+      <button id="submit">Submit</button>
+    </div>
+    <div class="form-row">
+      <p>Result:</p>
+      <textarea id="result" rows="10" cols="50" readonly></textarea>
+    </div>
+    <div id="logs"></div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

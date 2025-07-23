@@ -46,11 +46,9 @@ export class WriterHelper {
       context: "I'm a customer asking a question"
     };
     if (streaming) {
-      return this.writer.write(content, options);
+      return this.writer.writeStreaming(content, options);
     } else {
-      for await (const chunk of stream) {
-        composeTextbox.append(chunk);
-      }
+      return this.writer.write(content, options);
     }
   }
 }

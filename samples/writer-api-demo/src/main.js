@@ -10,8 +10,20 @@ submitButton.addEventListener('click', async () => {
     await writerHelper.init();
   }
   const prompt = document.querySelector('#input').value;
-  const doc = await writerHelper.write(prompt);
-  console.log(doc);
+  const streaming = document.querySelector('#streaming').checked;
+  const composeTextbox = document.querySelector('#result');
+  composeTextbox.innerHTML = 'Loading...';
+  const streamOrResult = await writerHelper.write(prompt, streaming);
+  composeTextbox.innerHTML = '';
+  if (streaming) {
+    composeTextbox.innerHTML = '';
+    for await (const chunk of streamOrResult) {
+      composeTextbox.append(chunk);
+    }
+  } else {
+    composeTextbox.innerHTML = streamOrResult;
+  }
+  console.log(streamOrResult);
 });
 
 
