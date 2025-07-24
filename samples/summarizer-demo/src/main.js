@@ -18,7 +18,16 @@ submitButton.addEventListener('click', async () => {
   const prompt = document.querySelector('#message').value;
   const streaming = document.querySelector('#streaming').checked;
   try {
-    const streamOrResult = await summarizerHelper.summarize(prompt, streaming)
+    const streamOrResult = await summarizerHelper.summarize(prompt, streaming);
+    if (streaming) {
+      resultTextBox.innerHTML = '';
+      for await (const chunk of streamOrResult) {
+        resultTextBox.append(chunk);
+      }
+    } else {
+      resultTextBox.innerHTML = streamOrResult;
+    }
+    console.log(streamOrResult);
   } catch (error) {
     console.error('Error during summarization:', error);
     if (this.logElement) {
@@ -26,17 +35,6 @@ submitButton.addEventListener('click', async () => {
     }
     return;
   }
-
-  resultTextBox.innerHTML = '';
-  if (streaming) {
-    resultTextBox.innerHTML = '';
-    for await (const chunk of streamOrResult) {
-      resultTextBox.append(chunk);
-    }
-  } else {
-    resultTextBox.innerHTML = streamOrResult;
-  }
-  console.log(streamOrResult);
 });
 
 
