@@ -20,6 +20,7 @@ jobs:
           cd ../../samples/writer-api-demo && bun install && bun run build
           cd ../../samples/rewriter-api-demo && bun install && bun run build
           cd ../../samples/language-detector-demo && bun install && bun run build
+          cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../
       - name: Copy static files
         run: |
@@ -28,6 +29,7 @@ jobs:
           mv samples/writer-api-demo/dist public/writer-api-demo
           mv samples/rewriter-api-demo/dist public/rewriter-api-demo
           mv samples/language-detector-demo/dist public/language-detector-demo
+          mv samples/summarizer-demo/dist public/summarizer-demo
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:

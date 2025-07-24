@@ -26,7 +26,11 @@ mdc: true
 
 ---
 
-![](./assets/yes-no-browser-ai.png)
+![Active browser AI APIs](./assets/yes-no-browser-ai.png)
+
+---
+
+![Too many models crash](./assets/too-many-model-crash.png)
 
 ---
 

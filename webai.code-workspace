@@ -20,6 +20,9 @@
     },
     {
       "path": "samples/language-detector-demo"
+    },
+    {
+      "path": "samples/summarizer-demo"
     }
   ],
   "settings": {}
