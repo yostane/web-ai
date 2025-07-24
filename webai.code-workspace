@@ -17,6 +17,9 @@
     },
     {
       "path": "samples/rewriter-api-demo"
+    },
+    {
+      "path": "samples/language-detector-demo"
     }
   ],
   "settings": {}
