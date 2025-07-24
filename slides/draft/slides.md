@@ -53,6 +53,14 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
+# Rewriter API
+
+- `chrome://flags/#rewriter-api-for-gemini-nano`
+
+![rewriter api chrome flag](./assets/rewriterapi-chrome-flag.png)
+
+---
+
 # Resources and links
 
 - [Meme1](https://imgflip.com/i/a16egd)

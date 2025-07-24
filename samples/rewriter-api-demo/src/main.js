@@ -1,19 +1,19 @@
 import './style.css'
-import { WriterHelper } from "./WriterHelper";
+import { RewriterHelper } from "./RewriterHelper";
 
-let writerHelper;
+let rewriterHelper;
 
 const submitButton = document.querySelector('#submit');
 submitButton.addEventListener('click', async () => {
-  if (!writerHelper) {
-    writerHelper = new WriterHelper();
-    await writerHelper.init();
+  if (!rewriterHelper) {
+    rewriterHelper = new RewriterHelper();
+    await rewriterHelper.init();
   }
-  const prompt = document.querySelector('#input').value;
+  const prompt = document.querySelector('#message').value;
   const streaming = document.querySelector('#streaming').checked;
   const composeTextbox = document.querySelector('#result');
   composeTextbox.innerHTML = 'Loading...';
-  const streamOrResult = await writerHelper.write(prompt, streaming);
+  const streamOrResult = await rewriterHelper.write(prompt, streaming);
   composeTextbox.innerHTML = '';
   if (streaming) {
     composeTextbox.innerHTML = '';

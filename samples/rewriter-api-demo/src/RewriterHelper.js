@@ -1,4 +1,4 @@
-export class WriterHelper {
+export class RewriterHelper {
   constructor() {
     this.logElement = document.querySelector('#logs');
     this.writer = null;
@@ -7,24 +7,22 @@ export class WriterHelper {
   async init() {
     if ('Writer' in self) {
       const options = {
-        sharedContext: 'This is an email to request information about an order.',
-        tone: 'casual',
+        sharedContext: 'You are master Yoda, a wise and powerful Jedi Master. You are asked to rewrite the following text in a Yoda like manner.',
         format: 'plain-text',
-        length: 'medium',
       };
 
-      const available = await Writer.availability();
+      const available = await Rewriter.availability();
       let writer;
       if (available === 'unavailable') {
-        this.logElement.innerHTML += 'Writer API is not available.<br>';
+        this.logElement.innerHTML += 'Rewriter API is not available.<br>';
         return;
       }
       if (available === 'available') {
-        this.logElement.innerHTML += 'Writer API is available.<br>';
-        this.writer = await Writer.create(options);
+        this.logElement.innerHTML += 'Rewriter API is available.<br>';
+        this.writer = await Rewriter.create(options);
       } else {
-        this.logElement.innerHTML += '// The Writer can be used after the model is downloaded.<br>';
-        this.writer = await Writer.create({
+        this.logElement.innerHTML += '// The Rewriter can be used after the model is downloaded.<br>';
+        this.writer = await Rewriter.create({
           ...options,
           monitor(m) {
             m.addEventListener("downloadprogress", e => {
@@ -43,12 +41,12 @@ export class WriterHelper {
       await this.init();
     }
     const options = {
-      context: "I'm a customer asking a question"
+      context: "Rewrite the following text in a Yoda like manner.",
     };
     if (streaming) {
-      return this.writer.writeStreaming(content, options);
+      return this.writer.rewriteStreaming(content, options);
     } else {
-      return this.writer.write(content, options);
+      return this.writer.rewrite(content, options);
     }
   }
 }

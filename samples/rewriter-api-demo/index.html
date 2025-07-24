@@ -10,10 +10,18 @@
 
 <body>
   <div id="app" visibility="hidden">
-    <h1>Rewriter API Demo to remove toxic content from an email</h1>
+    <a href="/web-ai/">Back to demos list</a>
+    <h1>Rewriter API Demo to rewrite an email with Yoda dialect</h1>
     <p>Enter some content</p>
-    <div class="form-row"><input type="text" id="input" placeholder="I haven't received my order number 42"
-        value="I haven't received my order number 42" /> </div>
+    <textarea id="message">
+      Hello,
+
+      I am writing to let you know that the built-in rewriter API is now available in the browser. 
+      You can use it to rewrite text in various styles.
+
+      Best regards,
+      Luke
+    </textarea>
     <div class="form-row">
       <label for="streaming">Enable streaming</label><input type="checkbox" name="streaming" id="streaming"> <br>
     </div>
@@ -22,7 +30,7 @@
     </div>
     <div class="form-row">
       <p>Result:</p>
-      <textarea id="result" readonly></textarea>
+      <textarea id="result"></textarea>
     </div>
     <div id="logs">Logs:<br></div>
     <script type="module" src="/src/main.js"></script>
