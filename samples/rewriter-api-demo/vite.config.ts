@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/web-ai/writer-api-demo/",
+  base: "/web-ai/rewriter-api-demo/",
 });
