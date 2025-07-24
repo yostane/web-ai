@@ -1,6 +1,6 @@
 export class WriterHelper {
   constructor() {
-    this.logElement = window.document.querySelector('#logs');
+    this.logElement = document.querySelector('#logs');
     this.writer = null;
   }
 
@@ -16,14 +16,14 @@ export class WriterHelper {
       const available = await Writer.availability();
       let writer;
       if (available === 'unavailable') {
-        // The Writer API isn't usable.
+        this.logElement.innerHTML += 'Writer API is not available.<br>';
         return;
       }
       if (available === 'available') {
-        // The Writer API can be used immediately .
+        this.logElement.innerHTML += 'Writer API is available.<br>';
         this.writer = await Writer.create(options);
       } else {
-        // The Writer can be used after the model is downloaded.
+        this.logElement.innerHTML += '// The Writer can be used after the model is downloaded.<br>';
         this.writer = await Writer.create({
           ...options,
           monitor(m) {
