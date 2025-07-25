@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/web-ai/summarizer-api-demo/",
+  base: "/web-ai/summarizer-demo/",
 });
