@@ -5,30 +5,34 @@ export class SummarizerHelper {
   }
 
   async init(options = {}) {
-    if ('Summarizer' in self) {
-      options.sharedContext = 'This a blog technical blog post and you are a specialist in summarizing technical content';
-      const available = await Summarizer.availability();
-      let writer;
-      if (available === 'unavailable') {
-        this.logElement.innerHTML += 'Summarizer API is not available.<br>';
-        return;
-      }
-      if (available === 'available') {
-        this.logElement.innerHTML += 'Summarizer API is available.<br>';
-        this.summarizer = await Summarizer.create(options);
-      } else {
-        this.logElement.innerHTML += '// The Rewriter can be used after the model is downloaded.<br>';
-        this.summarizer = await Summarizer.create({
-          ...options,
-          monitor(m) {
-            m.addEventListener("downloadprogress", e => {
-              if (this.logElement) {
-                this.logElement.innerHTML += `Downloading ${e.loaded * 100}%<br>`;
-              }
-            });
-          }
+    if (!('Summarizer' in self)) {
+      this.log('Summarizer API is not supported in this browser.');
+      return;
+    }
+    options.sharedContext = 'This a blog technical blog post and you are a specialist in summarizing technical content';
+    const available = await Summarizer.availability();
+    if (available === 'unavailable') {
+      this.log('Summarizer API is not available.');
+      return;
+    }
+    if (available === 'available') {
+      this.log('Summarizer API is available.');
+      this.summarizer = await Summarizer.create(options);
+    } else {
+      const logFn = this.log;
+      logFn('Downloading summarizer model.');
+      options.monitor = m => {
+        m.addEventListener("downloadprogress", e => {
+          logFn(`Downloading ${e.loaded * 100}%`);
         });
-      }
+      };
+      this.summarizer = await Summarizer.create(options);
+    }
+  }
+
+  log(message) {
+    if (this.logElement) {
+      this.logElement.innerHTML += `${message}<br>`;
     }
   }
 
