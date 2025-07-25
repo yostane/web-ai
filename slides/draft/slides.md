@@ -65,6 +65,14 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
+# TypeScript types
+
+`bun install --save-dev @types/dom-chromium-ai`
+
+[@types/dom-chromium-ai](https://www.npmjs.com/package/@types/dom-chromium-ai)
+
+---
+
 # Resources and links
 
 - [Meme1](https://imgflip.com/i/a16egd)
