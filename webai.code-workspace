@@ -23,6 +23,9 @@
     },
     {
       "path": "samples/summarizer-demo"
+    },
+    {
+      "path": "samples/prompt-demo"
     }
   ],
   "settings": {}
