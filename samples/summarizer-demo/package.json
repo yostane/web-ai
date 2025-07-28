@@ -9,9 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.0.4"
-  },
-  "dependencies": {
+    "vite": "^7.0.4",
     "@types/dom-chromium-ai": "^0.0.9"
   }
 }

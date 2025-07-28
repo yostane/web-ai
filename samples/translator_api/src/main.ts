@@ -1,13 +1,13 @@
 import "./style.css";
-import { TranslatorHelper } from "./TranslatorWrapper";
+import { TranslatorHelper } from "./TranslatorHelper";
 
-const translator = new TranslatorHelper(document.querySelector("#logElement")!);
-await translator.setup();
-
-document.querySelectorAll("#app p").forEach((element) => {
-  element.addEventListener("click", async () => {
-    element.innerHTML += `<p>${await translator.translate(
-      element.textContent ?? ""
-    )}</p>`;
-  });
+const translateButton = document.querySelector("#translateButton");
+translateButton?.addEventListener("click", async () => {
+  const translator = new TranslatorHelper(
+    document.querySelector("#logElement")!
+  );
+  await translator.setup();
+  const sourceText = document.querySelector("#sourceText") as HTMLInputElement;
+  const targetText = document.querySelector("#targetText") as HTMLInputElement;
+  targetText.value = await translator.translate(sourceText.value);
 });

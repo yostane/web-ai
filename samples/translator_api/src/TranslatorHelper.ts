@@ -20,23 +20,15 @@ export class TranslatorHelper {
     if (this.#logElement) {
       this.#logElement.innerHTML = `Capabilities : ${translatorCapabilities}`;
     }
-    if (translatorCapabilities == "downloadable") {
-      const downloadButton = document.querySelector("#downloadButton");
-      if (downloadButton) {
-        downloadButton.style.visibility = "visible";
-        downloadButton.addEventListener("click", async () => {
-          this.#create();
-        });
-        this.#logElement.innerHTML += "<br>";
-      }
+    if (translatorCapabilities === "unavailable") {
+      this.#logElement.innerHTML = "Translator is not available.";
+      return false;
     }
-  }
-
-  async #create() {
+    this.#logElement.innerHTML =
+      "Translator is available, creating instance...";
     const downloadListener = (e) => {
       this.#logElement.innerHTML += `Downloaded ${e.loaded * 100}%<br>`;
     };
-
     this.#translator = await Translator.create({
       sourceLanguage: this.#sourceLang,
       targetLanguage: this.#destinationLang,
@@ -44,10 +36,7 @@ export class TranslatorHelper {
         m.addEventListener("downloadprogress", downloadListener);
       },
     });
-    this.#logElement.innerHTML += "Translator ready!";
-    const downloadButton = document.querySelector("#downloadButton");
-    downloadButton.innerHTML = "Translator ready!";
-    downloadButton.disabled = true;
+
     return true;
   }
 
