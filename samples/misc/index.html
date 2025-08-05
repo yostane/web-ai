@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body>
+  <input type="button" value="Run translator demo" onclick="runTranslatorDemo()" />
+
+  <script>
+    async function runTranslatorDemo() {
+      if (!("Translator" in window)) {
+        console.error("Translator API is not available.");
+        return;
+      }
+      const options = {
+        sourceLanguage: "en",
+        targetLanguage: "fr"
+      };
+      const availability = await Translator.availability(options);
+      if (availability === "unavailable") {
+        console.error("Translator API is not available or the model is not available.");
+        return;
+      }
+      const translator = await Translator.create(options);
+      const result = await translator.translate("Hello, world!");
+      console.log(result);
+    }
+  </script>
+</body>
+
+</html>

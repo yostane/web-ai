@@ -26,6 +26,9 @@
     },
     {
       "path": "samples/prompt-demo"
+    },
+    {
+      "path": "samples/misc"
     }
   ],
   "settings": {}
