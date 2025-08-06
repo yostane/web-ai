@@ -29,6 +29,9 @@
     },
     {
       "path": "samples/misc"
+    },
+    {
+      "path": "samples/transformerjs/transformerjs-demos"
     }
   ],
   "settings": {}
