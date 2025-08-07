@@ -2,18 +2,21 @@ import {
   Pipeline,
   pipeline,
   TextClassificationPipeline,
+  type AllTasks,
+  type PipelineType,
 } from "@huggingface/transformers";
 
 class SentimentAnalysisHelper {
-  classifier: TextClassificationPipeline;
+  classifier: TextClassificationPipeline | null = null;
   constructor() {}
 
-  async analyze() {
-    if (!this.classifier) {
-      this.classifier = (await pipeline(
-        "sentiment-analysis"
-      )) as TextClassificationPipeline;
+  async analyze(message: string): Promise<string> {
+    if (this.classifier == null) {
+      const classifier = await pipeline("sentiment-analysis");
+      this.classifier = classifier;
     }
-    return this.classifier("I love transformers!");
+
+    const output = await this.classifier(message);
+    return "test";
   }
 }
