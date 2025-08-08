@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/web-ai/rewriter-api-demo/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewriter Browser API demo</title>
+  <script type="module" crossorigin src="/web-ai/rewriter-api-demo/assets/index-LoJhMcjW.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-ai/rewriter-api-demo/assets/index-BGGbrpoT.css">
+</head>
+
+<body>
+  <div id="app" visibility="hidden">
+    <a href="/web-ai/">Back to demos list</a>
+    <h1>Rewriter API Demo to rewrite an email with Yoda dialect</h1>
+    <p>To enable on Chrome, visit <b>chrome://flags/#rewriter-api-for-gemini-nano</b> and enable the
+      flag.</p>
+    <p>Enter some content</p>
+    <textarea id="message">
+      Hello,
+
+      I am writing to let you know that the built-in rewriter API is now available in the browser. 
+      You can use it to rewrite text in various styles.
+
+      Best regards,
+      Luke
+    </textarea>
+    <div class="form-row">
+      <label for="streaming">Enable streaming</label><input type="checkbox" name="streaming" id="streaming"> <br>
+    </div>
+    <div class="form-row">
+      <button id="submit">Submit</button>
+    </div>
+    <div class="form-row">
+      <p>Result:</p>
+      <textarea id="result"></textarea>
+    </div>
+    <div id="logs">Logs:<br></div>
+</body>
+
+</html>

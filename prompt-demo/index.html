@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/web-ai/prompt-demo/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Build-in AI API demo</title>
+  <script type="module" crossorigin src="/web-ai/prompt-demo/assets/index-cYyfaeUL.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-ai/prompt-demo/assets/index-CC6-xmrO.css">
+</head>
+
+<body>
+  <div id="app" visibility="hidden">
+    <a href="/web-ai/">Back to demos list</a>
+    <h1>Prompt API Demo to generate a story</h1>
+    <p>To enable the API on Chrome, set this flag to enabled: chrome://flags/#prompt-api-for-gemini-nano</p>
+    <p>Enter some content</p>
+    <input type="text" name="topic" id="topic" placeholder="Enter a topic for the story" value="Dinosaurs" />
+    <div class="form-row">
+      <label for="streaming">Enable streaming</label>
+      <input type="checkbox" name="streaming" id="streaming" checked>
+    </div>
+    <div class="form-row">
+      <button id="submit">Submit</button>
+    </div>
+    <div class="form-row">
+      <p>Result:</p>
+      <textarea id="result"></textarea>
+    </div>
+    <div id="logs">Logs:<br></div>
+</body>
+
+</html>
