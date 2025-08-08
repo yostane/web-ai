@@ -49,8 +49,9 @@ h1 {
   padding: 2rem;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {
