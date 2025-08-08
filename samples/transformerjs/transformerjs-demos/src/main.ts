@@ -1,24 +1,38 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { SentimentAnalysisHelper } from "./sentiment-analysis";
+import "./style.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+function shouldUseWebGpu() {
+  const useWebGPUInput = document.getElementById(
+    "use-webgpu"
+  ) as HTMLInputElement;
+  return useWebGPUInput.checked;
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+export async function analyzeSentiment() {
+  const input = document.getElementById(
+    "sentiment-input"
+  ) as HTMLTextAreaElement;
+  const output = document.getElementById(
+    "sentiment-output"
+  ) as HTMLTextAreaElement;
+
+  const text = input.value;
+  const sentimentAnalysisHelper = new SentimentAnalysisHelper(
+    shouldUseWebGpu()
+  );
+  const sentiment = await sentimentAnalysisHelper.analyze(text);
+
+  output.innerText = `Sentiment: ${sentiment}`;
+}
+
+const sentimentAnalysisButton = document.getElementById(
+  "sentiment-analysis-button"
+) as HTMLButtonElement;
+
+sentimentAnalysisButton?.addEventListener("click", async () => {
+  sentimentAnalysisButton.disabled = true;
+  sentimentAnalysisButton.innerHTML = "Analyzing...";
+  await analyzeSentiment();
+  sentimentAnalysisButton.disabled = false;
+  sentimentAnalysisButton.innerHTML = "Analyze";
+});
