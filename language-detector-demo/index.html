@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/web-ai/language-detector-demo/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewriter Browser API demo</title>
+  <script type="module" crossorigin src="/web-ai/language-detector-demo/assets/index-XgdrC7c_.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-ai/language-detector-demo/assets/index-BGGbrpoT.css">
+</head>
+
+<body>
+  <div id="app" visibility="hidden">
+    <a href="/web-ai/">Back to demos list</a>
+    <h1>Language detector API Demo</h1>
+    <p>Enter some content in different languages:</p>
+    <div class="form-row">
+      <label for="content1">Content:</label>
+      <input type="text" name="content1" id="content1" value="Bonjour, comment ça va?">
+      <span id="content1-result"></span>
+    </div>
+    <div class="form-row">
+      <label for="content2">Content 2:</label>
+      <input type="text" name="content2" id="content2" value="Hello, how are you?">
+      <span id="content2-result"></span>
+    </div>
+    <div class="form-row">
+      <label for="content3">Content 3:</label>
+      <input type="text" name="content3" id="content3" value="こんにちわ 元気ですか？">
+      <span id="content3-result"></span>
+    </div>
+    <div class="form-row">
+      <button id="submit">Detect languages</button>
+    </div>
+    <div id="logs">Logs:<br></div>
+</body>
+
+</html>

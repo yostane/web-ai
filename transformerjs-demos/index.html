@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/web-ai/transformerjs-demos/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transforer.js demos</title>
+  <script type="module" crossorigin src="/web-ai/transformerjs-demos/assets/index-BPBl43hH.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-ai/transformerjs-demos/assets/index-e5-GDSGj.css">
+</head>
+
+<body>
+  <div><a href="/web-ai/">Back to demos list</a></div>
+  <div><input type="checkbox" name="webgpu" id="use-webgpu"><label for="webgpu">Enable WebGPU</label></div>
+  <div id="app">
+    <section id="sentiment-analysis-section">
+      <h1>Sentiment Analysis</h1>
+      <textarea id="sentiment-input"
+        placeholder="Type your message here...">I enjoy running AI in the browser</textarea>
+      <button id="sentiment-analysis-button">Analyze</button>
+      <div id="sentiment-result">
+        <p>Sentiment: <span id="sentiment-output"></span></p>
+      </div>
+    </section>
+    <section id="text-to-speech-section">
+      <h1>Text to Speech / Audio</h1>
+      <textarea id="text-to-speech-input" placeholder="Type your message here...">Hello, how are you?</textarea>
+      <button id="text-to-speech-button">Speak</button>
+    </section>
+  </div>
+  <div id="logElement"></div>
+</body>
+
+</html>

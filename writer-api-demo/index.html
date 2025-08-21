@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/web-ai/writer-api-demo/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writer Browser API demo</title>
+  <script type="module" crossorigin src="/web-ai/writer-api-demo/assets/index-D6Q4bvTp.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-ai/writer-api-demo/assets/index-JrZqPPRW.css">
+</head>
+
+<body>
+  <div id="app" visibility="hidden">
+    <a href="/web-ai/">Back to demos list</a>
+    <h1>Writer API Demo to generate order inquiry email</h1>
+    <p>To enable on Chrome, visit <b>chrome://flags/#writer-api-for-gemini-nano</b> and enable the
+      flag.</p>
+    <p>Enter a description of your question.</p>
+    <div class="form-row"><input type="text" id="input" placeholder="I haven't received my order number 42"
+        value="I haven't received my order number 42" /> </div>
+    <div class="form-row">
+      <label for="streaming">Enable streaming</label><input type="checkbox" name="streaming" id="streaming"> <br>
+    </div>
+    <div class="form-row">
+      <button id="submit">Submit</button>
+    </div>
+    <div class="form-row">
+      <p>Result:</p>
+      <textarea id="result" readonly></textarea>
+    </div>
+    <div id="logs">Logs:<br></div>
+</body>
+
+</html>
