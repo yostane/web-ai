@@ -1,5 +1,5 @@
 import { pipeline, TextToAudioPipeline } from "@huggingface/transformers";
-import { log } from "./utils";
+import { log, logProgress } from "./utils";
 
 export class TextToSpeechHelper {
   private synthesizer?: TextToAudioPipeline | undefined;
@@ -15,7 +15,7 @@ export class TextToSpeechHelper {
       "Xenova/speecht5_tts",
       {
         progress_callback: (progress) => {
-          log(`Progress`, progress);
+          logProgress(progress);
         },
       }
     );
@@ -30,6 +30,7 @@ export class TextToSpeechHelper {
 
     const output = await this.synthesizer(text, {
       speaker_embeddings: this.speaker_embeddings,
+      
     });
 
     const audioContext = new AudioContext();

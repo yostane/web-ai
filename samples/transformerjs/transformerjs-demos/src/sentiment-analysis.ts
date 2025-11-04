@@ -4,18 +4,17 @@ import {
   type PretrainedModelOptions,
 } from "@huggingface/transformers";
 
-import { log } from "./utils";
+import { log, logProgress } from "./utils";
 
 export class SentimentAnalysisHelper {
-  pipelineOptions?: PretrainedModelOptions = undefined;
+  pipelineOptions: PretrainedModelOptions = {};
   classifier: TextClassificationPipeline | null = null;
 
   constructor(useWebGPU: boolean) {
     if (useWebGPU) {
-      this.pipelineOptions = {
-        device: "webgpu",
-      };
+      this.pipelineOptions.device = "webgpu"
     }
+    this.pipelineOptions.progress_callback = logProgress
   }
 
   async analyze(message: string): Promise<string> {
