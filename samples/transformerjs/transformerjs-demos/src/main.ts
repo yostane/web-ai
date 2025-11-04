@@ -1,6 +1,6 @@
 import { SentimentAnalysisHelper } from "./sentiment-analysis";
-import "./style.css";
 import { TextToSpeechHelper } from "./text-to-speech";
+import "./style.css";
 
 function shouldUseWebGpu() {
   const useWebGPUInput = document.getElementById(
