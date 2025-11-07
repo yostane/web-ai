@@ -32,6 +32,9 @@
     },
     {
       "path": "samples/transformerjs/transformerjs-demos"
+    },
+    {
+      "path": "samples/transformerjs/transformersjs-audio-chat"
     }
   ],
   "settings": {}
