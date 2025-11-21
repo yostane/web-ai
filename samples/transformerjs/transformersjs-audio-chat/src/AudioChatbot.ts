@@ -5,7 +5,7 @@ import {
   type ProgressInfo,
 } from "@huggingface/transformers";
 
-import type { Message } from "./model.ts";
+import type {Message} from "./model.ts";
 
 export class AudioChatbot {
   private messages: Message[] = [];
@@ -103,9 +103,9 @@ export class AudioChatbot {
       "#usebrowser-tts-stt"
     ) as HTMLInputElement;
     if (useBrowserSTT && useBrowserSTT.checked) {
-      this.startRecordingWithBrowserStt();
+      await this.startRecordingWithBrowserStt();
     } else {
-      this.startRecordingWithTranformersJs();
+      await this.startRecordingWithTranformersJs();
     }
   }
 
@@ -114,9 +114,9 @@ export class AudioChatbot {
       if (!("SpeechRecognition" in window)) {
         throw new Error("Browser STT not supported");
       }
-
-      this.isProcessing = true;
+      this.isListening = true;
       this.updateStatus("Listening...");
+      this.updateRecordButton();
       const recognition = new SpeechRecognition();
       recognition.lang = "en-US";
       recognition.interimResults = false;
@@ -136,7 +136,9 @@ export class AudioChatbot {
 
       recognition.onend = () => {
         this.isProcessing = false;
+        this.isListening = false;
         this.updateStatus("Ready");
+        this.updateRecordButton();
       };
 
       recognition.start();
@@ -168,7 +170,7 @@ export class AudioChatbot {
       this.updateStatus("Recording...");
 
       // Get audio stream from microphone
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({audio: true});
 
       // Create audio context and recorder
       this.mediaRecorder = new MediaRecorder(stream);
@@ -184,7 +186,7 @@ export class AudioChatbot {
         this.updateStatus("Processing audio...");
 
         // Create blob from chunks
-        const audioBlob = new Blob(chunks, { type: chunks[0].type });
+        const audioBlob = new Blob(chunks, {type: chunks[0].type});
 
         // Convert blob to ArrayBuffer
         const arrayBuffer = await audioBlob.arrayBuffer();
