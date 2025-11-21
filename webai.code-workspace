@@ -31,10 +31,10 @@
       "path": "samples/misc"
     },
     {
-      "path": "samples/transformerjs/transformerjs-demos"
+      "path": "samples/transformersjs/transformersjs-demos"
     },
     {
-      "path": "samples/transformerjs/transformersjs-audio-chat"
+      "path": "samples/transformersjs/transformersjs-audio-chat"
     }
   ],
   "settings": {}
