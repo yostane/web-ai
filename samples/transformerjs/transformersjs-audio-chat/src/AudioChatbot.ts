@@ -7,6 +7,9 @@ import {
 
 import type {Message} from "./model.ts";
 
+export const SAMPLE_RATE = 16000;
+export const SAMPLE_RATE_MS = SAMPLE_RATE / 1000;
+
 export class AudioChatbot {
   private messages: Message[] = [];
   private isListening = false;
@@ -51,12 +54,19 @@ export class AudioChatbot {
       // Load Automatic Speech Recognition pipeline (Whisper)
       const asr = await pipeline(
         "automatic-speech-recognition",
-        "Xenova/whisper-tiny.en",
+        "onnx-community/moonshine-base-ONNX",
         {
+          device: "webgpu",
+          dtype: {
+            encoder_model: "fp32",
+            decoder_model_merged: "q4",
+          },
           progress_callback: logProgress,
         }
       );
       this.asr = asr;
+
+      await this.asr(new Float32Array(SAMPLE_RATE)); // Compile shaders
 
       this.updateStatus("Loading Text-to-Speech model...");
       // Load Text-to-Speech pipeline
@@ -64,6 +74,7 @@ export class AudioChatbot {
         "text-to-speech",
         "Xenova/speecht5_tts",
         {
+          device: "webgpu",
           progress_callback: logProgress,
         }
       );
@@ -71,9 +82,11 @@ export class AudioChatbot {
 
       this.updateStatus("Loading Text Generation model...");
       // Load Text Generation pipeline
-      this.textGen = await pipeline("text-generation", "Xenova/distilgpt2", {
-        progress_callback: logProgress,
-      });
+      this.textGen = await pipeline("text-generation",
+        "HuggingFaceTB/SmolLM2-135M-Instruct", {
+          device: "webgpu",
+          progress_callback: logProgress,
+        });
 
       this.updateStatus("Ready");
       this.addMessage(
@@ -170,7 +183,16 @@ export class AudioChatbot {
       this.updateStatus("Recording...");
 
       // Get audio stream from microphone
-      const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          channelCount: 1,
+          echoCancellation: true,
+          autoGainControl: true,
+          noiseSuppression: true,
+          sampleRate: SAMPLE_RATE,
+        },
+      });
+
 
       // Create audio context and recorder
       this.mediaRecorder = new MediaRecorder(stream);
@@ -188,11 +210,10 @@ export class AudioChatbot {
         // Create blob from chunks
         const audioBlob = new Blob(chunks, {type: chunks[0].type});
 
-        // Convert blob to ArrayBuffer
-        const arrayBuffer = await audioBlob.arrayBuffer();
+        const audioURL = window.URL.createObjectURL(audioBlob);
 
         // Process audio with ASR pipeline
-        await this.addAudioMessageToChatTransformersJs(arrayBuffer);
+        await this.addAudioMessageToChatTransformersJs(audioURL);
 
         // Stop audio stream
         stream.getTracks().forEach((track) => track.stop());
@@ -209,24 +230,15 @@ export class AudioChatbot {
   }
 
   private async addAudioMessageToChatTransformersJs(
-    audioBuffer: ArrayBuffer
+    url: string
   ): Promise<void> {
     try {
       if (this.asr == undefined) {
         throw new Error("No ASR");
       }
       this.isProcessing = true;
-
-      // Decode audio buffer
-      const audioContext = new AudioContext();
-      const audioData = await audioContext.decodeAudioData(audioBuffer);
-
-      // Get audio samples
-      const samples = audioData.getChannelData(0);
-
-      // Run ASR pipeline
       this.updateStatus("Recognizing speech...");
-      const asrResult = await this.asr(samples);
+      const asrResult = await this.asr(url);
       const result = Array.isArray(asrResult) ? asrResult[0] : asrResult;
       const transcript = result.text;
 
@@ -295,12 +307,15 @@ export class AudioChatbot {
     try {
       if (this.textGen) {
         // Use Transformers.js for text generation
-        const result = await this.textGen(userInput, {
-          max_new_tokens: 50,
-          do_sample: true,
-          temperature: 0.7,
-        });
-        response = result[0].generated_text;
+        const messages = [
+          {
+            role: "system",
+            content: "You are a helpful assistant that provides short answers that fit in a sentence or two.."
+          },
+          {role: "user", content: userInput},
+        ];
+        const result = await this.textGen(messages, {max_new_tokens: 128});
+        response = result[0].generated_text.at(-1).content;
       } else {
         response = this.getBasicResponse(userInput);
       }
