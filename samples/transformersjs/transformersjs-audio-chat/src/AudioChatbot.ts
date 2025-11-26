@@ -5,7 +5,7 @@ import {
   type ProgressInfo,
 } from "@huggingface/transformers";
 
-import type {Message} from "./model.ts";
+import type { Message } from "./model.ts";
 
 export const SAMPLE_RATE = 16000;
 export const SAMPLE_RATE_MS = SAMPLE_RATE / 1000;
@@ -82,11 +82,14 @@ export class AudioChatbot {
 
       this.updateStatus("Loading Text Generation model...");
       // Load Text Generation pipeline
-      this.textGen = await pipeline("text-generation",
-        "HuggingFaceTB/SmolLM2-135M-Instruct", {
+      this.textGen = await pipeline(
+        "text-generation",
+        "HuggingFaceTB/SmolLM2-135M-Instruct",
+        {
           device: "webgpu",
           progress_callback: logProgress,
-        });
+        }
+      );
 
       this.updateStatus("Ready");
       this.addMessage(
@@ -193,7 +196,6 @@ export class AudioChatbot {
         },
       });
 
-
       // Create audio context and recorder
       this.mediaRecorder = new MediaRecorder(stream);
       const chunks: Blob[] = [];
@@ -208,7 +210,7 @@ export class AudioChatbot {
         this.updateStatus("Processing audio...");
 
         // Create blob from chunks
-        const audioBlob = new Blob(chunks, {type: chunks[0].type});
+        const audioBlob = new Blob(chunks, { type: chunks[0].type });
 
         const audioURL = window.URL.createObjectURL(audioBlob);
 
@@ -310,11 +312,12 @@ export class AudioChatbot {
         const messages = [
           {
             role: "system",
-            content: "You are a helpful assistant that provides short answers that fit in a sentence or two.."
+            content:
+              "You are a helpful assistant that provides short answers that fit in a sentence or two..",
           },
-          {role: "user", content: userInput},
+          { role: "user", content: userInput },
         ];
-        const result = await this.textGen(messages, {max_new_tokens: 128});
+        const result = await this.textGen(messages, { max_new_tokens: 128 });
         response = result[0].generated_text.at(-1).content;
       } else {
         response = this.getBasicResponse(userInput);
@@ -397,7 +400,7 @@ export class AudioChatbot {
       source.connect(audioContext.destination);
       source.start();
       // Clean when the audio context ends
-      source.onended = (ev) => {
+      source.onended = (_) => {
         this.updateStatus("Ready");
       };
     } catch (error) {
