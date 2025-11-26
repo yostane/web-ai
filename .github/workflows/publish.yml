@@ -24,7 +24,6 @@ jobs:
           cd ../../samples/prompt-demo && bun install && bun run build
           cd ../../samples/transformersjs/transformersjs-audio-chat && bun install && bun run build
           cd ../../samples/transformersjs/transformersjs-demos && bun install && bun run build
-          cd ../../
       - name: Copy static files
         run: |
           mv slides/draft/dist public/slides-draft
