@@ -26,9 +26,9 @@ jobs:
           echo "Building transformersjs-demos"
           cd ../../samples/transformersjs/transformersjs-demos && bun install && bun run build
           echo "Building transformersjs-audio-chat"
-          cd ../../samples/transformersjs/transformersjs-audio-chat && bun install && bun run build
-          echo "Build complete"
           cd $START_DIR
+          cd samples/transformersjs/transformersjs-audio-chat && bun install && bun run build
+          echo "Build complete"
       - name: Copy static files
         run: |
           mv slides/draft/dist public/slides-draft
