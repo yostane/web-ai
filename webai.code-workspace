@@ -1,8 +1,12 @@
 {
   "folders": [
-    {
-      "path": "slides/draft"
-    },
+  {
+    "path": "slides/draft"
+  },
+  {
+    "path": "slides/genaiparis2025"
+  },
+    
     {
       "path": "samples/translator_api"
     },
