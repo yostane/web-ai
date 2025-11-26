@@ -15,8 +15,5 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^3.8.0"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.1.14"
   }
 }
