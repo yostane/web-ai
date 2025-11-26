@@ -399,7 +399,6 @@ export class AudioChatbot {
       source.buffer = audioBuffer;
       source.connect(audioContext.destination);
       source.start();
-      // Clean when the audio context ends
       source.onended = (_) => {
         this.updateStatus("Ready");
       };
