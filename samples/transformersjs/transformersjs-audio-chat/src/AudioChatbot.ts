@@ -93,7 +93,7 @@ export class AudioChatbot {
 
       this.updateStatus("Ready");
       this.addMessage(
-        "AI models loaded successfully! Click the microphone to start speaking.",
+        "AI models loaded successfully! Click on the microphone to start speaking.",
         "bot"
       );
     } catch (error) {
