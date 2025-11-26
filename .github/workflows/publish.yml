@@ -23,8 +23,11 @@ jobs:
           cd ../../samples/language-detector-demo && bun install && bun run build
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
+          echo "Building transformersjs-demos"
           cd ../../samples/transformersjs/transformersjs-demos && bun install && bun run build
+          echo "Building transformersjs-audio-chat"
           cd ../../samples/transformersjs/transformersjs-audio-chat && bun install && bun run build
+          echo "Build complete"
           cd $START_DIR
       - name: Copy static files
         run: |
