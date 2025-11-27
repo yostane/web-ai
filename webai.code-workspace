@@ -1,12 +1,11 @@
 {
   "folders": [
-  {
-    "path": "slides/draft"
-  },
-  {
-    "path": "slides/genaiparis2025"
-  },
-    
+    {
+      "path": "slides/draft"
+    },
+    {
+      "path": "slides/genaiparis2025"
+    },
     {
       "path": "samples/translator_api"
     },
@@ -39,6 +38,12 @@
     },
     {
       "path": "samples/transformersjs/transformersjs-audio-chat"
+    },
+    {
+      "path": "samples/seamless-international-chat/seamless-intl-chat-webapp"
+    },
+    {
+      "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server"
     }
   ],
   "settings": {}

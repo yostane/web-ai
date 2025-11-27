@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seamless International Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #chat {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      max-width: 90vw;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #messages {
+      height: 250px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 8px;
+      margin-bottom: 12px;
+      background: #fafafa;
+    }
+
+    #inputRow {
+      display: flex;
+      gap: 8px;
+    }
+
+    #messageInput {
+      flex: 1;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    #sendBtn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: none;
+      background: #0078d7;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #sendBtn:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    #status {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .language-detection {
+      color: #aaa;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chat">
+    <div id="status">Connecting...</div>
+    <div id="messages"></div>
+    <div id="inputRow">
+      <input id="messageInput" type="text" placeholder="Type a message..." disabled />
+      <button id="sendBtn" disabled>Send</button>
+    </div>
+    <p id="current-language">Current language used:</p>
+    <p id="translator-status">Translator status: waiting</p>
+  </div>
+  <script>
+    // --- WebRTC Chat with public signaling server ---
+    // Using ws://localhost:8080 as a local signaling server
+    const SIGNAL_SERVER = 'ws://localhost:8080';
+    const ROOM = 'seamless-chat-demo'; // Change for unique rooms
+    let ws, pc, dc, isInitiator = false;
+    const status = document.getElementById('status');
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    function log(msg, isOwn) {
+      const div = document.createElement('div');
+      const p = document.createElement('p')
+      p.textContent = msg;
+      p.style.textAlign = isOwn ? 'right' : 'left';
+      div.appendChild(p)
+      div.style.margin = '4px 0';
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+      return div
+    }
+
+    function setStatus(s) {
+      status.textContent = s;
+    }
+
+    function enableChat(enable) {
+      input.disabled = !enable;
+      sendBtn.disabled = !enable;
+    }
+
+    function setupWebRTC() {
+      pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+      pc.onicecandidate = e => {
+        if (e.candidate) {
+          ws.send(JSON.stringify({ room: ROOM, type: 'candidate', candidate: e.candidate }));
+        }
+      };
+      pc.addEventListener('datachannel', event => {
+        const dataChannel = event.channel;
+        console.log('Data channel received:', dataChannel.label);
+      });
+      /*pc.ondatachannel = e => {
+        dc = e.channel;
+        dc.onopen = () => {
+          setStatus('Connected!');
+          enableChat(true);
+        };
+        dc.onmessage = e => onMessageReceived(e.data)
+      };*/
+    }
+
+    function createDataChannel() {
+      dc = pc.createDataChannel('chat');
+      dc.onopen = () => {
+        setStatus('Connected!');
+        enableChat(true);
+      };
+      dc.onmessage = e => onMessageReceived(e.data);
+    }
+
+    function connectSignaling() {
+      ws = new WebSocket(SIGNAL_SERVER);
+      ws.onopen = () => {
+        setStatus('Signaling connected. Waiting for peer...');
+        ws.send(JSON.stringify({ room: ROOM, type: 'join' }));
+      };
+      ws.onmessage = async msg => {
+        const data = JSON.parse(msg.data);
+        console.log('Signaling message received: ', msg.data);
+        if (data.room !== ROOM) return;
+        if (data.type === 'init') {
+          isInitiator = true;
+          setupWebRTC();
+          createDataChannel();
+          const offer = await pc.createOffer();
+          await pc.setLocalDescription(offer);
+          ws.send(JSON.stringify({ room: ROOM, type: 'offer', offer }));
+        } else if (data.type === 'offer') {
+          setupWebRTC();
+          await pc.setRemoteDescription(new RTCSessionDescription(data.offer));
+          const answer = await pc.createAnswer();
+          await pc.setLocalDescription(answer);
+          ws.send(JSON.stringify({ room: ROOM, type: 'answer', answer }));
+        } else if (data.type === 'answer') {
+          await pc.setRemoteDescription(new RTCSessionDescription(data.answer));
+        } else if (data.type === 'candidate' && data.candidate) {
+          try {
+            await pc.addIceCandidate(new RTCIceCandidate(data.candidate));
+          } catch (e) { }
+        } else if (data.type === 'join') {
+          try {
+            await pc.addIceCandidate(new RTCIceCandidate(data.candidate));
+          } catch (e) { }
+        } else {
+          console.log('Unknown signaling message', data);
+        }
+      };
+      ws.onerror = () => setStatus('Signaling error.');
+      ws.onclose = () => setStatus('Signaling closed.');
+    }
+
+    sendBtn.onclick = async () => {
+      const text = input.value.trim();
+      if (text && dc && dc.readyState === 'open') {
+        dc.send(text);
+        const msgSent = log('Me: ' + text, true);
+        input.value = '';
+        const languageSpoken = await detectLanguage(text, msgSent)
+        if (languageSpoken !== null) setCurrentLanguageSpoken(languageSpoken)
+      }
+    };
+    input.onkeydown = e => {
+      if (e.key === 'Enter') sendBtn.click();
+    };
+
+    connectSignaling();
+
+    async function onMessageReceived(msg) {
+      const logElement = log('Peer: ' + msg);
+      const detectedLanguage = await detectLanguage(msg, logElement)
+      if (detectedLanguage !== lastLanguageReceived) {
+        lastLanguageReceived = detectedLanguage;
+        await updateTranslator()
+      }
+      if (translator && detectedLanguage !== currentLanguageSpoken) {
+        translateMessage(msg, logElement);
+      }
+    }
+
+    let lastLanguageReceived = null;
+    async function detectLanguage(text, logElement) {
+      const languageDetectorElm = document.createElement("p")
+      languageDetectorElm.className = "language-detection"
+      logElement.insertBefore(languageDetectorElm, logElement.firstChild);
+      if ('LanguageDetector' in self) {
+        // The Language Detector API is available.
+        const availability = await LanguageDetector.availability();
+        if (availability === "unavailable") {
+          languageDetectorElm.textContent = ' (Language detection not available)';
+        } else {
+          const detector = await LanguageDetector.create({
+            monitor(m) {
+              m.addEventListener('downloadprogress', (e) => {
+                console.log(`Downloaded ${e.loaded * 100}%`);
+              });
+            },
+          });
+          const results = await detector.detect(text);
+          if (results.length === 0) {
+            languageDetectorElm.textContent = ' (No language detected)';
+            return null
+          } else {
+            const result = results[0];
+            if (Intl && Intl.DisplayNames) {
+              const languageNames = new Intl.DisplayNames(['en'], { type: 'language' });
+              langName = languageNames.of(result.detectedLanguage);
+            }
+
+            languageDetectorElm.textContent = `(Detected: ${langName} with ${Math.round(result.confidence * 100)}% confidence)`;
+            return result.detectedLanguage
+          }
+        }
+      } else {
+        languageDetectorElm.textContent = ' (Language detection not supported)';
+      }
+      return null
+    }
+
+    let currentLanguageSpoken = null;
+    setCurrentLanguageSpoken(navigator.language)
+    function setCurrentLanguageSpoken(lang) {
+      if (lang !== currentLanguageSpoken) {
+        currentLanguageSpoken = lang
+        document.getElementById("current-language").textContent = `Current language used: ${lang}`
+        updateTranslator()
+      }
+    }
+
+    let translator = null;
+    async function updateTranslator() {
+      const translatorStatusElm = document.getElementById("translator-status");
+      if (lastLanguageReceived == null || currentLanguageSpoken == null) return;
+      const availability = await Translator.availability({
+        sourceLanguage: lastLanguageReceived,
+        targetLanguage: currentLanguageSpoken
+      });
+
+      if (availability === "unavailable") {
+        translatorStatusElm.textContent = `Translator status: Translation from ${lastLanguageReceived} to ${currentLanguageSpoken} is unavailable`;
+        translator = null;
+        return null
+      } else {
+        translatorStatusElm.textContent = `Translator status: Preparing translation from ${lastLanguageReceived} to ${currentLanguageSpoken}...`;
+        translator = await Translator.create({
+          sourceLanguage: lastLanguageReceived,
+          targetLanguage: currentLanguageSpoken
+        });
+        translatorStatusElm.textContent = `Translator status: Translation from ${lastLanguageReceived} to ${currentLanguageSpoken} is ready`;
+        return translator
+      }
+    }
+
+    function translateMessage(text, logElement) {
+      const languageDetectorElm = logElement.querySelector('.language-detection');
+      if (translator === null) {
+        languageDetectorElm.textContent += ' - Translation not available';
+        return
+      }
+
+      translator.translate(text).then(translated => {
+        const p = logElement.querySelector('p:not(.language-detection)');
+        if (p && translated && translated.length > 0) {
+          p.textContent = `Peer (translated): ${translated}`;
+        }
+      }).catch(error => {
+        // Optionally handle translation errors
+        console.error('Translation failed', error);
+        languageDetectorElm.textContent += ` - Translation failed: ${error}`;
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -79,11 +79,7 @@ level: 2
 
 ---
 
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
+# Browser AI vs server AI
 
 |                                                    |                             |
 | -------------------------------------------------- | --------------------------- |
@@ -566,6 +562,11 @@ square: -61,0,0,0
 
 dragPos:
 square: -61,0,0,0
+
+---
+
+dragPos:
+square: -16,-91,0,0
 
 ---
 
