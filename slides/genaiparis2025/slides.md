@@ -32,16 +32,16 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-# Seamless chat
+# Seamless chat demo
 
-<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="600" width="200"></iframe>
+::left::
+
+<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/"></iframe>
 
 ::right::
-
-# Right
 
 <iframe src="https://yostane.github.io/web-ai/seamless-international-chat/"></iframe>
 
@@ -51,8 +51,8 @@ layout: two-cols
     border-radius: 8px;
     padding: 0;
     margin: 0;
-    height: 600px;
-    width: 400px;
+    height: 450px;
+    width: 350px;
   }
 </style>
 
