@@ -17,6 +17,7 @@ jobs:
         run: |
           START_DIR=$(pwd)
           cd slides/draft && bun install && bun run build
+          cd ../genaiparis2025 && bun install && bun run build
           cd ../../samples/translator_api && bun install && bun run build
           cd ../../samples/writer-api-demo && bun install && bun run build
           cd ../../samples/rewriter-api-demo && bun install && bun run build
@@ -32,6 +33,7 @@ jobs:
       - name: Copy static files
         run: |
           mv slides/draft/dist public/slides-draft
+          mv slides/genaiparis2025/dist public/slides-genaiparis2025
           mv samples/translator_api/dist public/translator-api-demo
           mv samples/writer-api-demo/dist public/writer-api-demo
           mv samples/rewriter-api-demo/dist public/rewriter-api-demo
