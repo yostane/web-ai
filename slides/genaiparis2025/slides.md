@@ -37,13 +37,22 @@ layout: two-cols
 
 # Seamless chat
 
-<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="500"></iframe>
+<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="600" width="200"></iframe>
 
 ::right::
 
 # Right
 
-<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="500"></iframe>
+<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="600" width="200"></iframe>
+
+<style>
+  iframe {
+    border: none;
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+  }
+</style>
 
 ---
 
