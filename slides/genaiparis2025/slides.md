@@ -43,14 +43,16 @@ layout: two-cols
 
 # Right
 
-<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/" height="600" width="200"></iframe>
+<iframe src="https://yostane.github.io/web-ai/seamless-international-chat/"></iframe>
 
 <style>
   iframe {
     border: none;
-    border-radius: 12px;
-    height: 100%;
-    width: 100%;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    height: 600px;
+    width: 400px;
   }
 </style>
 
