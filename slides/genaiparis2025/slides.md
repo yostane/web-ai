@@ -32,7 +32,9 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+
 layout: two-cols-header
+
 ---
 
 # Seamless chat demo
@@ -60,23 +62,13 @@ layout: two-cols-header
 
 # Browser AI vs server AI
 
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+| Criteria      | Browser AI                          | Server AI                                |
+| ------------- | ----------------------------------- | ---------------------------------------- |
+| Privacy       | 🏆 Data stays in the device         | Data sent to server                      |
+| Latency       | 🏆 No network delay                 | Network latency                          |
+| Cost          | 🏆 No server costs                  | Ongoing server costs                     |
+| Scalability   | Limited by user device capabilities | 🏆 Easily scalable with server resources |
+| Models choice | Limited                             | 🏆 Wide variety of models available      |
 
 ---
 
@@ -553,8 +545,10 @@ dragPos:
 square: 0,0,0,0
 
 ---
+
 dragPos:
-  square: NaN,NaN,NaN,NaN
+square: NaN,NaN,NaN,NaN
+
 ---
 
 # Draggable Elements
@@ -602,7 +596,6 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
-
 
 ---
 
