@@ -62,13 +62,13 @@ layout: two-cols-header
 
 # Browser AI vs server AI
 
-| Criteria      | Browser AI                          | Server AI                                |
-| ------------- | ----------------------------------- | ---------------------------------------- |
-| Privacy       | 🏆 Data stays in the device         | Data sent to server                      |
-| Latency       | 🏆 No network delay                 | Network latency                          |
-| Cost          | 🏆 No server costs                  | Ongoing server costs                     |
-| Scalability   | Limited by user device capabilities | 🏆 Easily scalable with server resources |
-| Models choice | Limited                             | 🏆 Wide variety of models available      |
+| Criteria                     | Browser AI                          | Server AI                                |
+| ---------------------------- | ----------------------------------- | ---------------------------------------- |
+| Privacy                      | 🏆 Data stays in the device         | Data sent to server                      |
+| Latency                      | 🏆 No network delay                 | Network latency                          |
+| Cost                         | 🏆 No server costs                  | Ongoing server costs                     |
+| Scalability                  | Limited by user device capabilities | 🏆 Easily scalable with server resources |
+| Supported Models / use-cases | Limited                             | 🏆 Wide variety of models available      |
 
 ---
 
