@@ -2,24 +2,19 @@
 theme: seriph
 addons:
   - slidev-addon-excalidraw
+fonts:
+  sans: Robot
+  serif: Robot Slab
+  mono: Fira Code
 title: GenAI for webapps, where we're at
 info: GenerationAI Paris. December 9, 2025
-class: text-center
 drawings:
   persist: false
 transition: slide-left
 mdc: true
 duration: 25min
----
-
-<div class="pt-12">
-  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-    Press Space to start the presentation <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
----
 layout: center
+zoom: 1.5
 ---
 
 <img border="rounded" src="./assets/webapp-01.svg" />
@@ -125,6 +120,82 @@ pre {
 # Transformers.js
 
 ---
+
+# OpenCV.js
+
+- Open source computer vision library ported to WASM
+- Supports image and video processing tasks
+- Can be used for tasks like object detection, image filtering, etc.
+
+```js
+let faceCascade = new cv.CascadeClassifier();
+let eyeCascade = new cv.CascadeClassifier();
+faceCascade.load("haarcascade_frontalface_default.xml");
+eyeCascade.load("haarcascade_eye.xml");
+faceCascade.detectMultiScale(srcImage, faces);
+for (let i = 0; i < faces.size(); ++i) {
+  draw(faces[i]);
+  eyeCascade.detectMultiScale(faces[i], eyes);
+  for (let j = 0; j < eyes.size(); ++j) {
+    cv.rectangle(eyes[j]);
+  }
+}
+```
+
+[Demo](https://docs.opencv.org/3.4/d2/d99/tutorial_js_face_detection.html)
+
+---
+
+# Built-in Web AI APIs
+
+- Introduced by Chrome team and aims to become a web standard
+- Provides access to AI models directly from the browser
+- Model is managed by the browser vendor and used once across all origins
+- Apis follow this general pattern:
+
+```js
+if (!("WebAIAPI" in window)) {
+  return;
+}
+const options = {};
+const availability = await WebAIAPI.availability(options);
+if (availability === "unavailable") {
+  return;
+}
+const aiObject = await WebAIAPI.create(options);
+const output = await aiObject.performTask(input);
+console.log(output);
+```
+
+---
+
+# Example: Translator API
+
+```js
+// Check if the Translator API is available in the browser
+if (!("Translator" in window)) {
+  alert("Translator API is not available.");
+  return;
+}
+// Set up the options for the Translator API
+const options = {
+  sourceLanguage: "en",
+  targetLanguage: "fr",
+};
+const availability = await Translator.availability(options);
+if (availability === "unavailable") {
+  alert("Translator API is not available or the model is not available.");
+  return;
+}
+// Create a Translator object with the desired options
+const translator = await Translator.create(options);
+// Ask the Translator object to translate a text
+const result = await translator.translate("Hello, world!");
+console.log(result);
+// The output should be: "Bonjour, monde !"
+```
+
+---
 layout: two-cols-header
 ---
 
@@ -164,116 +235,6 @@ layout: two-cols-header
 ---
 
 <img border="rounded" src="./assets/yes-no-browser-ai.png" />
-
----
-
-## level: 2
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-});
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: "John Doe",
-        books: [
-          "Vue 2 - Advanced Guide",
-          "Vue 3 - Basic Guide",
-          "Vue 4 - The Mystery",
-        ],
-      },
-    };
-  },
-};
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: "John Doe",
-      books: [
-        "Vue 2 - Advanced Guide",
-        "Vue 3 - Basic Guide",
-        "Vue 4 - The Mystery",
-      ],
-    },
-  }),
-};
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-};
-</script>
-```
-````
-
----
-
-## class: px-20
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-layout: center
-class: text-center
 
 ---
 
