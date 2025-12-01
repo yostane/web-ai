@@ -1,24 +1,51 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
+theme: purplin
 title: GenAI for webapps, where we're at
-info: |
-
-# apply UnoCSS classes to the current slide
+info: GenerationAI Paris. December 9, 2025
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# duration of the presentation
-duration: 35min
+duration: 25min
+---
+
+<div class="pt-12">
+  <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
+    Press Space to start the presentation <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+
+<BarBottom  title="Slidev theme purplin">
+  <Item text="slidevjs/slidev">
+    <carbon:logo-github />
+  </Item>
+  <Item text="Slidevjs">
+    <carbon:logo-twitter />
+  </Item>
+  <Item text="sli.dev">
+    <carbon:link />
+  </Item>
+</BarBottom>
+
+---
+layout: intro
+---
+
+![Web app with AI](./assets/webapp-01.svg)
+
+- Live translation
+- Image processing
+- Summarization
+
+---
+layout: center
+---
+
+![](./assets/money.png)
+
+---
+layout: center
 ---
 
 # GenAI for webapps
@@ -33,8 +60,34 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-layout: two-cols-header
+![Active browser AI APIs](./assets/yes-no-browser-ai.png)
 
+---
+layout: two-cols
+---
+
+# Speaker
+
+- Yassine Benabbas
+- DevRel @ Worldline
+- Teacher
+- Lille Android User Group
+- Social networks: @yostane
+- LinkedIn: **in/yassinebenabbas/**
+- Anime, Pokémon TCG
+
+::right::
+
+![Yassine Benabbas](./assets/yassine-benabbas.jpg)
+
+---
+
+# Agenda
+
+<Toc text-sm minDepth="1" maxDepth="1" />
+
+---
+layout: two-cols-header
 ---
 
 # Seamless chat demo
@@ -71,31 +124,8 @@ layout: two-cols-header
 | Supported Models / use-cases | Limited                             | 🏆 Wide variety of models available      |
 
 ---
-
-layout: two-cols
-layoutClass: gap-16
-
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc text-sm minDepth="1" maxDepth="2" />
-
----
-
-layout: image-right
+layout: intro
 image: https://cover.sli.dev
-
 ---
 
 # Code
@@ -220,48 +250,6 @@ const author = {
 </script>
 ```
 ````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
 
 ---
 
@@ -551,6 +539,29 @@ square: NaN,NaN,NaN,NaN
 
 ---
 
+dragPos:
+square: 0,-252,0,0
+
+---
+
+dragPos:
+square: 0,-252,0,0
+
+---
+
+dragPos:
+square: 0,-252,0,0
+
+---
+
+dragPos:
+square: 0,-252,0,0
+
+---
+dragPos:
+  square: 0,-252,0,0
+---
+
 # Draggable Elements
 
 Double-click on the draggable elements to edit their positions.
@@ -596,6 +607,7 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
+
 
 ---
 

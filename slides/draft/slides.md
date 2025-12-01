@@ -30,10 +30,6 @@ mdc: true
 
 ---
 
-![Too many models crash](./assets/too-many-model-crash.png)
-
----
-
 # AI on the web
 
 Presentation slides for developers
@@ -70,6 +66,10 @@ The last comment block of each slide will be treated as slide notes. It will be 
 `bun install --save-dev @types/dom-chromium-ai`
 
 [@types/dom-chromium-ai](https://www.npmjs.com/package/@types/dom-chromium-ai)
+
+---
+
+![Too many models crash](./assets/too-many-model-crash.png)
 
 ---
 
