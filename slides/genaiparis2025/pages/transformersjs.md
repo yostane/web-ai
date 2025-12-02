@@ -24,7 +24,7 @@ const modelId = "'Xenova/bert-base-multilingual-uncased-sentiment'";
 // (optional) options: logging, device, etc.
 const options = { device: "webgpu" };
 const model = await pipeline(task, modelId, options);
-const result = (await model('I love transformers!')) as any;
+const result = (await model("I love transformers!")) as any;
 console.log(result);
 // # [{'label': 'POSITIVE', 'score': 0.999806941}]
 ```
@@ -32,12 +32,15 @@ console.log(result);
 ---
 layout: iframe-right
 url: https://yostane.github.io/web-ai/transformersjs-audio-chat/
+class: chatbot-iframe
 ---
 
 ### Demo: Local audio chatbot
 
-| Pipeline        | Model                                  |
-| --------------- | -------------------------------------- |
-| Speech-to-Text  | `Xenova/wav2vec2-base-960h`            |
-| Text Generation | `Xenova/gpt2-small-en`                 |
-| Text-to-Speech  | `Xenova/tacotron2` + `Xenova/hifi-gan` |
+| Task id                      | Model                    |
+| ---------------------------- | ------------------------ |
+| automatic-speech-recognition | `Xenova/whisper-tiny.en` |
+| Text-to-Speech               | `Xenova/speecht5_tts`    |
+| text-generation              | `Xenova/distilgpt2`      |
+
+<button onclick="reloadAudioChatbotIframe()">Reload iframe</button>
