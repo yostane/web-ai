@@ -8,7 +8,7 @@
 
 ---
 
-### Transformers.js Pipeline
+## Transformers.js Pipeline
 
 - High-level API for common tasks (text generation, sentiment analysis, etc.)
 - Some tasks require extra setup (for example, setup embeddings for text-to-speech)
@@ -35,7 +35,7 @@ url: https://yostane.github.io/web-ai/transformersjs-audio-chat/
 class: chatbot-iframe
 ---
 
-### Demo: Local audio chatbot
+## Demo: Local audio chatbot
 
 | Task id                      | Model                    |
 | ---------------------------- | ------------------------ |
@@ -43,4 +43,4 @@ class: chatbot-iframe
 | Text-to-Speech               | `Xenova/speecht5_tts`    |
 | text-generation              | `Xenova/distilgpt2`      |
 
-<button onclick="reloadAudioChatbotIframe()">Reload iframe</button>
+<button onclick="reloadAudioChatbotIframe()">Reload demo</button>

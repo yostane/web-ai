@@ -28,13 +28,6 @@ hideInToc: true
 - Summarization
 
 ---
-layout: center
-hideInToc: true
----
-
-![](./assets/money.png)
-
----
 layout: cover
 hideInToc: true
 ---
@@ -67,15 +60,20 @@ hideInToc: true
 
 # Agenda
 
-<Toc minDepth="1" maxDepth="2" />
+<Toc minDepth="1" maxDepth="1" />
 
 ---
 src: ./pages/serverai.md
 ---
 
+---
+
 # AI inference in the browser
 
-![](./assets/webapp-04-browser-ai.svg)
+<img border="rounded" src="./assets/webapp-04-browser-ai.svg" />
+
+<br>
+<br>
 
 - Libraries: transformers.js, openvsc.js, web AI APIs
 - Pros: Privacy, low latency, no server costs
@@ -108,7 +106,5 @@ src: ./pages/webai.md
 <img border="rounded" src="./assets/yes-no-browser-ai.png" />
 
 ---
-
-# Learn More
-
-<PoweredBySlidev mt-10 />
+src: ./pages/conclusion.md
+---

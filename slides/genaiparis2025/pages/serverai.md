@@ -3,9 +3,14 @@
 <img v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
+<br>
+<br>
+
 1. The web app send a request to the backend server
-1. If the query requires AI inference, the backend server delegates it to a separate AI service
-1. The backend server processes the AI output and sends the final response back to the web app
+1. If AI inference is needed, it is delegated to a separate AI service
+1. AI output is processed by the server and the final response is sent back to the web app
+
+<br>
 
 <div v-after><b>What is the AI service?</b></div>
 
@@ -21,16 +26,17 @@ display: none;
 
 <img border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
 
-- Providers: OpenAI, Anthropic, Cohere, etc.
-- Pros: Powerful models, easy to use
-- Cons: Latency, cost, privacy
+<br>
+<br>
+
+**Providers**: GoogleAI, OpenAI, Anthropic, etc.
 
 ---
 layout: center
 zoom: 1.5
 ---
 
-### Example with Google Cloud AI
+## Example with Google Cloud AI
 
 ```py
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -60,3 +66,10 @@ pre {
 - Tools: Llama.cpp, Ollama, etc.
 - Pros: More control, no ongoing costs
 - Cons: Infrastructure costs, maintenance
+
+---
+layout: center
+hideInToc: true
+---
+
+![](../assets/money.png)

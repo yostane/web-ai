@@ -21,7 +21,7 @@ console.log(output);
 
 ---
 
-### Example: Translator API
+## Example: Translator API
 
 ```js
 // Check if the Translator API is available in the browser

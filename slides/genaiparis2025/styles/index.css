@@ -1,0 +1,9 @@
+ul {
+  li {
+    list-style-type: none;
+  }
+  li::before {
+    content: "▻";
+    margin-right: 0.5rem;
+  }
+}
