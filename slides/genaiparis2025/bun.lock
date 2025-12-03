@@ -5,7 +5,8 @@
     "": {
       "name": "webai-genaiparis2025",
       "dependencies": {
-        "@slidev/cli": "^52.9.1",
+        "@iconify-json/logos": "^1.2.10",
+        "@slidev/cli": "^52.10.1",
         "@slidev/theme-default": "latest",
         "@slidev/theme-seriph": "latest",
         "slidev-addon-excalidraw": "^1.0.4",
@@ -13,10 +14,10 @@
         "slidev-component-pager": "^1.1.0",
         "slidev-component-progress": "^1.1.0",
         "slidev-theme-purplin": "^1.2.0",
-        "vue": "^3.5.24",
+        "vue": "^3.5.25",
       },
       "devDependencies": {
-        "prettier": "^3.7.3",
+        "prettier": "^3.7.4",
         "prettier-plugin-slidev": "^1.0.5",
       },
     },
@@ -159,6 +160,8 @@
     "@hedgedoc/markdown-it-task-lists": ["@hedgedoc/markdown-it-task-lists@2.0.1", "", { "peerDependencies": { "markdown-it": ">=12" } }, "sha512-/iwO+hlzh+Jg+jQqE1SkI3Fr9LPBLqS2rgWQFOFSj0HH7KEYbegYru+dc+B2V89ZcY0AwwT6LzU4f5oqsgyvEw=="],
 
     "@iconify-json/carbon": ["@iconify-json/carbon@1.2.14", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-33u6uGiYJ79Dfp72peT+PBMcjxzi+NyJLpqYRX8pnw0zchsUW7Us2xecgvkWgD83KYcbe6hufyWlHFU9y7fb/Q=="],
+
+    "@iconify-json/logos": ["@iconify-json/logos@1.2.10", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-qxaXKJ6fu8jzTMPQdHtNxlfx6tBQ0jXRbHZIYy5Ilh8Lx9US9FsAdzZWUR8MXV8PnWTKGDFO4ZZee9VwerCyMA=="],
 
     "@iconify-json/ph": ["@iconify-json/ph@1.2.2", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw=="],
 

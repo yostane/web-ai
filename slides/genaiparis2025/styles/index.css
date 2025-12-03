@@ -9,6 +9,7 @@ ul {
 }
 
 .slidev-layout {
+  padding: 20px 40px;
   p,
   li {
     font-size: 1.2em;
@@ -20,6 +21,11 @@ ul {
   h1,
   h2,
   h3 {
-    margin-bottom: 0.5em;
+    margin: 0;
+    padding-bottom: 0.2em;
+    line-height: 1;
+  }
+  code {
+    font-size: 1.4em;
   }
 }

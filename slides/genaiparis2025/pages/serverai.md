@@ -1,4 +1,8 @@
-# Server-side AI inference
+---
+hideInToc: false
+---
+
+# AI inference on the server
 
 <img v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
@@ -7,34 +11,40 @@
 1. If AI inference is needed, it is delegated to a separate AI service
 1. AI output is processed by the server and the final response is sent back to the web app
 
-<br>
-
 <p v-after style="color:lightblue"><b>Where is the AI service hosted?</b></p>
 
 <style>
 .slidev-vclick-hidden {
 display: none;
 }
+
+img {
+  height: 200px;
+}
 </style>
 
 ---
 
-## AI inference on the Cloud
+# AI inference by a 3rd party provider
 
 <img border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
 
-<br>
-<br>
+<v-clicks>
 
 - **Pricing**: pay-as-you-go. Some provide free tiers.
 - **Providers**: GoogleAI, OpenAI, Anthropic, etc.
 
----
-layout: center
-zoom: 1.5
+</v-clicks>
+
+<style>
+img {
+  height: 300px;
+}
+</style>
+
 ---
 
-## Example with Google Cloud AI
+# Example with Google Cloud AI
 
 ```py
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -57,13 +67,35 @@ pre {
 
 ---
 
-## AI inference on-premise
+# AI inference on-premise
 
 <img border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
 
-- Tools: Llama.cpp, Ollama, etc.
-- Pros: More control, no ongoing costs
-- Cons: Infrastructure costs, maintenance
+- **Tools**: Ollama, Jan AI, LM Studio, etc.
+
+<style>
+img {
+  height: 300px;
+}
+</style>
+
+---
+
+# Third party vs on-premise AI service
+
+<v-clicks>
+
+| Criteria            | 3rd party AI service          | On-premise AI service                                |
+| ------------------- | ----------------------------- | ---------------------------------------------------- |
+| **Short term cost** | 🏆 Only cost of usage         | Initial investment required                          |
+| **Long term cost**  | Costs may accumulate          | 🏆 Nearly constant costs                             |
+| **Privacy**         | Data sent to external servers | 🏆 Data stays within the organization                |
+| **Maintenance**     | 🏆 Delegated to the provider  | Organization responsible for updates and maintenance |
+| **Sovereignty**     | Potentially lower sovereignty | 🏆 Full control over data and models                 |
+
+</v-clicks>
+
+[Reference: Lenovo 2025 study](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
 
 ---
 layout: center

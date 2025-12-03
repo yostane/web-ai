@@ -1,7 +1,6 @@
 ---
 layout: image-right
-image: ./assets/speaker.jpg
-hideInToc: true
+image: ../assets/speaker.jpg
 ---
 
 # Speaker
@@ -10,8 +9,7 @@ hideInToc: true
 - DevRel @ Worldline
 - Teacher
 - Lille Android User Group
-- SNs: @yostane
-- LinkedIn: **in/yassinebenabbas/**
+- @yostane, **in/yassinebenabbas**
 - Anime, Pokémon TCG
 
 ---
