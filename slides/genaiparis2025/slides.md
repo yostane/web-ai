@@ -28,6 +28,12 @@ hideInToc: true
 - Summarization
 
 ---
+layout: center
+---
+
+<img border="rounded" src="./assets/elmo-faint.gif" />
+
+---
 layout: cover
 hideInToc: true
 ---
@@ -39,20 +45,8 @@ Where we're at
 GenerationAI Paris. December 9, 2025
 
 ---
-layout: image-right
-image: ./assets/speaker.jpg
-hideInToc: true
+src: ./pages/bio.md
 ---
-
-# Speaker
-
-- Yassine Benabbas
-- DevRel @ Worldline
-- Teacher
-- Lille Android User Group
-- SNs: @yostane
-- LinkedIn: **in/yassinebenabbas/**
-- Anime, Pokémon TCG
 
 ---
 hideInToc: true

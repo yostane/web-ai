@@ -3,16 +3,13 @@
 <img v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
-<br>
-<br>
-
 1. The web app send a request to the backend server
 1. If AI inference is needed, it is delegated to a separate AI service
 1. AI output is processed by the server and the final response is sent back to the web app
 
 <br>
 
-<div v-after><b>What is the AI service?</b></div>
+<p v-after style="color:lightblue"><b>Where is the AI service hosted?</b></p>
 
 <style>
 .slidev-vclick-hidden {
@@ -29,7 +26,8 @@ display: none;
 <br>
 <br>
 
-**Providers**: GoogleAI, OpenAI, Anthropic, etc.
+- **Pricing**: pay-as-you-go. Some provide free tiers.
+- **Providers**: GoogleAI, OpenAI, Anthropic, etc.
 
 ---
 layout: center
@@ -59,7 +57,7 @@ pre {
 
 ---
 
-# AI inference on-premise
+## AI inference on-premise
 
 <img border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
 
