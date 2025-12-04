@@ -4,9 +4,29 @@ hideInToc: false
 
 # Conclusion
 
+<br>
+<br>
+
+<div class="grid grid-cols-3 gap-10 text-center">
+  <div class="flex flex-col items-center">
+    <img style="width: 150px;" border="rounded" src="../assets/genai-paris-logo.webp" />
+    <p>GenAI is accessible to devs</p>
+  </div>
+  <div class="flex flex-col items-center">
+    <img style="width: 150px;" border="rounded" src="../assets/genai-paris-logo.webp" />
+    <p>Default choice</p>
+  </div>
+  <div class="flex flex-col items-center">
+    <img style="width: 150px;" border="rounded" src="../assets/genai-paris-logo.webp" />
+    <p>Emerging and promising</p>
+</div>
+</div>
+
+<!--
 - Webapps can leverage AI either via server-side inference or directly in the browser
 - The server is still the best choice for most use cases
 - Browser AI is emerging as a privacy-friendly and cost-effective alternative
+-->
 
 ---
 layout: end
