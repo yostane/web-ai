@@ -16,5 +16,18 @@ layout: end
 
 Any Questions?
 
-<PoweredBySlidev mt-10 />
-Credits: Tenor, Chrome for developers
+<div class="flex flex-col items-center">
+<QRCode
+    :width="270"
+    :height="270"
+    type="svg"
+    data="https://wrl.li/genai-paris25"
+    :imageOptions="{ margin: 5 }"
+    :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
+    image="../assets/worldline-mint-symbol.png"
+/>
+</div>
+
+Slides: [wrl.li/genai-paris25](https://wrl.li/genai-paris25).
+<br>
+Credits: Tenor, Chrome for developers, <PoweredBySlidev mt-5 />.
