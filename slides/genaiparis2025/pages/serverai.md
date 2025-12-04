@@ -81,6 +81,31 @@ img {
 
 ---
 
+# Ollama demo
+
+Run Ollama server locally with the gemma3 model:
+
+```bash
+ollama serve
+ollama pull gemma3
+```
+
+My JS backend server code to query the local Ollama server:
+
+```ts
+const ollama = new Ollama({ host: 'http://localhost:11434' })
+app.post("/chat", async (req, res) => {
+  const question = req.body.question
+  const response = await ollama.chat({
+      model: 'gemma3',
+      messages: [{ role: 'user', content: question }],
+  })
+  res.json({ answer: response.message.content })
+})
+```
+
+---
+
 # Third party vs on-premise AI service
 
 <v-clicks>

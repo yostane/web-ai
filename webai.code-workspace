@@ -44,6 +44,9 @@
     },
     {
       "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server"
+    },
+    {
+      "path": "samples/ollama/ollama-express-demo"
     }
   ],
   "settings": {}

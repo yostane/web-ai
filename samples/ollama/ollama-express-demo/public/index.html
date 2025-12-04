@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Ollama demo</title>
+  <script>
+    async function chat() {
+      const responseList = document.getElementById("responseList");
+      const questionInput = document.getElementById("questionInput");
+      const question = questionInput.value;
+      if (!question) return;
+
+      const responseItem = document.createElement("li");
+      responseItem.innerText = "Loading...";
+      responseList.appendChild(responseItem);
+
+      try {
+        const response = await fetch("/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ question }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        responseItem.innerText = data.answer;
+      } catch (error) {
+        responseItem.innerText = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="questionInput" placeholder="Ask a question..."
+      value="Tell me a short fact about programming" />
+    <button id="askButton" onclick="chat()">Ask</button>
+  </div>
+  <ul id="responseList"></ul>
+</body>
+
+</html>
