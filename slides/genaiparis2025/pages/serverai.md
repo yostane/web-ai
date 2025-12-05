@@ -7,7 +7,7 @@ hideInToc: false
 <img v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
-1. The web app send a request to the backend server
+1. The web app sends a request to the backend server
 1. If AI inference is needed, it is delegated to a separate AI service
 1. AI output is processed by the server and the final response is sent back to the web app
 

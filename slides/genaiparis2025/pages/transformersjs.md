@@ -22,7 +22,7 @@ import { pipeline } from "@huggingface/transformers.js";
 // task identifier: "text-generation", "translation", etc.
 const task = "sentiment-analysis";
 // (optional) model identifier from Hugging Face
-const modelId = "'Xenova/bert-base-multilingual-uncased-sentiment'";
+const modelId = "Xenova/bert-base-multilingual-uncased-sentiment";
 // (optional) options: logging, device, etc.
 const options = { device: "webgpu" };
 const model = await pipeline(task, modelId, options);

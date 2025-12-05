@@ -6,8 +6,8 @@ addons:
   - slidev-component-progress
   - slidev-addon-qrcode
 fonts:
-  sans: Robot
-  serif: Robot Slab
+  sans: Roboto
+  serif: Roboto Slab
   mono: Fira Code
 title: GenAI for webapps, where we're at
 info: GenerationAI Paris. December 9, 2025
