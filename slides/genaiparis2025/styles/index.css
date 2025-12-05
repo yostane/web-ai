@@ -29,3 +29,13 @@ ul {
     font-size: 1.4em;
   }
 }
+
+.svgimg {
+  height: 300px;
+  width: 600px;
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 15px;
+  border: 4px solid var(--slidev-theme-primary);
+  background: white;
+}

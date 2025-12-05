@@ -19,7 +19,7 @@ hideInToc: false
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-conclusion-webai.svg" />
     <p>Web AI will soon become a strong alternative</p>
-</div>
+  </div>
 </div>
 
 <style>

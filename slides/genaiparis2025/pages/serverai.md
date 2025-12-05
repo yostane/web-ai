@@ -4,12 +4,12 @@ hideInToc: false
 
 # AI inference on the server
 
-<img v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
-<img v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
+<img class="svgimg" v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
+<img class="svgimg" v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
-1. The web app sends a request to the backend server
-1. If AI inference is needed, it is delegated to a separate AI service
-1. AI output is processed by the server and the final response is sent back to the web app
+1. The web app sends a request to the backend server.
+1. If AI inference is needed, it is delegated to a separate AI service.
+1. AI output is processed by the server and the final response is sent back to the web app.
 
 <p v-after style="color:lightblue"><b>Where is the AI service hosted?</b></p>
 
@@ -19,7 +19,7 @@ display: none;
 }
 
 img {
-  height: 200px;
+  height: 250px;
 }
 </style>
 
@@ -27,18 +27,23 @@ img {
 
 # AI inference by a 3rd party provider
 
-<img border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
+<img class="svgimg" border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
 
-<v-clicks>
+<br>
+<br>
+<br>
+
+<v-click>
 
 - **Pricing**: pay-as-you-go. Some provide free tiers.
-- **Providers**: GoogleAI, OpenAI, Anthropic, etc.
+- **Providers**: GoogleAI, OpenAI, Anthropic, etc
 
-</v-clicks>
+</v-click>
 
 <style>
 img {
-  height: 300px;
+  width: 900px;
+  height: 200px;
 }
 </style>
 

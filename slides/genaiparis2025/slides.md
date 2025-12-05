@@ -16,29 +16,81 @@ drawings:
 transition: slide-left
 mdc: true
 duration: 25min
-layout: center
+layout: default
 defaults:
   hideInToc: true
 ---
 
-<img border="rounded" src="./assets/webapp-01.svg" />
+<div class="grid grid-rows-2">
 
-AI features
+  <div class="flex justify-center mb-10">
+    <img v-click.hide border="rounded" src="./assets/happy-customer-01.svg" />
+    <img v-click="['1', '5']" border="rounded" src="./assets/happy-customer-02.svg" />
+    <img v-click="5" border="rounded" src="./assets/happy-customer-03.svg" />
+  </div>
 
-<v-clicks>
-
-- Translation
-- Chatbot
-- Summarization
-
-</v-clicks>
+  <div class="grid grid-cols-3 gap-10 text-center">
+    <div v-click="2" class="flex flex-col items-center myblock">
+      <twemoji-writing-hand class="text-3xl"/>
+      <ul style="list-style: none;" class="mt-4">
+        <li>Chatbots</li>
+        <li>Content generation</li>
+      </ul>
+    </div>
+    <div v-click="3" class="flex flex-col items-center myblock">
+      <twemoji-framed-picture class="text-3xl"/>
+      <ul style="list-style: none;" class="mt-4">
+        <li>Image segmentation</li>
+        <li>Image generation</li>
+      </ul>
+    </div>
+    <div v-click="4" class="flex flex-col items-center myblock">
+      <twemoji-studio-microphone class="text-3xl"/>
+      <ul style="list-style: none;" class="mt-4">
+        <li>Text to speech</li>
+        <li>Speech recognition</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <style>
-  img {
-    width: 600px;
-  }
-</style>
 
+.myblock {
+  padding-top: 5px;
+  background: black;
+  border-radius: 15px;
+  border: 4px solid var(--slidev-theme-primary);
+  height: 150px;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li::before {
+  margin: 0;
+  padding: 0;
+  content: "";
+}
+
+img {
+  height: 300px;
+  width: 600px;
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 15px;
+  border: 4px solid var(--slidev-theme-primary);
+  background: white;
+}
+
+.slidev-vclick-hidden {
+  display: none;
+}
+
+</style>
 ---
 layout: center
 ---
@@ -85,12 +137,18 @@ hideInToc: false
 
 <br>
 
-**Libraries**: transformers.js, openvsc.js, web AI APIs
+**Libraries**: transformers.js, openvsc.js, web AI APIs.
 
 <style>
   img {
-    height: 300px;
-  }
+  height: 300px;
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 15px;
+  border: 4px solid var(--slidev-theme-primary);
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 </style>
 
 ---
