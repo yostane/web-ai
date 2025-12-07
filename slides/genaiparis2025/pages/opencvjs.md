@@ -19,4 +19,8 @@ for (let i = 0; i < faces.size(); ++i) {
 }
 ```
 
+--- 
+
+# Demo
+
 [Demo](https://docs.opencv.org/3.4/d2/d99/tutorial_js_face_detection.html)
