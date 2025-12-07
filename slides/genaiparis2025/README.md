@@ -25,10 +25,10 @@ To start the slide show:
   bun run dev
   ```
 
-- Streamlit AI chat demo
+- Streamlit AI chat demo [aistudio.google.com](https://aistudio.google.com), Check that your [proxy does not block this page](https://generativelanguage.googleapis.com/)
 
   ```bash
-  cd .<./samples/streamlit/streamlit-ai-chat-demo
+  cd ../samples/streamlit/streamlit-ai-chat-demo
   pip install -r requirements.txt
   stre>amlit run app.py
   ```

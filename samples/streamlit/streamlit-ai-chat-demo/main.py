@@ -6,7 +6,7 @@ if len(api_key) == 0:
     st.error("No API key")
     st.stop()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=api_key)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", api_key=api_key)
 system_message = (
     "system", "You are an expert at explaining programming languages' concepts.")
 
