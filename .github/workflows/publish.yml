@@ -25,10 +25,10 @@ jobs:
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
           cd $START_DIR
-          cd ../../samples/opencvjs/opencvjs-demo && bun install && bun run build
+          cd samples/opencvjs/opencvjs-demo && bun install && bun run build
           cd $START_DIR
           echo "Building transformersjs-demos"
-          cd ../../samples/transformersjs/transformersjs-demos && bun install && bun run build
+          cd samples/transformersjs/transformersjs-demos && bun install && bun run build
           echo "Building transformersjs-audio-chat"
           cd $START_DIR
           cd samples/transformersjs/transformersjs-audio-chat && bun install && bun run build
