@@ -1,11 +1,34 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# GenAI Paris 2025 Slides
 
 To start the slide show:
 
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
+- `bun install`
+- `bun run dev`
 
-Edit the [slides.md](./slides.md) to see the changes.
+## Prepare the demos before the talk
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+- Signaling server for the live chat demo
+
+  ```bash
+  cd ../samples/seamless-international-chat/seamless-intl-chat-signaling-server
+  bun install
+  bun run dev
+  ```
+
+- Local Ollama server for the on-premise AI demo
+
+  ```bash
+  cd
+  ollama serve
+  cd ../samples/ollama/ollama-express-demo
+  bun install
+  bun run dev
+  ```
+
+- Streamlit AI chat demo
+
+  ```bash
+  cd .<./samples/streamlit/streamlit-ai-chat-demo
+  pip install -r requirements.txt
+  stre>amlit run app.py
+  ```
