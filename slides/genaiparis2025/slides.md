@@ -176,12 +176,16 @@ layout: center
 <br>
 <br>
 
+<v-clicks>
+
 | Criteria           | Browser AI                          | Server AI                                |
 | ------------------ | ----------------------------------- | ---------------------------------------- |
 | Privacy            | 🏆 Data stays in the device         | Data sent to server                      |
 | Cost               | 🏆 No server costs                  | Subscription or ongoing server costs     |
 | Scalability        | Limited by user device capabilities | 🏆 Easily scalable with server resources |
 | Models / use-cases | Limited                             | 🏆 Wide variety of models available      |
+
+</v-clicks>
 
 ---
 src: ./pages/conclusion.md
