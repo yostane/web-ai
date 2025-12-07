@@ -20,6 +20,20 @@ for (let i = 0; i < faces.size(); ++i) {
 ```
 
 ---
-layout: iframe
-url: https://yostane.github.io/web-ai/opencvjs-demo/index.html
----
+
+# Demo
+
+<br>
+<br>
+
+<iframe
+  src="https://yostane.github.io/web-ai/opencvjs-demo/index.html" />
+
+<style>
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+}
+</style>
