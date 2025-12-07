@@ -47,6 +47,9 @@
     },
     {
       "path": "samples/ollama/ollama-express-demo"
+    },
+    {
+      "path": "samples/streamlit/streamlit-ai-chat-demo"
     }
   ],
   "settings": {}

@@ -1,0 +1,56 @@
+{
+  // Place your streamlit-ai-chat-demo workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "requirements": {
+    "prefix": "01-req",
+    "body": ["streamlit", "langchain-google-genai"],
+    "description": "Add requirements"
+  },
+  "imports": {
+    "prefix": "02-imp",
+    "body": [
+      "import streamlit as st",
+      "from langchain_google_genai import ChatGoogleGenerativeAI"
+    ]
+  },
+  "API key code": {
+    "prefix": "03-api-check",
+    "body": [
+      "api_key = st.sidebar.text_input(\"Google AI API Key\", type=\"password\")",
+      "if len(api_key) == 0:",
+      "    st.error(\"No API key\")",
+      "    st.stop()"
+    ]
+  },
+  "llm setup": {
+    "prefix": "04-llm-setup",
+    "body": [
+      "llm = ChatGoogleGenerativeAI(model=\"gemini-2.0-flash-lite\", api_key=api_key)",
+      "system_message = (",
+      "\"system\", \"You are an expert at explaining programming languages' concepts.\")"
+    ]
+  },
+  "setup form": {
+    "prefix": "05-setup-form",
+    "body": [
+      "st.title(\"AI Coding coach\")",
+      "with st.form(\"my_form\"):",
+      "    text = st.text_area(\"Prompt:\")",
+      "    submitted = st.form_submit_button(\"Submit\")"
+    ]
+  },
+  "submit form": {
+    "prefix": "06-submit-form",
+    "body": [
+      "if submitted:",
+      "    human_message = (\"human\", text)",
+      "    response = llm.invoke([system_message, human_message])",
+      "    st.info(response.content)"
+    ]
+  }
+}

@@ -137,7 +137,7 @@ hideInToc: false
 
 <br>
 
-**Libraries**: transformers.js, openvsc.js, web AI APIs.
+**Libraries**: transformers.js, OpenCV.js, Built-in Web AI APIs.
 
 <style>
   img {

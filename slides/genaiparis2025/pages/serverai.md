@@ -18,7 +18,8 @@ hideInToc: false
 display: none;
 }
 
-img {
+.svgimg {
+  width: 100%;
   height: 250px;
 }
 </style>
@@ -42,7 +43,7 @@ img {
 
 <style>
 img {
-  width: 900px;
+  width: 100%;
   height: 200px;
 }
 </style>
@@ -74,13 +75,17 @@ pre {
 
 # AI inference on-premise
 
-<img border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
+<img class="svgimg" border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
+
+<br>
+<br>
 
 - **Tools**: Ollama, Jan AI, LM Studio, etc.
 
 <style>
 img {
   height: 300px;
+  width: auto;
 }
 </style>
 
@@ -119,7 +124,6 @@ app.post("/chat", async (req, res) => {
 | ------------------- | ----------------------------- | ---------------------------------------------------- |
 | **Short term cost** | 🏆 Only cost of usage         | Initial investment required                          |
 | **Long term cost**  | Costs may accumulate          | 🏆 Nearly constant costs                             |
-| **Privacy**         | Data sent to external servers | 🏆 Data stays within the organization                |
 | **Maintenance**     | 🏆 Delegated to the provider  | Organization responsible for updates and maintenance |
 | **Sovereignty**     | Potentially lower sovereignty | 🏆 Full control over data and models                 |
 
