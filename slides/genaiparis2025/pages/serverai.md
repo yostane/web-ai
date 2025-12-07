@@ -39,6 +39,8 @@ display: none;
 - **Pricing**: pay-as-you-go. Some provide free tiers.
 - **Providers**: GoogleAI, OpenAI, Anthropic, etc
 
+Free LLM API ressources list proivded by [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+
 </v-click>
 
 <style>
@@ -50,7 +52,7 @@ img {
 
 ---
 
-# Example with Google Cloud AI
+# Demo: Google Cloud AI
 
 ```py
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -61,15 +63,18 @@ response = llm.invoke([system_message, human_message])
 print(response.content)
 ```
 
-A free API key can be obtained from [aistudio.google.com](https://aistudio.google.com/api-keys)
+1. Download the [sample project](https://github.com/yostane/web-ai/tree/main/samples/streamlit/streamlit-ai-chat-demo)
+1. Install dependencies: `pip install -r requirements.txt`
+1. Run the app: `streamlit run app.py`
+1. Get API Key from [aistudio.google.com](https://aistudio.google.com/api-keys) and enter it in the app to start chatting
 
-<style>
-pre {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
+---
+
+# Streamlit AI chat demo
+
+<div style="display: flex; justify-content: center;">
+  <Youtube id="lZBGyJVyIE4" style="width:100%;height:400px;" />
+</div>
 
 ---
 
