@@ -24,6 +24,7 @@ jobs:
           cd ../../samples/language-detector-demo && bun install && bun run build
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
+          cd ../../samples/opencvjs/opencvjs-demo && bun install && bun run build
           echo "Building transformersjs-demos"
           cd ../../samples/transformersjs/transformersjs-demos && bun install && bun run build
           echo "Building transformersjs-audio-chat"
@@ -40,6 +41,7 @@ jobs:
           mv samples/language-detector-demo/dist public/language-detector-demo
           mv samples/summarizer-demo/dist public/summarizer-demo
           mv samples/prompt-demo/dist public/prompt-demo
+          mv samples/opencvjs/opencvjs-demo/dist public/opencvjs-demo
           mv samples/transformersjs/transformersjs-demos/dist public/transformersjs-demos
           mv samples/transformersjs/transformersjs-audio-chat/dist public/transformersjs-audio-chat
       - name: Deploy to GitHub Pages

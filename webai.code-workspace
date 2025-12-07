@@ -50,6 +50,9 @@
     },
     {
       "path": "samples/streamlit/streamlit-ai-chat-demo"
+    },
+    {
+      "path": "samples/opencvjs/opencvjs-demo"
     }
   ],
   "settings": {}

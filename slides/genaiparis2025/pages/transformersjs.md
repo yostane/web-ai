@@ -4,10 +4,15 @@ mdc: true
 
 # Transformers.js
 
+<div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
+
 - Developed by [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) from <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
 - Runs AI models directly in the browser or a runtime (Node.js, bun, Deno).
 - Models are in the [ONNX format](https://onnx.ai/) (conversion tools available)
 - Many models are available on [Hugging Face Model Hub](https://huggingface.co/models?library=transformers.js)
+
+</div>
+
 
 ---
 

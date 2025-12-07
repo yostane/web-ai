@@ -1,0 +1,19 @@
+{
+  "name": "opencvjs-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "@opencvjs/types": "^4.12.0-release.1"
+  },
+  "dependencies": {
+    "@opencvjs/web": "^4.12.0-release.1"
+  }
+}
