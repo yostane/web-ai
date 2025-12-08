@@ -33,15 +33,15 @@ defaults:
     <div v-click="2" class="flex flex-col items-center myblock">
       <twemoji-writing-hand class="text-3xl"/>
       <ul style="list-style: none;" class="mt-4">
-        <li>Chatbots</li>
-        <li>Content generation</li>
+        <li>Summarization</li>
+        <li>Translation</li>
       </ul>
     </div>
     <div v-click="3" class="flex flex-col items-center myblock">
       <twemoji-framed-picture class="text-3xl"/>
       <ul style="list-style: none;" class="mt-4">
-        <li>Image segmentation</li>
-        <li>Image generation</li>
+        <li>Background removal</li>
+        <li>Face detection</li>
       </ul>
     </div>
     <div v-click="4" class="flex flex-col items-center myblock">
@@ -105,7 +105,16 @@ layout: cover
 
 Where we're at
 
-GenerationAI Paris. December 9, 2025
+<img style="height: 80px;" src="./assets/logo-genai-paris-2025.png" />
+<img style="height: 150px;" src="./assets/logo-genai-paris-pc-2025.webp" />
+
+December 9, 2025
+
+<style>
+img {
+  display: inline-block;
+}
+</style>
 
 ---
 src: ./pages/bio.md
@@ -190,3 +199,27 @@ layout: center
 ---
 src: ./pages/conclusion.md
 ---
+
+---
+layout: end
+---
+
+# Thank you 😊
+
+Any Questions?
+
+<div class="flex flex-col items-center">
+<QRCode
+    :width="270"
+    :height="270"
+    type="svg"
+    data="https://wrl.li/genai-paris25"
+    :imageOptions="{ margin: 5 }"
+    :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
+    image="assets/worldline-mint-symbol.png"
+/>
+</div>
+
+Slides: [wrl.li/genai-paris25](https://wrl.li/genai-paris25).
+<br>
+Credits: Tenor, Chrome for developers, <PoweredBySlidev mt-5 />.

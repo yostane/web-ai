@@ -5,7 +5,7 @@ layout: two-cols
 # Speaker
 
 - Yassine Benabbas
-- DevRel @ Worldline, Teacher
+- DevRel @ <img style="height: 24px; display: inline-block; vertical-align: baseline;" src="../assets/worldline-mint-symbol.png" /> Worldline, Teacher
 - Anime, gaming, Pokémon TCG
 - [Lille Android User Group](https://www.meetup.com/lille-android-user-group/) <logos-android-icon />
 - @yostane <logos-twitter /> <logos-bluesky /> <logos-github-octocat />

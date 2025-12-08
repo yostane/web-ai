@@ -1,8 +1,8 @@
 ## OpenCV.js
 
-- Open source computer vision library ported to WASM
-- Supports image and video processing tasks
-- Can be used for tasks like object detection, image filtering, etc.
+- Open source <logos-c /> and <logos-c-plusplus /> computer vision library
+- Ported to <logos-javascript /> and <logos-webassembly />
+- Supports image and video processing tasks: filtering, object detection, etc.
 
 ```js
 let faceCascade = new cv.CascadeClassifier();
