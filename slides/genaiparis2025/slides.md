@@ -9,7 +9,7 @@ fonts:
   sans: Roboto
   serif: Roboto Slab
   mono: Fira Code
-title: GenAI for webapps, where we're at
+title: GenAI for Web Apps, where we're at
 info: GenerationAI Paris. December 9, 2025
 drawings:
   persist: false
@@ -101,7 +101,7 @@ layout: center
 layout: cover
 ---
 
-# GenAI for webapps
+# GenAI for Web Apps
 
 Where we're at
 
