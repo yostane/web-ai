@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@iconify-json/logos": "^1.2.10",
+    "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/twemoji": "^1.2.4",
     "@slidev/cli": "^52.10.1",
     "@slidev/theme-default": "latest",

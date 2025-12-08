@@ -1,16 +1,19 @@
 ---
-layout: image-right
-image: ../assets/pic.webp
+layout: two-cols
 ---
 
 # Speaker
 
 - Yassine Benabbas
-- DevRel @ Worldline
-- Teacher
-- Lille Android User Group
-- @yostane, **in/yassinebenabbas**
-- Anime, Pokémon TCG
+- DevRel @ Worldline, Teacher
+- Anime, gaming, Pokémon TCG
+- [Lille Android User Group](https://www.meetup.com/lille-android-user-group/) <logos-android-icon />
+- @yostane <logos-twitter /> <logos-bluesky /> <logos-github-octocat />
+- **in/yassinebenabbas** <logos-linkedin-icon />
+
+::right::
+
+<img border="rounded" src="../assets/pic.webp"  style="width: 100%; height: 100%; object-fit: cover;" />
 
 ---
 layout: none
