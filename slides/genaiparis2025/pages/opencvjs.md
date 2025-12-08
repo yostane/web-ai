@@ -1,4 +1,4 @@
-## OpenCV.js
+## OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
 
 - Open source <logos-c /> and <logos-c-plusplus /> computer vision library
 - Ported to <logos-javascript /> and <logos-webassembly />

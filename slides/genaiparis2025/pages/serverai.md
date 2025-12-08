@@ -4,14 +4,18 @@ hideInToc: false
 
 # AI inference on the server
 
-<img class="svgimg" v-click.hide border="rounded" src="../assets/webapp-02-serverai.svg" />
-<img class="svgimg" v-after border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
+<img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
+<img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
-1. The web app sends a request to the backend server.
-1. If AI inference is needed, it is delegated to a separate AI service.
+<v-clicks>
+
+1. The web app sends a **request** to the backend server.
+1. If AI inference is needed, it is delegated to a separate **AI service**.
 1. AI output is processed by the server and the final response is sent back to the web app.
 
-<p v-after style="color:lightblue"><b>Where is the AI service hosted?</b></p>
+</v-clicks>
+
+<p v-click="4" style="color:lightblue"><b>Where is the AI service hosted?</b></p>
 
 <style>
 .slidev-vclick-hidden {
@@ -37,7 +41,7 @@ display: none;
 <v-click>
 
 - **Pricing**: pay-as-you-go. Some provide free tiers.
-- **Providers**: GoogleAI, OpenAI, Anthropic, etc
+- **Providers**: <logos-google-cloud /> , <logos-aws />, <logos-openai style="background:white; border-radius: 5px; padding: 2px;" />, <logos-microsoft-azure />, etc.
 
 Free LLM API ressources list proivded by [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 

@@ -20,7 +20,6 @@ mdc: true
 
 - High-level API for common tasks (text generation, sentiment analysis, etc.)
 - Some tasks require extra setup (for example, setup embeddings for text-to-speech)
-- Model and options are optional
 
 ```ts
 import { pipeline } from "@huggingface/transformers.js";

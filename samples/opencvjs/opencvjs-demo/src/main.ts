@@ -1,11 +1,13 @@
 import "./style.css";
 import { loadOpenCV, type OpenCV } from "@opencvjs/web";
 
+let dataFileCreated = false;
 let currentProcess:
   | "Stop"
   | "Grayscale"
   | "BackgroundSubtraction"
-  | "FaceDetection" = "Stop";
+  | "FaceDetection"
+  | "FaceEmojis" = "Stop";
 
 const FPS = 60;
 
@@ -36,7 +38,7 @@ async function setupCv(
   let canvasFrame = document.getElementById(
     "video-output",
   ) as HTMLCanvasElement;
-  const context = canvasFrame.getContext("2d");
+  const context = canvasFrame.getContext("2d", { willReadFrequently: true });
   const width = video.width;
   const height = video.height;
   let src = new cv.Mat(height, width, cv.CV_8UC4);
@@ -104,8 +106,9 @@ export async function startGrayscale() {
   requestAnimationFrame(processVideo);
 }
 
-async function startFaceDetection() {
-  currentProcess = "FaceDetection";
+async function startFaceDetection(putEmojiOnFaces: boolean = false) {
+  currentProcess = putEmojiOnFaces ? "FaceEmojis" : "FaceDetection";
+  const process = currentProcess;
   const video = await startVideoCapture();
   const { cv, canvasFrame, context, src, dst } = await setupCv(video, true);
   const cap = new cv.VideoCapture(video);
@@ -115,19 +118,23 @@ async function startFaceDetection() {
   // Load the pre-trained classifier XML file from a URL into openCV FS
   const response = await fetch("haarcascade_frontalface_default.xml");
   const data = new Uint8Array(await response.arrayBuffer());
-  cv.FS_createDataFile(
-    "/",
-    "haarcascade_frontalface_default.xml",
-    data,
-    true,
-    false,
-    false,
-  );
+
+  if (!dataFileCreated) {
+    cv.FS_createDataFile(
+      "/",
+      "haarcascade_frontalface_default.xml",
+      data,
+      true,
+      false,
+      false,
+    );
+    dataFileCreated = true;
+  }
   classifier.load("haarcascade_frontalface_default.xml");
 
   let lastFrameTime = Date.now();
   function processVideo() {
-    if (!context || currentProcess !== "FaceDetection") {
+    if (!context || currentProcess !== process) {
       src.delete();
       dst.delete();
       gray.delete();
@@ -145,16 +152,24 @@ async function startFaceDetection() {
       cap.read(src);
       src.copyTo(dst);
       cv.cvtColor(dst, gray, cv.COLOR_RGBA2GRAY, 0);
-      // detect faces.
       classifier.detectMultiScale(gray, faces, 1.1, 3, 0);
-      // draw faces.
-      for (let i = 0; i < faces.size(); ++i) {
-        let face = faces.get(i);
-        let point1 = new cv.Point(face.x, face.y);
-        let point2 = new cv.Point(face.x + face.width, face.y + face.height);
-        cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
+      if (!putEmojiOnFaces) {
+        for (let i = 0; i < faces.size(); ++i) {
+          let face = faces.get(i);
+          let point1 = new cv.Point(face.x, face.y);
+          let point2 = new cv.Point(face.x + face.width, face.y + face.height);
+          cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
+        }
       }
       cv.imshow(canvasFrame.id, dst);
+      if (putEmojiOnFaces) {
+        for (let i = 0; i < faces.size(); ++i) {
+          let face = faces.get(i);
+          const emoji = "😎";
+          context.font = `${face.height}px Arial`;
+          context.fillText(emoji, face.x, face.y + face.height);
+        }
+      }
       requestAnimationFrame(processVideo);
     } catch (error) {
       console.error(error);
@@ -169,7 +184,20 @@ document.addEventListener("DOMContentLoaded", () => {
     "start-background-subtraction",
   );
   const faceDetectButton = document.getElementById("start-face-detection");
+  const faceDetectEmojiButton = document.getElementById(
+    "start-face-detection-emoji",
+  );
+  const stopButton = document.getElementById("stop");
   startButton?.addEventListener("click", startGrayscale);
   backgroundButton?.addEventListener("click", startBackgroundRemoval);
-  faceDetectButton?.addEventListener("click", startFaceDetection);
+  faceDetectButton?.addEventListener("click", () => startFaceDetection(false));
+  faceDetectEmojiButton?.addEventListener("click", () =>
+    startFaceDetection(true),
+  );
+  stopButton?.addEventListener("click", () => {
+    currentProcess = "Stop";
+    const video = document.getElementById("video-input") as HTMLVideoElement;
+    const media = video.srcObject as MediaStream;
+    media?.getTracks().forEach((track) => track.stop());
+  });
 });

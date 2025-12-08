@@ -124,7 +124,7 @@ src: ./pages/bio.md
 layout: two-cols
 ---
 
-# Agenda
+# Agenda <twemoji-spiral-calendar />
 
 <Toc minDepth="1" maxDepth="1" />
 
