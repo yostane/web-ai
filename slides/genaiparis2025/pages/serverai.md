@@ -54,6 +54,8 @@ img {
 
 # Demo: Google Cloud AI
 
+- **Tools**: <logos-python /> Langchain and Streamlit
+
 ```py
 from langchain_google_genai import ChatGoogleGenerativeAI
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=api_key)
@@ -63,10 +65,14 @@ response = llm.invoke([system_message, human_message])
 print(response.content)
 ```
 
-1. Download the [sample project](https://github.com/yostane/web-ai/tree/main/samples/streamlit/streamlit-ai-chat-demo)
-1. Install dependencies: `pip install -r requirements.txt`
-1. Run the app: `streamlit run app.py`
-1. Get API Key from [aistudio.google.com](https://aistudio.google.com/api-keys) and enter it in the app to start chatting
+<v-click>
+
+Libraries:
+
+- Provider's libs and APIs,
+- Or multi-provider: LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
+
+</v-click>
 
 ---
 
@@ -105,7 +111,7 @@ ollama serve
 ollama pull gemma3
 ```
 
-My JS backend server code to query the local Ollama server:
+<logos-javascript /> backend server code that queries the local Ollama server:
 
 ```ts
 const ollama = new Ollama({ host: 'http://localhost:11434' })
