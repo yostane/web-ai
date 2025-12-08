@@ -216,7 +216,7 @@ Any Questions?
     data="https://wrl.li/genai-paris25"
     :imageOptions="{ margin: 5 }"
     :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
-    image="assets/worldline-mint-symbol.png"
+    image="worldline-mint-symbol.png"
 />
 </div>
 
