@@ -222,4 +222,4 @@ Any Questions?
 
 [wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" /> 
 <br>
-Credits: Tenor, Chrome for developers, <PoweredBySlidev mt-5 />.
+Credits: Tenor, Chrome for developers, <PoweredBySlidev mt-5 />
