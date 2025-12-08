@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: ../assets/speaker.jpg
+image: ../assets/speaker.webp
 ---
 
 # Speaker
