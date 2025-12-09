@@ -101,7 +101,7 @@ layout: center
 layout: cover
 ---
 
-# GenAI for Web Apps
+# (Gen)AI for Web Apps
 
 Where we're at
 
