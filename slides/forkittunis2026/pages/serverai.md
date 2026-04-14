@@ -1,0 +1,154 @@
+---
+hideInToc: false
+---
+
+# AI inference on the server
+
+<img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
+<img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
+
+<v-clicks>
+
+1. The web app sends a **request** to the backend server.
+1. If AI inference is needed, it is delegated to a separate **AI service**.
+1. AI output is processed by the server and the final response is sent back to the web app.
+
+</v-clicks>
+
+<p v-click="4" style="color:lightblue"><b>Where is the AI service hosted?</b></p>
+
+<style>
+.slidev-vclick-hidden {
+display: none;
+}
+
+.svgimg {
+  width: 100%;
+  height: 250px;
+}
+</style>
+
+---
+
+# AI inference by a 3rd party provider
+
+<img class="svgimg" border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
+
+<br>
+<br>
+<br>
+
+<v-click>
+
+- **Pricing**: pay-as-you-go. Some provide free tiers.
+- **Providers**: <logos-google-cloud /> , <logos-aws />, <logos-openai style="background:white; border-radius: 5px; padding: 2px;" />, <logos-microsoft-azure />, etc.
+
+Free LLM API ressources list proivded by [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+
+</v-click>
+
+<style>
+img {
+  width: 100%;
+  height: 200px;
+}
+</style>
+
+---
+
+# Demo: Google Cloud AI
+
+- **Tools**: <logos-python /> Langchain and Streamlit
+
+```py
+from langchain_google_genai import ChatGoogleGenerativeAI
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=api_key)
+system_message = (
+    "system", "You are an expert at explaining programming languages' concepts.")
+response = llm.invoke([system_message, human_message])
+print(response.content)
+```
+
+<v-click>
+
+Libraries:
+
+- Provider's libs and APIs,
+- Or multi-provider: LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
+
+</v-click>
+
+---
+
+# Streamlit AI chat demo
+
+<div style="display: flex; justify-content: center;">
+  <Youtube id="lZBGyJVyIE4" style="width:100%;height:400px;" />
+</div>
+
+---
+
+# AI inference on-premise
+
+<img class="svgimg" border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
+
+<br>
+<br>
+
+- **Tools**: Ollama, Jan AI, LM Studio, etc.
+
+<style>
+img {
+  height: 300px;
+  width: auto;
+}
+</style>
+
+---
+
+# Ollama demo
+
+Run Ollama server locally with the gemma3 model:
+
+```bash
+ollama serve
+ollama pull gemma3
+```
+
+<logos-javascript /> backend server code that queries the local Ollama server:
+
+```ts
+const ollama = new Ollama({ host: 'http://localhost:11434' })
+app.post("/chat", async (req, res) => {
+  const question = req.body.question
+  const response = await ollama.chat({
+      model: 'gemma3',
+      messages: [{ role: 'user', content: question }],
+  })
+  res.json({ answer: response.message.content })
+})
+```
+
+---
+
+# Third party vs on-premise AI service
+
+<v-clicks>
+
+| Criteria            | 3rd party AI service          | On-premise AI service                                |
+| ------------------- | ----------------------------- | ---------------------------------------------------- |
+| **Short term cost** | 🏆 Only cost of usage         | Initial investment required                          |
+| **Long term cost**  | Costs may accumulate          | 🏆 Nearly constant costs                             |
+| **Maintenance**     | 🏆 Delegated to the provider  | Organization responsible for updates and maintenance |
+| **Sovereignty**     | Potentially lower sovereignty | 🏆 Full control over data and models                 |
+
+</v-clicks>
+
+[Reference: Lenovo 2025 study](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
+
+---
+layout: center
+hideInToc: true
+---
+
+![](../assets/money.png)

@@ -1,59 +1,62 @@
 {
   "folders": [
     {
-      "path": "slides/draft"
+      "path": "slides/draft",
     },
     {
-      "path": "slides/genaiparis2025"
+      "path": "slides/genaiparis2025",
     },
     {
-      "path": "samples/translator_api"
+      "path": "samples/translator_api",
     },
     {
-      "path": "samples/writer-api-demo"
+      "path": "samples/writer-api-demo",
     },
     {
-      "path": "public"
+      "path": "public",
     },
     {
-      "path": ".github"
+      "path": ".github",
     },
     {
-      "path": "samples/rewriter-api-demo"
+      "path": "samples/rewriter-api-demo",
     },
     {
-      "path": "samples/language-detector-demo"
+      "path": "samples/language-detector-demo",
     },
     {
-      "path": "samples/summarizer-demo"
+      "path": "samples/summarizer-demo",
     },
     {
-      "path": "samples/prompt-demo"
+      "path": "samples/prompt-demo",
     },
     {
-      "path": "samples/misc"
+      "path": "samples/misc",
     },
     {
-      "path": "samples/transformersjs/transformersjs-demos"
+      "path": "samples/transformersjs/transformersjs-demos",
     },
     {
-      "path": "samples/transformersjs/transformersjs-audio-chat"
+      "path": "samples/transformersjs/transformersjs-audio-chat",
     },
     {
-      "path": "samples/seamless-international-chat/seamless-intl-chat-webapp"
+      "path": "samples/seamless-international-chat/seamless-intl-chat-webapp",
     },
     {
-      "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server"
+      "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server",
     },
     {
-      "path": "samples/ollama/ollama-express-demo"
+      "path": "samples/ollama/ollama-express-demo",
     },
     {
-      "path": "samples/streamlit/streamlit-ai-chat-demo"
+      "path": "samples/streamlit/streamlit-ai-chat-demo",
     },
     {
-      "path": "samples/opencvjs/opencvjs-demo"
-    }
+      "path": "samples/opencvjs/opencvjs-demo",
+    },
+    {
+      "path": "slides/forkittunis2026",
+    },
   ],
-  "settings": {}
+  "settings": {},
 }
