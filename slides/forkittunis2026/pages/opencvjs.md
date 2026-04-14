@@ -1,8 +1,9 @@
 ## OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
 
-- Open source <logos-c /> and <logos-c-plusplus /> computer vision library
-- Ported to <logos-javascript /> and <logos-webassembly />
-- Supports image and video processing tasks: filtering, object detection, etc.
+- Bibliothèque de vision par ordinateur open source
+- Codée en <logos-c /> et <logos-c-plusplus />
+- Portée en <logos-javascript /> et <logos-webassembly />
+- Traitement d'images et de vidéos : filtrage, détection d'objets, etc.
 
 ```js
 let faceCascade = new cv.CascadeClassifier();
@@ -21,7 +22,7 @@ for (let i = 0; i < faces.size(); ++i) {
 
 ---
 
-# Demo
+# Démo
 
 <br>
 <br>

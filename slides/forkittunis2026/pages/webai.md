@@ -3,10 +3,10 @@
 <div class="grid grid-cols-[1fr_600px] gap-2">
   <div style="align-self: center; justify-self: center;">
     <ul>
-      <li>Web standard</li>
-      <li>Specialized APIs</li>
-      <li>Text generation</li>
-      <li>Exp. on Chrome</li>
+      <li>Standard web</li>
+      <li>APIs spécialisées</li>
+      <li>Génération de texte</li>
+      <li>Exp. sur Chrome</li>
     </ul>
   </div>
   <div>
@@ -16,25 +16,25 @@
 
 ---
 
-# Example: Translator API
+# Exemple : API Traducteur
 
 ```js
-// Check if the Translator API is available in the browser
-if (!("Translator" in window)) return;
-// Set up the options for the Translator API
+// Vérifier si l'API Traducteur est disponible dans le navigateur
+if (!('Translator' in window)) return;
+// Configurer les options de l'API Traducteur
 const options = {
-  sourceLanguage: "en",
-  targetLanguage: "fr",
+  sourceLanguage: 'en',
+  targetLanguage: 'fr',
 };
-// Check the availability of the Translator API with the given options
+// Vérifier la disponibilité de l'API Traducteur avec les options données
 const availability = await Translator.availability(options);
-if (availability === "unavailable") return;
-// Create a Translator object with the desired options
+if (availability === 'unavailable') return;
+// Créer un objet Traducteur avec les options souhaitées
 const translator = await Translator.create(options);
-// Ask the Translator object to translate a text
-const result = await translator.translate("Hello, world!");
+// Demander à l'objet Traducteur de traduire un texte
+const result = await translator.translate('Hello, world!');
 console.log(result);
-// The output should be: "Bonjour, monde !"
+// La sortie devrait être : "Bonjour, monde !"
 ```
 
 ---
@@ -42,7 +42,7 @@ layout: two-cols-header
 srcLeft: ./pages/webai-demo.md
 ---
 
-# WebAI demo: Seamless chat
+# Démo WebAI : chat multilingue
 
 ::left::
 

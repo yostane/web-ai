@@ -9,8 +9,8 @@ fonts:
   sans: Roboto
   serif: Roboto Slab
   mono: Fira Code
-title: GenAI for Web Apps, where we're at
-info: GenerationAI Paris. December 9, 2025
+title: Le future de l'IA (est) dans les navigateurs
+info: Fork It! Tunis. 18 avril 2026
 drawings:
   persist: false
 transition: slide-left
@@ -33,22 +33,22 @@ defaults:
     <div v-click="2" class="flex flex-col items-center myblock">
       <twemoji-writing-hand class="text-3xl"/>
       <ul style="list-style: none;" class="mt-4">
-        <li>Summarization</li>
-        <li>Translation</li>
+        <li>Résumé</li>
+        <li>Traduction</li>
       </ul>
     </div>
     <div v-click="3" class="flex flex-col items-center myblock">
       <twemoji-framed-picture class="text-3xl"/>
       <ul style="list-style: none;" class="mt-4">
-        <li>Background removal</li>
-        <li>Face detection</li>
+        <li>Suppression d'arrière-plan</li>
+        <li>Détection de visages</li>
       </ul>
     </div>
     <div v-click="4" class="flex flex-col items-center myblock">
       <twemoji-studio-microphone class="text-3xl"/>
       <ul style="list-style: none;" class="mt-4">
-        <li>Text to speech</li>
-        <li>Speech recognition</li>
+        <li>Synthèse vocale</li>
+        <li>Reconnaissance vocale</li>
       </ul>
     </div>
   </div>
@@ -91,6 +91,7 @@ img {
 }
 
 </style>
+
 ---
 layout: center
 ---
@@ -101,7 +102,6 @@ layout: center
 layout: image
 image: assets/2026-tunisia-tunis-yassine-benabbas-large.jpg
 ---
-
 
 ---
 src: ./pages/bio.md
@@ -127,13 +127,13 @@ src: ./pages/serverai.md
 hideInToc: false
 ---
 
-# AI inference in the browser
+# Inférence IA dans le navigateur
 
 <img border="rounded" src="./assets/webapp-04-browser-ai.svg" />
 
 <br>
 
-**Libraries**: transformers.js, OpenCV.js, Built-in Web AI APIs.
+**Bibliothèques** : transformers.js, OpenCV.js, APIs Web AI intégrées.
 
 <style>
   img {
@@ -167,19 +167,19 @@ layout: center
 
 ---
 
-# Browser AI vs server AI
+# IA navigateur vs IA serveur
 
 <br>
 <br>
 
 <v-clicks>
 
-| Criteria           | Browser AI                          | Server AI                                |
-| ------------------ | ----------------------------------- | ---------------------------------------- |
-| Privacy            | 🏆 Data stays in the device         | Data sent to server                      |
-| Cost               | 🏆 No server costs                  | Subscription or ongoing server costs     |
-| Scalability        | Limited by user device capabilities | 🏆 Easily scalable with server resources |
-| Models / use-cases | Limited                             | 🏆 Wide variety of models available      |
+| Critère             | IA côté navigateur                     | IA côté serveur                                    |
+| ------------------- | -------------------------------------- | -------------------------------------------------- |
+| Confidentialité     | 🏆 Données sur l'appareil              | Données envoyées au serveur                        |
+| Coût                | 🏆 Aucun coût serveur                  | Abonnement ou coûts serveur récurrents             |
+| Scalabilité         | Limité par les capacités de l'appareil | 🏆 Facilement scalable avec des ressources serveur |
+| Modèles / cas usage | Limité                                 | 🏆 Grande variété de modèles disponibles           |
 
 </v-clicks>
 
@@ -191,9 +191,9 @@ src: ./pages/conclusion.md
 layout: end
 ---
 
-# Thank you 😊
+# Merci 😊
 
-Any Questions?
+Des questions ?
 
 <div class="flex flex-col items-center">
 <QRCode
@@ -207,6 +207,6 @@ Any Questions?
 />
 </div>
 
-[wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" /> 
+[wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
 <br>
-Credits: Tenor, Chrome for developers, <PoweredBySlidev mt-5 />
+Crédits : Tenor, Chrome for developers, <PoweredBySlidev mt-5 />

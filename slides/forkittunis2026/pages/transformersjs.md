@@ -6,10 +6,10 @@ mdc: true
 
 <div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
 
-- Developed by [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) from <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
-- Runs AI models directly in the browser or a runtime (Node.js, bun, Deno).
-- Models are in the [ONNX format](https://onnx.ai/) (conversion tools available)
-- Many models are available on [Hugging Face Model Hub](https://huggingface.co/models?library=transformers.js)
+- Développé par [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) de <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
+- Exécute des modèles IA directement dans le navigateur ou un runtime (Node.js, bun, Deno).
+- Les modèles sont au format [ONNX](https://onnx.ai/) (outils de conversion disponibles)
+- De nombreux modèles sont disponibles sur le [Hub de modèles Hugging Face](https://huggingface.co/models?library=transformers.js)
 
 </div>
 
@@ -18,8 +18,8 @@ mdc: true
 
 # Transformers.js Pipeline
 
-- High-level API for common tasks (text generation, sentiment analysis, etc.)
-- Some tasks require extra setup (for example, setup embeddings for text-to-speech)
+- API de haut niveau pour les tâches courantes (génération de texte, analyse de sentiment, etc.)
+- Certaines tâches nécessitent une configuration supplémentaire (par exemple, les embeddings pour la synthèse vocale)
 
 ```ts
 import { pipeline } from "@huggingface/transformers.js";
@@ -41,9 +41,9 @@ url: https://yostane.github.io/web-ai/transformersjs-audio-chat/
 class: chatbot-iframe
 ---
 
-# Demo: Local audio chatbot
+# Démo : chatbot audio local
 
-| Task id                      | Model                    |
+| Identifiant de tâche         | Modèle                   |
 | ---------------------------- | ------------------------ |
 | automatic-speech-recognition | `Xenova/whisper-tiny.en` |
 | Text-to-Speech               | `Xenova/speecht5_tts`    |

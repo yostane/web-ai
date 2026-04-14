@@ -10,15 +10,15 @@ hideInToc: false
 <div class="grid grid-cols-3 gap-10 text-center">
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-browser.svg" />
-    <p>GenAI opens new features for web apps</p>
+    <p>L'IA ouvre de nouvelles fonctionnalités pour les applications web</p>
   </div>
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-server.svg" />
-    <p>AI inference on the server is still a good default choice</p> 
+    <p>Certains cas d'usage peuvent être réalisés par le navigateur</p> 
   </div>
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-conclusion-webai.svg" />
-    <p>Browser AI already available and keeps improving</p>
+    <p>L'IA côté navigateur est déjà disponible et continue de s'améliorer</p>
   </div>
 </div>
 

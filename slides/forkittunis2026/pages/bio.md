@@ -2,11 +2,11 @@
 layout: two-cols
 ---
 
-# Speaker
+# Bio
 
 - Yassine Benabbas
-- DevRel @ <img style="height: 24px; display: inline-block; vertical-align: baseline;" src="../assets/worldline-mint-symbol.png" /> Worldline, Teacher
-- Anime, gaming, Pokémon TCG
+- DevRel @ <img style="height: 24px; display: inline-block; vertical-align: baseline;" src="../assets/worldline-mint-symbol.png" /> Worldline, Enseignant
+- Anime, gaming, TCG Pokémon
 - [Lille Android User Group](https://www.meetup.com/lille-android-user-group/) <logos-android-icon />
 - @yostane <logos-twitter /> <logos-bluesky /> <logos-github-octocat />
 - **in/yassinebenabbas** <logos-linkedin-icon />

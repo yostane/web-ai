@@ -2,20 +2,20 @@
 hideInToc: false
 ---
 
-# AI inference on the server
+# Inférence IA côté serveur
 
 <img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
 <v-clicks>
 
-1. The web app sends a **request** to the backend server.
-1. If AI inference is needed, it is delegated to a separate **AI service**.
-1. AI output is processed by the server and the final response is sent back to the web app.
+1. L'application web envoie une **requête** au serveur backend.
+1. Si une inférence IA est nécessaire, elle est déléguée à un **service IA** séparé.
+1. La sortie IA est traitée par le serveur et la réponse finale est renvoyée à l'application web.
 
 </v-clicks>
 
-<p v-click="4" style="color:lightblue"><b>Where is the AI service hosted?</b></p>
+<p v-click="4" style="color:lightblue"><b>Où est hébergé le service IA ?</b></p>
 
 <style>
 .slidev-vclick-hidden {
@@ -30,7 +30,7 @@ display: none;
 
 ---
 
-# AI inference by a 3rd party provider
+# Inférence IA via un fournisseur tiers
 
 <img class="svgimg" border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
 
@@ -40,10 +40,10 @@ display: none;
 
 <v-click>
 
-- **Pricing**: pay-as-you-go. Some provide free tiers.
-- **Providers**: <logos-google-cloud /> , <logos-aws />, <logos-openai style="background:white; border-radius: 5px; padding: 2px;" />, <logos-microsoft-azure />, etc.
+- **Tarification** : à l'utilisation. Certains proposent des offres gratuites.
+- **Fournisseurs** : <logos-google-cloud /> , <logos-aws />, <logos-openai style="background:white; border-radius: 5px; padding: 2px;" />, <logos-microsoft-azure />, etc.
 
-Free LLM API ressources list proivded by [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
+Liste de ressources API LLM gratuites fournie par [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 
 </v-click>
 
@@ -56,9 +56,9 @@ img {
 
 ---
 
-# Demo: Google Cloud AI
+# Démo : Google Cloud AI
 
-- **Tools**: <logos-python /> Langchain and Streamlit
+- **Outils** : <logos-python /> Langchain et Streamlit
 
 ```py
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -71,16 +71,16 @@ print(response.content)
 
 <v-click>
 
-Libraries:
+Bibliothèques :
 
-- Provider's libs and APIs,
-- Or multi-provider: LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
+- Bibliothèques et APIs du fournisseur,
+- Ou multi-fournisseur : LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
 
 </v-click>
 
 ---
 
-# Streamlit AI chat demo
+# Démo : chat IA avec Streamlit
 
 <div style="display: flex; justify-content: center;">
   <Youtube id="lZBGyJVyIE4" style="width:100%;height:400px;" />
@@ -88,14 +88,14 @@ Libraries:
 
 ---
 
-# AI inference on-premise
+# Inférence IA en local (on-premise)
 
 <img class="svgimg" border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
 
 <br>
 <br>
 
-- **Tools**: Ollama, Jan AI, LM Studio, etc.
+- **Outils** : Ollama, Jan AI, LM Studio, etc.
 
 <style>
 img {
@@ -106,16 +106,16 @@ img {
 
 ---
 
-# Ollama demo
+# Démo : Ollama
 
-Run Ollama server locally with the gemma3 model:
+Démarrer le serveur Ollama en local avec le modèle gemma3 :
 
 ```bash
 ollama serve
 ollama pull gemma3
 ```
 
-<logos-javascript /> backend server code that queries the local Ollama server:
+<logos-javascript /> code du serveur backend qui interroge le serveur Ollama local :
 
 ```ts
 const ollama = new Ollama({ host: 'http://localhost:11434' })
@@ -131,20 +131,20 @@ app.post("/chat", async (req, res) => {
 
 ---
 
-# Third party vs on-premise AI service
+# Service IA tiers vs service IA local
 
 <v-clicks>
 
-| Criteria            | 3rd party AI service          | On-premise AI service                                |
-| ------------------- | ----------------------------- | ---------------------------------------------------- |
-| **Short term cost** | 🏆 Only cost of usage         | Initial investment required                          |
-| **Long term cost**  | Costs may accumulate          | 🏆 Nearly constant costs                             |
-| **Maintenance**     | 🏆 Delegated to the provider  | Organization responsible for updates and maintenance |
-| **Sovereignty**     | Potentially lower sovereignty | 🏆 Full control over data and models                 |
+| Critère                | Service IA tiers                       | Service IA local                                         |
+| ---------------------- | -------------------------------------- | -------------------------------------------------------- |
+| **Coût court terme**   | 🏆 Uniquement coût d'usage             | Investissement initial requis                            |
+| **Coût long terme**    | Les coûts s'accumulent                 | 🏆 Coûts quasi constants                                 |
+| **Maintenance**        | 🏆 Déléguée au fournisseur             | L'organisation responsable des mises à jour              |
+| **Souveraineté**       | Souveraineté potentiellement réduite   | 🏆 Contrôle total sur les données et modèles             |
 
 </v-clicks>
 
-[Reference: Lenovo 2025 study](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
+[Référence : étude Lenovo 2025](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
 
 ---
 layout: center
