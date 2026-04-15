@@ -100,8 +100,15 @@ layout: center
 
 ---
 layout: image
-image: assets/2026-tunisia-tunis-yassine-benabbas-large.jpg
+image: "./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg"
 ---
+
+---
+layout: image
+image: "./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg"
+---
+
+<img src="./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg" width="0%" />
 
 ---
 src: ./pages/bio.md
