@@ -99,19 +99,28 @@ layout: center
 <img border="rounded" src="./assets/maes-b-lost-in-a-field.gif" />
 
 ---
-layout: image
-image: "./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg"
+layout: center
 ---
 
----
-layout: image
-image: "./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg"
----
+<img src="./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg" />
 
-<img src="./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg" width="0%" />
+<style>
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.slidev-layout {
+  padding: 0;
+  margin: 0;
+}
+
+</style>
 
 ---
-src: ./pages/bio.md
+src: ./pages/01-bio.md
 ---
 
 ---
@@ -127,7 +136,7 @@ layout: two-cols
 <img border="rounded" src="./assets/outdoors-camping.gif"  />
 
 ---
-src: ./pages/serverai.md
+src: ./pages/02-intro.md
 ---
 
 ---
@@ -155,15 +164,16 @@ hideInToc: false
 </style>
 
 ---
-src: ./pages/transformersjs.md
+src: ./pages/03-opencvjs.md
 ---
 
 ---
-src: ./pages/opencvjs.md
+src: ./pages/04-transformersjs.md
 ---
 
+
 ---
-src: ./pages/webai.md
+src: ./pages/05-webai.md
 ---
 
 ---
@@ -191,7 +201,7 @@ layout: center
 </v-clicks>
 
 ---
-src: ./pages/conclusion.md
+src: ./pages/06-conclusion.md
 ---
 
 ---

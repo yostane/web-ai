@@ -1,8 +1,17 @@
 ---
 hideInToc: false
+layout: center
 ---
 
-# Inférence IA côté serveur
+# Introduction
+
+- L'IA permet d'enrichir l'UX dans les applications web
+- ChatBots, recommandations personnalisées, traduction, etc.
+- Usuellement implémentée côté serveur
+
+---
+
+# IA côté serveur
 
 <img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
@@ -19,7 +28,7 @@ hideInToc: false
 
 <style>
 .slidev-vclick-hidden {
-display: none;
+  display: none;
 }
 
 .svgimg {
@@ -130,25 +139,39 @@ app.post("/chat", async (req, res) => {
 ```
 
 ---
+layout: center
+---
 
-# Service IA tiers vs service IA local
+# Résumé
 
-<v-clicks>
+De l'inférence IA côté serveur
 
-| Critère                | Service IA tiers                       | Service IA local                                         |
-| ---------------------- | -------------------------------------- | -------------------------------------------------------- |
-| **Coût court terme**   | 🏆 Uniquement coût d'usage             | Investissement initial requis                            |
-| **Coût long terme**    | Les coûts s'accumulent                 | 🏆 Coûts quasi constants                                 |
-| **Maintenance**        | 🏆 Déléguée au fournisseur             | L'organisation responsable des mises à jour              |
-| **Souveraineté**       | Souveraineté potentiellement réduite   | 🏆 Contrôle total sur les données et modèles             |
+💪 Accès à des modèles puissants et à jour
 
-</v-clicks>
+💰 Coûts de maintenance ou d'abonnement
+
+🔒 Potentiels problèmes de confidentialité
+
+🌐 Dépendance à la connectivité réseau
 
 [Référence : étude Lenovo 2025](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
 
 ---
 layout: center
-hideInToc: true
 ---
 
 ![](../assets/money.png)
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?*
+
+*Sur certains cas d'usage.

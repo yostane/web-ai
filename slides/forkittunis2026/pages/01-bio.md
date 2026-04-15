@@ -1,19 +1,15 @@
 ---
-layout: two-cols
+layout: center
 ---
 
 # Bio
 
-- Yassine Benabbas
 - DevRel @ <img style="height: 24px; display: inline-block; vertical-align: baseline;" src="../assets/worldline-mint-symbol.png" /> Worldline, Enseignant
 - Anime, gaming, TCG Pokémon
 - [Lille Android User Group](https://www.meetup.com/lille-android-user-group/) <logos-android-icon />
 - @yostane <logos-twitter /> <logos-bluesky /> <logos-github-octocat />
 - **in/yassinebenabbas** <logos-linkedin-icon />
 
-::right::
-
-<img border="rounded" src="../assets/pic.webp"  style="width: 100%; height: 100%; object-fit: cover;" />
 
 ---
 layout: none
