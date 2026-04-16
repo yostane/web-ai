@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mail-assistant</title>
+</head>
+
+<body>
+  <div>
+    <h1>mail-assistant</h1>
+    <button id="start-button">Start demo</button>
+    <p id="loading" style="display: none;">Loading...</p>
+    <div id="mail-form" style="display: none;">
+      <label for="title"></label> <input name="title" type="text" id="title" />
+      <label for="content"></label> <textarea id="content" name="content"></textarea>
+      <div>Next word suggestion will appear here: <span id="next-word-suggestion"></span></div>
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

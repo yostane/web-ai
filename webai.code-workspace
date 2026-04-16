@@ -57,6 +57,9 @@
     {
       "path": "slides/forkittunis2026",
     },
+    {
+      "path": "samples/mail-assistant",
+    },
   ],
   "settings": {},
 }
