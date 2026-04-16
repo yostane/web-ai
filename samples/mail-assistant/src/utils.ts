@@ -7,7 +7,7 @@ export async function setupWriter(): Promise<Writer> {
   }
   const options: WriterCreateOptions = {
     sharedContext: `This is a contact email fur support issues or for general information.
-      Please suggest the next word as the output.`,
+      Output only one word.`,
     tone: "formal",
     format: "plain-text",
     length: "short",

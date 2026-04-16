@@ -23,7 +23,7 @@ async function setupSuggestions() {
     const title = titleInput.value;
     const content = contentInput.value;
     stream = writer.writeStreaming(
-      `Title: ${title}.\n\n Current content: ${content}`,
+      `Output only one word.\nTitle: ${title}.\n\nCurrent content: ${content}`,
     );
     for await (const chunk of stream) {
       console.log("Received chunk:", chunk);
