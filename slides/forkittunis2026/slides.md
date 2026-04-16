@@ -217,13 +217,13 @@ Des questions ?
     :width="270"
     :height="270"
     type="svg"
-    data="https://wrl.li/genai-paris25"
+    data="https://wrl.li/webai-forkit-tunis26"
     :imageOptions="{ margin: 5 }"
     :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
     image="worldline-mint-symbol.png"
 />
 </div>
 
-[wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
+[wrl.li/webai-forkit-tunis26](https://wrl.li/webai-forkit-tunis26) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
 <br>
 Crédits : Tenor, Chrome for developers, <PoweredBySlidev mt-5 />

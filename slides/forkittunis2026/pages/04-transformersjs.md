@@ -37,9 +37,7 @@ console.log(result);
 ```
 
 ---
-layout: iframe-right
-url: https://yostane.github.io/web-ai/transformersjs-audio-chat/
-class: chatbot-iframe
+layout: center
 ---
 
 # Démo : chatbot audio local
@@ -50,7 +48,7 @@ class: chatbot-iframe
 | Text-to-Speech               | `Xenova/speecht5_tts`    |
 | text-generation              | `Xenova/distilgpt2`      |
 
-<button onclick="reloadAudioChatbotIframe()">Reload demo</button>
+- [Lancer la démo](https://yostane.github.io/web-ai/transformersjs-audio-chat/)
 
 
 ---
