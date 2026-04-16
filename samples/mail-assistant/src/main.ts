@@ -22,8 +22,14 @@ async function setupSuggestions() {
     nextWordSuggestion.textContent = "";
     const title = titleInput.value;
     const content = contentInput.value;
+    const context = document.querySelector<HTMLInputElement>(
+      "input[name=context]",
+    )!.value;
     stream = writer.writeStreaming(
-      `Output only one word.\nTitle: ${title}.\n\nCurrent content: ${content}`,
+      `Output only one word.\nContext: ${context}.\nTitle: ${title}.\n\nCurrent content: ${content}`,
+      {
+        context,
+      },
     );
     for await (const chunk of stream) {
       console.log("Received chunk:", chunk);
