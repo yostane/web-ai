@@ -2,7 +2,7 @@
 hideInToc: false
 ---
 
-## OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
+# OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
 
 - Bibliothèque de vision par ordinateur open source
 - Codée en <logos-c /> et <logos-c-plusplus />

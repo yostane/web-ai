@@ -1,5 +1,6 @@
 ---
 mdc: true
+hideInToc: false
 ---
 
 # Transformers.js
@@ -50,3 +51,16 @@ class: chatbot-iframe
 | text-generation              | `Xenova/distilgpt2`      |
 
 <button onclick="reloadAudioChatbotIframe()">Reload demo</button>
+
+
+---
+layout: center
+---
+
+# Démos proposées par Xenova
+
+- [AI Code Playground](https://huggingface.co/spaces/Xenova/ai-code-playground)
+- [Doodle Dash Sketch recognition](https://huggingface.co/spaces/Xenova/doodle-dash)
+- [MusicGen Web](https://huggingface.co/spaces/Xenova/musicgen-web)
+
+[Et plein d'autres !](https://huggingface.co/collections/Xenova/transformersjs-demos)

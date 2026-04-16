@@ -1,18 +1,34 @@
-# Web AI: W3C WebML Working Group
+---
+hideInToc: false
+layout: center
+---
 
-<div class="grid grid-cols-[1fr_600px] gap-2">
-  <div style="align-self: center; justify-self: center;">
-    <ul>
-      <li>Standard web</li>
-      <li>APIs spécialisées</li>
-      <li>Génération de texte</li>
-      <li>Exp. sur Chrome</li>
-    </ul>
-  </div>
-  <div>
-    <img style="width: 600px;" border="rounded" src="../assets/built-in-infra.jpg" />
-  </div>
-</div>
+# Web AI
+
+- Standard web
+- W3C WebML Working Group
+- APIs spécialisées
+- En expérimentation sur Chrome: Gemini Nano
+
+---
+layout: center
+---
+
+<img style="width: 600px;" border="rounded" src="../assets/built-in-infra.jpg" />
+
+---
+layout: center
+---
+
+# API disponibles
+
+- Création de sommaires
+- Traduction
+- Détection de langue
+- Correction orthographique
+- Rédaction de texte
+- Révision de texte
+- Prompting
 
 ---
 
@@ -36,6 +52,16 @@ const result = await translator.translate('Hello, world!');
 console.log(result);
 // La sortie devrait être : "Bonjour, monde !"
 ```
+
+---
+layout: center
+---
+
+# Démos
+
+- [Mes démos](https://yostane.github.io/web-ai/)
+- [Démos de Chrome](https://chrome.dev/web-ai-demos/)
+- [Infos du modème dans chrome://on-device-internals/](chrome://on-device-internals/)
 
 ---
 layout: two-cols-header
