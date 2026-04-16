@@ -6,8 +6,7 @@ export async function setupWriter(): Promise<Writer> {
     throw new Error("Writer not available");
   }
   const options: WriterCreateOptions = {
-    sharedContext: `This is a contact email fur support issues or for general information.
-      Output only one word.`,
+    sharedContext: `Please compose an email for support issues or for general information. A title and order id will be provided. The email should be concise and professional.`,
     tone: "formal",
     format: "plain-text",
     length: "short",

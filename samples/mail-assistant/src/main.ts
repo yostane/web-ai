@@ -1,5 +1,5 @@
 import "./style.css";
-import { setupWriter } from "./utils";
+import { setupWriter } from "./writer-utils";
 
 async function setupSuggestions() {
   const writer = await setupWriter();
@@ -7,34 +7,26 @@ async function setupSuggestions() {
   document.getElementById("mail-form")!.style.display = "block";
   console.log("Setup completed");
 
-  const titleInput =
-    document.querySelector<HTMLInputElement>("input[name=title]")!;
-  const contentInput = document.querySelector<HTMLTextAreaElement>(
-    "textarea[name=content]",
-  )!;
-  const nextWordSuggestion = document.getElementById("next-word-suggestion")!;
-
+  const generateBtn = document.getElementById("generate-btn")!;
   let stream: ReadableStream<string> | null = null;
-  let currrentSuggestion = "";
-  contentInput.addEventListener("input", async () => {
-    stream?.cancel();
-    currrentSuggestion = "";
-    nextWordSuggestion.textContent = "";
+  generateBtn.addEventListener("click", async () => {
+    const titleInput =
+      document.querySelector<HTMLInputElement>("input[name=title]")!;
+    const contentInput = document.querySelector<HTMLTextAreaElement>(
+      "textarea[name=content]",
+    )!;
+    const orderIdInput = document.querySelector<HTMLInputElement>(
+      "input[name=order-id]",
+    )!;
+
+    contentInput.value = "";
     const title = titleInput.value;
-    const content = contentInput.value;
-    const context = document.querySelector<HTMLInputElement>(
-      "input[name=context]",
-    )!.value;
-    stream = writer.writeStreaming(
-      `Output only one word.\nContext: ${context}.\nTitle: ${title}.\n\nCurrent content: ${content}`,
-      {
-        context,
-      },
+    const orderId = orderIdInput.value;
+    stream = await writer.writeStreaming(
+      `Title: "${title}" Order id: "${orderId}".`,
     );
     for await (const chunk of stream) {
-      console.log("Received chunk:", chunk);
-      currrentSuggestion += chunk;
-      nextWordSuggestion.textContent = currrentSuggestion;
+      contentInput.value += chunk;
     }
   });
 }

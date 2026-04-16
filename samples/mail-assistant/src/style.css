@@ -319,3 +319,8 @@ textarea {
     border-right-color: var(--border);
   }
 }
+
+textarea {
+  height: 300px;
+  resize: vertical;
+}
