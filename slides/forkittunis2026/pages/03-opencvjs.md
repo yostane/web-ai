@@ -42,3 +42,11 @@ iframe {
   border-radius: 8px;
 }
 </style>
+
+---
+
+# OpenCV parfois > Modèles IA
+
+<div style="display: flex; justify-content: center;">
+  <Youtube id="oxnFnS46yI8" style="width:100%;height:400px;" />
+</div>
