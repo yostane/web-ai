@@ -18,12 +18,16 @@ async function setupSuggestions() {
     const orderIdInput = document.querySelector<HTMLInputElement>(
       "input[name=order-id]",
     )!;
+    const usernameInput = document.querySelector<HTMLInputElement>(
+      "input[name=username]",
+    )!;
 
     contentInput.value = "";
     const title = titleInput.value;
     const orderId = orderIdInput.value;
+    const username = usernameInput.value;
     stream = await writer.writeStreaming(
-      `Title: "${title}" Order id: "${orderId}".`,
+      `Title: "${title}" Order id: "${orderId}" User name: "${username}".`,
     );
     for await (const chunk of stream) {
       contentInput.value += chunk;
