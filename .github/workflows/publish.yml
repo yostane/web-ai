@@ -21,6 +21,7 @@ jobs:
           cd ../forkittunis2026 && bun install && bun run build
           cd ../../samples/translator_api && bun install && bun run build
           cd ../../samples/writer-api-demo && bun install && bun run build
+          cd ../../samples/mail-assistant && bun install && bun run build
           cd ../../samples/rewriter-api-demo && bun install && bun run build
           cd ../../samples/language-detector-demo && bun install && bun run build
           cd ../../samples/summarizer-demo && bun install && bun run build
@@ -41,6 +42,7 @@ jobs:
           mv slides/forkittunis2026/dist public/slides-forkittunis2026
           mv samples/translator_api/dist public/translator-api-demo
           mv samples/writer-api-demo/dist public/writer-api-demo
+          mv samples/mail-assistant/dist public/writer-mail-assistant
           mv samples/rewriter-api-demo/dist public/rewriter-api-demo
           mv samples/language-detector-demo/dist public/language-detector-demo
           mv samples/summarizer-demo/dist public/summarizer-demo
