@@ -12,7 +12,7 @@ async function setupSuggestions() {
   const contentInput = document.querySelector<HTMLTextAreaElement>(
     "textarea[name=content]",
   )!;
-  const nextWordSuggestion = document.getElementById("next-word-suggestion")!;
+  //const nextWordSuggestion = document.getElementById("next-word-suggestion")!;
 
   let stream: ReadableStream<string> | null = null;
   contentInput.addEventListener("input", async () => {
