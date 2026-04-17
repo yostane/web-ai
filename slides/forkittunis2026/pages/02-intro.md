@@ -55,44 +55,8 @@ img {
 </style>
 
 ---
-disabled: true
----
 
-# Démo : Google Cloud AI
-
-- **Outils** : <logos-python /> Langchain et Streamlit
-
-```py
-from langchain_google_genai import ChatGoogleGenerativeAI
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=api_key)
-system_message = (
-    "system", "You are an expert at explaining programming languages' concepts.")
-response = llm.invoke([system_message, human_message])
-print(response.content)
-```
-
-<v-click>
-
-Bibliothèques :
-
-- Bibliothèques et APIs du fournisseur,
-- Ou multi-fournisseur : LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
-
-</v-click>
-
----
-disabled: true
----
-
-# Démo : chat IA avec Streamlit
-
-<div style="display: flex; justify-content: center;">
-  <Youtube id="lZBGyJVyIE4" style="width:100%;height:400px;" />
-</div>
-
----
-
-# Inférence IA en local (on-premise)
+# Inférence IA "on-premise"
 
 <img class="svgimg" border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
 
