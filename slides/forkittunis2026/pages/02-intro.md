@@ -55,6 +55,8 @@ img {
 </style>
 
 ---
+disabled: true
+---
 
 # Démo : Google Cloud AI
 
@@ -78,6 +80,8 @@ Bibliothèques :
 
 </v-click>
 
+---
+disabled: true
 ---
 
 # Démo : chat IA avec Streamlit
@@ -165,4 +169,4 @@ layout: fact
 
 # Et si on pouvait se passer du serveur ?*
 
-*Sur certains cas d'usage.
+*Dans certains cas d'usage.

@@ -10,15 +10,15 @@ hideInToc: false
 <div class="grid grid-cols-3 gap-10 text-center">
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-browser.svg" />
-    <p>L'IA ouvre de nouvelles fonctionnalités pour les applications web</p>
+    <p>Nouvelles possibilités aux applications web</p>
   </div>
   <div v-click class="flex flex-col items-center">
-    <img src="../assets/excalidraw-server.svg" />
-    <p>Certains cas d'usage peuvent être réalisés par le navigateur</p> 
+    <img src="../assets/local-vs-server.svg" />
+    <p>Client-side vs server-side : sur le rendu et sur l'IA</p> 
   </div>
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-conclusion-webai.svg" />
-    <p>L'IA côté navigateur est déjà disponible et continue de s'améliorer</p>
+    <p>Lib JS disponibles et WEB AI sera une révolution</p>
   </div>
 </div>
 
