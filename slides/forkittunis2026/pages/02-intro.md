@@ -1,14 +1,5 @@
 ---
 hideInToc: false
-layout: center
----
-
-# Introduction
-
-- L'IA permet d'enrichir l'UX dans les applications web
-- ChatBots, recommandations personnalisées, traduction, etc.
-- Usuellement implémentée côté serveur
-
 ---
 
 # IA côté serveur

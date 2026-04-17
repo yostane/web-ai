@@ -96,7 +96,7 @@ img {
 layout: center
 ---
 
-<img border="rounded" src="./assets/maes-b-lost-in-a-field.gif" />
+<img border="rounded" src="./assets/server.jpg" />
 
 ---
 layout: center

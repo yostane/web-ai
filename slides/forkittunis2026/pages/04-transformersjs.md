@@ -8,7 +8,7 @@ hideInToc: false
 <div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
 
 - Développé par [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) de <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
-- Exécute des modèles IA directement dans le navigateur ou un runtime (Node.js, bun, Deno).
+- Exécution de modèles IA dans le navigateur ou un runtime JS (Node.js, bun, Deno).
 - Les modèles sont au format [ONNX](https://onnx.ai/) (outils de conversion disponibles)
 - De nombreux modèles sont disponibles sur le [Hub de modèles Hugging Face](https://huggingface.co/models?library=transformers.js)
 
