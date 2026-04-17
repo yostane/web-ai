@@ -56,7 +56,15 @@ img {
 
 ---
 
-# Inférence IA "on-premise"
+# Démo : chat IA avec Streamlit
+
+<div style="display: flex; justify-content: center;">
+  <Youtube id="lZBGyJVyIE4" style="width:100%;height:400px;" />
+</div>
+
+---
+
+# Inférence IA en local (on-premise)
 
 <img class="svgimg" border="rounded" src="../assets/webapp-03-backend-onpremise-ai.svg" />
 
