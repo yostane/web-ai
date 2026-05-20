@@ -1,0 +1,41 @@
+ul {
+  li {
+    list-style-type: none;
+  }
+  li::before {
+    content: "▻";
+    margin-right: 0.5rem;
+  }
+}
+
+.slidev-layout {
+  padding: 20px 40px;
+  p,
+  li {
+    font-size: 1.2em;
+    line-height: 2;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding-bottom: 0.2em;
+    line-height: 1;
+  }
+  code {
+    font-size: 1.4em;
+  }
+}
+
+.svgimg {
+  height: 300px;
+  width: 600px;
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 15px;
+  border: 4px solid var(--slidev-theme-primary);
+  background: white;
+}

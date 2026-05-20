@@ -19,6 +19,7 @@ jobs:
           cd slides/draft && bun install && bun run build
           cd ../genaiparis2025 && bun install && bun run build
           cd ../forkittunis2026 && bun install && bun run build
+          cd ../fblillemeetup2026 && bun install && bun run build
           cd ../../samples/translator_api && bun install && bun run build
           cd ../../samples/writer-api-demo && bun install && bun run build
           cd ../../samples/rewriter-api-demo && bun install && bun run build
@@ -39,6 +40,7 @@ jobs:
           mv slides/draft/dist public/slides-draft
           mv slides/genaiparis2025/dist public/slides-genaiparis2025
           mv slides/forkittunis2026/dist public/slides-forkittunis2026
+          mv slides/fblillemeetup2026/dist public/slides-fblille2026
           mv samples/translator_api/dist public/translator-api-demo
           mv samples/writer-api-demo/dist public/writer-api-demo
           mv samples/rewriter-api-demo/dist public/rewriter-api-demo
