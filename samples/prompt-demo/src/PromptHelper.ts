@@ -5,6 +5,9 @@ export class PromptHelper {
   languageModel: LanguageModel | null = null;
   session: LanguageModel | null = null;
   apiName = "LanguageModel";
+  static systemPrompt = `You are an expert at telling stories.
+  Write a story based on the topic provided by the user.
+  Each story must be different from the previous ones. Just tell a story and don't ask the user for more information`;
 
   constructor() {
     if (!("LanguageModel" in self)) {
@@ -18,7 +21,6 @@ export class PromptHelper {
     if (!("LanguageModel" in self)) {
       throw new Error("LanguageModel API is not supported in this browser.");
     }
-    log(`Model capabilities are ${await LanguageModel.params()}`);
     const available = await LanguageModel.availability();
     if (available === "unavailable") {
       log("LanguageModel API is not available.");
@@ -39,8 +41,7 @@ export class PromptHelper {
       initialPrompts: [
         {
           role: "system",
-          content:
-            "You are an expert at telling stories. Write a story based on the topic provided by the user. Each story must be different from the previous ones. Just tell a story and don't ask the user for more information",
+          content: this.systemPrompt,
         },
       ],
       expectedInputs: [{ type: "text" }],
@@ -50,7 +51,7 @@ export class PromptHelper {
 
   async prompt(
     topic: string,
-    streaming: boolean = false
+    streaming: boolean = false,
   ): Promise<string | ReadableStream<string>> {
     if (!this.session) {
       throw new Error("LanguageModel is not initialized. Call init() first.");

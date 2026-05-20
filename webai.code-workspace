@@ -1,65 +1,68 @@
 {
   "folders": [
     {
-      "path": "slides/draft"
+      "path": ".github",
     },
     {
-      "path": "slides/genaiparis2025"
+    "path": "samples/translator_api",
     },
     {
-      "path": "samples/translator_api"
+      "path": "samples/writer-api-demo",
     },
     {
-      "path": "samples/writer-api-demo"
+      "path": "public",
     },
     {
-      "path": "public"
+      "path": "samples/rewriter-api-demo",
     },
     {
-      "path": ".github"
+      "path": "samples/language-detector-demo",
     },
     {
-      "path": "samples/rewriter-api-demo"
+      "path": "samples/summarizer-demo",
     },
     {
-      "path": "samples/language-detector-demo"
+      "path": "samples/prompt-demo",
     },
     {
-      "path": "samples/summarizer-demo"
+      "path": "samples/misc",
     },
     {
-      "path": "samples/prompt-demo"
+      "path": "samples/transformersjs/transformersjs-demos",
     },
     {
-      "path": "samples/misc"
+      "path": "samples/transformersjs/transformersjs-audio-chat",
     },
     {
-      "path": "samples/transformersjs/transformersjs-demos"
+      "path": "samples/seamless-international-chat/seamless-intl-chat-webapp",
     },
     {
-      "path": "samples/transformersjs/transformersjs-audio-chat"
+      "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server",
     },
     {
-      "path": "samples/seamless-international-chat/seamless-intl-chat-webapp"
+      "path": "samples/ollama/ollama-express-demo",
     },
     {
-      "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server"
+      "path": "samples/streamlit/streamlit-ai-chat-demo",
     },
     {
-      "path": "samples/ollama/ollama-express-demo"
+      "path": "samples/opencvjs/opencvjs-demo",
     },
     {
-      "path": "samples/streamlit/streamlit-ai-chat-demo"
+      "path": "samples/mail-assistant",
     },
     {
-      "path": "samples/opencvjs/opencvjs-demo"
+      "path": "slides/draft",
     },
     {
-      "path": "slides/forkittunis2026"
+      "path": "slides/genaiparis2025",
     },
     {
-      "path": "slides/fblillemeetup2026"
-    }
+      "path": "slides/forkittunis2026",
+    },
+    {
+      "path": "slides/fblillemeetup2026",
+    },
   ],
   "settings": {},
 }

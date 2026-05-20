@@ -1,15 +1,16 @@
 {
-  "name": "writer-api-demo",
+  "name": "mail-assistant",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.3.2",
-    "@types/dom-chromium-ai": "^0.0.9"
+    "typescript": "~6.0.2",
+    "vite": "^8.0.4",
+    "@types/dom-chromium-ai": "^0.0.16"
   }
 }

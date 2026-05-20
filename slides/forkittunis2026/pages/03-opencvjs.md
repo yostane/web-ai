@@ -1,4 +1,8 @@
-## OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
+---
+hideInToc: false
+---
+
+# OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
 
 - Bibliothèque de vision par ordinateur open source
 - Codée en <logos-c /> et <logos-c-plusplus />
@@ -38,3 +42,11 @@ iframe {
   border-radius: 8px;
 }
 </style>
+
+---
+
+# OpenCV parfois > Modèles IA
+
+<div style="display: flex; justify-content: center;">
+  <Youtube id="oxnFnS46yI8" style="width:100%;height:400px;" />
+</div>

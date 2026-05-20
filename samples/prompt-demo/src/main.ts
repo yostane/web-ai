@@ -2,11 +2,15 @@ import "./style.css";
 import { PromptHelper } from "./PromptHelper";
 import { log } from "./Utils";
 
+document.querySelector("#system-prompt")!.textContent =
+  PromptHelper.systemPrompt;
+
 const submitButton = document.querySelector("#submit") as HTMLButtonElement;
 submitButton.addEventListener("click", async () => {
   const promptHelper = new PromptHelper();
+
   const resultTextBox = document.querySelector(
-    "#result"
+    "#result",
   ) as HTMLTextAreaElement;
   resultTextBox.innerHTML = "Loading...";
   await promptHelper.init();
@@ -28,7 +32,7 @@ submitButton.addEventListener("click", async () => {
     log("Prompt completed successfully.");
   } catch (error) {
     console.error("Error during prompt:", error);
-    log(`Error: ${error.message}`);
+    log(`Error: ${error}`);
     return;
   }
 });

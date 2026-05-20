@@ -2,7 +2,7 @@
 hideInToc: false
 ---
 
-# Inférence IA côté serveur
+# IA côté serveur
 
 <img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
 <img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
@@ -19,7 +19,7 @@ hideInToc: false
 
 <style>
 .slidev-vclick-hidden {
-display: none;
+  display: none;
 }
 
 .svgimg {
@@ -53,30 +53,6 @@ img {
   height: 200px;
 }
 </style>
-
----
-
-# Démo : Google Cloud AI
-
-- **Outils** : <logos-python /> Langchain et Streamlit
-
-```py
-from langchain_google_genai import ChatGoogleGenerativeAI
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=api_key)
-system_message = (
-    "system", "You are an expert at explaining programming languages' concepts.")
-response = llm.invoke([system_message, human_message])
-print(response.content)
-```
-
-<v-click>
-
-Bibliothèques :
-
-- Bibliothèques et APIs du fournisseur,
-- Ou multi-fournisseur : LangChain <logos-python />, LangChain4j <logos-java /> <logos-kotlin-icon />, LangChain.js <logos-javascript /> <logos-typescript-icon />, Koog <logos-kotlin-icon />.
-
-</v-click>
 
 ---
 
@@ -130,25 +106,39 @@ app.post("/chat", async (req, res) => {
 ```
 
 ---
+layout: center
+---
 
-# Service IA tiers vs service IA local
+# Résumé
 
-<v-clicks>
+De l'inférence IA côté serveur
 
-| Critère                | Service IA tiers                       | Service IA local                                         |
-| ---------------------- | -------------------------------------- | -------------------------------------------------------- |
-| **Coût court terme**   | 🏆 Uniquement coût d'usage             | Investissement initial requis                            |
-| **Coût long terme**    | Les coûts s'accumulent                 | 🏆 Coûts quasi constants                                 |
-| **Maintenance**        | 🏆 Déléguée au fournisseur             | L'organisation responsable des mises à jour              |
-| **Souveraineté**       | Souveraineté potentiellement réduite   | 🏆 Contrôle total sur les données et modèles             |
+💪 Accès à des modèles puissants et à jour
 
-</v-clicks>
+💰 Coûts de maintenance ou d'abonnement
+
+🔒 Potentiels problèmes de confidentialité
+
+🌐 Dépendance à la connectivité réseau
 
 [Référence : étude Lenovo 2025](https://lenovopress.lenovo.com/lp2225-on-premise-vs-cloud-generative-ai-total-cost-of-ownership)
 
 ---
 layout: center
-hideInToc: true
 ---
 
 ![](../assets/money.png)
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?*
+
+*Dans certains cas d'usage.

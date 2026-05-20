@@ -96,15 +96,31 @@ img {
 layout: center
 ---
 
-<img border="rounded" src="./assets/maes-b-lost-in-a-field.gif" />
+<img border="rounded" src="./assets/server.jpg" />
 
 ---
-layout: image
-image: assets/2026-tunisia-tunis-yassine-benabbas-large.jpg
+layout: center
 ---
 
+<img src="./assets/2026-tunisia-tunis-yassine-benabbas-large.jpg" />
+
+<style>
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.slidev-layout {
+  padding: 0;
+  margin: 0;
+}
+
+</style>
+
 ---
-src: ./pages/bio.md
+src: ./pages/01-bio.md
 ---
 
 ---
@@ -120,7 +136,7 @@ layout: two-cols
 <img border="rounded" src="./assets/outdoors-camping.gif"  />
 
 ---
-src: ./pages/serverai.md
+src: ./pages/02-intro.md
 ---
 
 ---
@@ -148,15 +164,16 @@ hideInToc: false
 </style>
 
 ---
-src: ./pages/transformersjs.md
+src: ./pages/03-opencvjs.md
 ---
 
 ---
-src: ./pages/opencvjs.md
+src: ./pages/04-transformersjs.md
 ---
 
+
 ---
-src: ./pages/webai.md
+src: ./pages/05-webai.md
 ---
 
 ---
@@ -184,7 +201,7 @@ layout: center
 </v-clicks>
 
 ---
-src: ./pages/conclusion.md
+src: ./pages/06-conclusion.md
 ---
 
 ---
@@ -200,13 +217,13 @@ Des questions ?
     :width="270"
     :height="270"
     type="svg"
-    data="https://wrl.li/genai-paris25"
+    data="https://wrl.li/webai-forkit-tunis26"
     :imageOptions="{ margin: 5 }"
     :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
     image="worldline-mint-symbol.png"
 />
 </div>
 
-[wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
+[wrl.li/webai-forkit-tunis26](https://wrl.li/webai-forkit-tunis26) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
 <br>
 Crédits : Tenor, Chrome for developers, <PoweredBySlidev mt-5 />
