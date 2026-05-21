@@ -164,28 +164,32 @@ src: ./pages/webai.md
 ---
 
 ---
+layout: center
+---
 
-# IA navigateur vs IA serveur
+# Résumé
 
-<br>
-<br>
+- Vision par ordinateur: OpenCV.js
+- Tâche spécifique Web AI: WebAI API
+- Petit modèle (le mien ou tiers): transformers.js
+- Pour le reste: serveur IA
 
-| Critère             | IA côté navigateur                     | IA côté serveur                                    |
-| ------------------- | -------------------------------------- | -------------------------------------------------- |
-| Confidentialité     | 🏆 Données sur l'appareil              | Données envoyées au serveur                        |
-| Coût                | 🏆 Aucun coût serveur                  | Abonnement ou coûts serveur récurrents             |
-| Scalabilité         | Limité par les capacités de l'appareil | 🏆 Facilement scalable avec des ressources serveur |
-| Modèles / cas usage | Limité                                 | 🏆 Grande variété de modèles disponibles           |
+<style>
+
+li {
+  font-size: 2em;
+}
+</style>
+
+---
+src: ./pages/conclusion.md
+---
 
 ---
 layout: center
 ---
 
 <img style="height:100%" border="rounded" src="./assets/yes-no-browser-ai.png" />
-
----
-src: ./pages/conclusion.md
----
 
 ---
 layout: end
