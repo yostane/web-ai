@@ -3,7 +3,6 @@ theme: seriph
 addons:
   - slidev-addon-excalidraw
   - slidev-component-pager
-  - slidev-component-progress
   - slidev-addon-qrcode
 fonts:
   sans: Roboto
@@ -99,9 +98,14 @@ layout: center
 <img border="rounded" src="./assets/maes-b-lost-in-a-field.gif" />
 
 ---
-layout: image
-image: assets/2026-tunisia-tunis-yassine-benabbas-large.jpg
+layout: center
 ---
+
+# Le futur de l'IA (est) dans le navigateur
+
+Yassine Benabbas
+
+21 mai 2026
 
 ---
 src: ./pages/bio.md
@@ -196,17 +200,18 @@ layout: end
 Des questions ?
 
 <div class="flex flex-col items-center">
+
 <QRCode
     :width="270"
     :height="270"
     type="svg"
-    data="https://wrl.li/genai-paris25"
+    data="https://yostane.github.io/web-ai/slides-fblille2026"
     :imageOptions="{ margin: 5 }"
     :dotsOptions="{ type: 'extra-rounded', color: 'white' }"
-    image="worldline-mint-symbol.png"
 />
+
 </div>
 
-[wrl.li/genai-paris25](https://wrl.li/genai-paris25) <iconoir-presentation /> - [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
+Code source : [yostane/web-ai](https://github.com/yostane/web-ai/tree/main/samples) <logos-github-icon style="background:white; border-radius: 5px; padding:1px" />
 <br>
 Crédits : Tenor, Chrome for developers, <PoweredBySlidev mt-5 />
