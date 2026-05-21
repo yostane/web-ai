@@ -95,7 +95,7 @@ img {
 layout: center
 ---
 
-<img border="rounded" src="./assets/maes-b-lost-in-a-field.gif" />
+<img border="rounded" src="./assets/server.jpg" />
 
 ---
 layout: center
@@ -164,19 +164,11 @@ src: ./pages/webai.md
 ---
 
 ---
-layout: center
----
-
-<img style="height:100%" border="rounded" src="./assets/yes-no-browser-ai.png" />
-
----
 
 # IA navigateur vs IA serveur
 
 <br>
 <br>
-
-<v-clicks>
 
 | Critère             | IA côté navigateur                     | IA côté serveur                                    |
 | ------------------- | -------------------------------------- | -------------------------------------------------- |
@@ -185,7 +177,11 @@ layout: center
 | Scalabilité         | Limité par les capacités de l'appareil | 🏆 Facilement scalable avec des ressources serveur |
 | Modèles / cas usage | Limité                                 | 🏆 Grande variété de modèles disponibles           |
 
-</v-clicks>
+---
+layout: center
+---
+
+<img style="height:100%" border="rounded" src="./assets/yes-no-browser-ai.png" />
 
 ---
 src: ./pages/conclusion.md

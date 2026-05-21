@@ -5,6 +5,7 @@
     "": {
       "name": "webai-genaiparis2025",
       "dependencies": {
+        "@iconify-json/game-icons": "^1.2.4",
         "@iconify-json/iconoir": "^1.2.10",
         "@iconify-json/logos": "^1.2.11",
         "@iconify-json/mdi": "^1.2.3",
@@ -171,6 +172,8 @@
     "@hedgedoc/markdown-it-task-lists": ["@hedgedoc/markdown-it-task-lists@2.0.1", "", { "peerDependencies": { "markdown-it": ">=12" } }, "sha512-/iwO+hlzh+Jg+jQqE1SkI3Fr9LPBLqS2rgWQFOFSj0HH7KEYbegYru+dc+B2V89ZcY0AwwT6LzU4f5oqsgyvEw=="],
 
     "@iconify-json/carbon": ["@iconify-json/carbon@1.2.20", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-wqyxKEbIRdzGdfCAwQqn8iSfO6jx0m1toZAAQdx1NFjxd6iFl1YY4eKI1woWt7XOxs7s7phMW530kDD867JZGw=="],
+
+    "@iconify-json/game-icons": ["@iconify-json/game-icons@1.2.4", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-/HDDZxowXgDJcOEwPspUCq5RuDdl25OyZKdtxqqiPJQNTrWIym7r4StLzIVs77DyNzOWWhH5wDqwYR3WHeDfkg=="],
 
     "@iconify-json/iconoir": ["@iconify-json/iconoir@1.2.10", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-NnbdB9S5G++6wE5aEZhzpFR0HRcaZFSbJJIHOGF2axaNVKnSUs4NBW2z0uhZnM00iUkiK848Sp81EZPg52DL+w=="],
 

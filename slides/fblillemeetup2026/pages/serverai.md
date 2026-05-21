@@ -100,9 +100,8 @@ layout: center
 # Problématiques de l'IA côté serveur
 
 - Confidentialité
-- Latence
-- Dépendance réseau
-- Coût
+- Pas de offline
+- Coût : maintenance ou d'abonnement
 
 <style>
 
@@ -114,8 +113,45 @@ li {
 </style>
 
 ---
+
+# Coût d'abonnement non maîtrisé
+
+Phénomènes: LLMflation, LLM Cost paradox
+
+![](../assets/price-graph-gemini.webp)
+
+<style>
+img {
+  height: 400px;
+  width: auto;
+}
+</style>
+
+---
+
+![](../assets/price-graph-openai.webp)
+
+---
+
+![](../assets/price-graph-anthropic.webp)
+
+---
 layout: center
 hideInToc: true
 ---
 
 ![](../assets/money.png)
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?
+
+---
+layout: fact
+---
+
+# Et si on pouvait se passer du serveur ?\*
+
+\*Dans certains cas d'usage.

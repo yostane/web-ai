@@ -1,5 +1,6 @@
 ---
 mdc: true
+hideInToc: false
 ---
 
 # Transformers.js
@@ -7,12 +8,11 @@ mdc: true
 <div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
 
 - Développé par [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) de <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
-- Exécute des modèles IA directement dans le navigateur ou un runtime (Node.js, bun, Deno).
+- Exécution de modèles IA dans le navigateur ou un runtime JS (Node.js, bun, Deno).
 - Les modèles sont au format [ONNX](https://onnx.ai/) (outils de conversion disponibles)
 - De nombreux modèles sont disponibles sur le [Hub de modèles Hugging Face](https://huggingface.co/models?library=transformers.js)
 
 </div>
-
 
 ---
 
@@ -36,9 +36,7 @@ console.log(result);
 ```
 
 ---
-layout: iframe-right
-url: https://yostane.github.io/web-ai/transformersjs-audio-chat/
-class: chatbot-iframe
+layout: center
 ---
 
 # Démo : chatbot audio local
@@ -49,4 +47,16 @@ class: chatbot-iframe
 | Text-to-Speech               | `Xenova/speecht5_tts`    |
 | text-generation              | `Xenova/distilgpt2`      |
 
-<button onclick="reloadAudioChatbotIframe()">Reload demo</button>
+- [Lancer la démo](https://yostane.github.io/web-ai/transformersjs-audio-chat/)
+
+---
+layout: center
+---
+
+# Démos proposées par Xenova
+
+- [AI Code Playground](https://huggingface.co/spaces/Xenova/ai-code-playground)
+- [Doodle Dash Sketch recognition](https://huggingface.co/spaces/Xenova/doodle-dash)
+- [MusicGen Web](https://huggingface.co/spaces/Xenova/musicgen-web)
+
+[Et plein d'autres !](https://huggingface.co/collections/Xenova/transformersjs-demos)
