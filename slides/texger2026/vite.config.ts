@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	base: "/web-ai/slides-fblille2026/",
+	base: "/web-ai/slides-texger2026/",
 	server: {
 		proxy: {
 			"/web-ai/seamless-international-chat/": {
