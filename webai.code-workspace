@@ -4,7 +4,7 @@
       "path": ".github",
     },
     {
-    "path": "samples/translator_api",
+      "path": "samples/translator_api",
     },
     {
       "path": "samples/writer-api-demo",
@@ -62,6 +62,9 @@
     },
     {
       "path": "slides/fblillemeetup2026",
+    },
+    {
+      "path": "slides/texger2026",
     },
   ],
   "settings": {},

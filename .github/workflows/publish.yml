@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
       - name: build websites
         run: |
@@ -27,6 +27,7 @@ jobs:
           cd ../../samples/language-detector-demo && bun install && bun run build
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
+          cd ../../samples/seamless-international-chat/seamless-intl-chat-webapp && bun install && bun run build
           cd $START_DIR
           cd samples/opencvjs/opencvjs-demo && bun install && bun run build
           cd $START_DIR
@@ -49,6 +50,7 @@ jobs:
           mv samples/language-detector-demo/dist public/language-detector-demo
           mv samples/summarizer-demo/dist public/summarizer-demo
           mv samples/prompt-demo/dist public/prompt-demo
+          mv samples/seamless-international-chat/seamless-intl-chat-webapp/dist public/seamless-intl-chat-webapp
           mv samples/opencvjs/opencvjs-demo/dist public/opencvjs-demo
           mv samples/transformersjs/transformersjs-demos/dist public/transformersjs-demos
           mv samples/transformersjs/transformersjs-audio-chat/dist public/transformersjs-audio-chat
