@@ -61,12 +61,33 @@
       }
 
       function setupWebRTC() {
+        const iceServers = [
+          {
+            urls: "stun:stun.relay.metered.ca:80",
+          },
+          {
+            urls: "turn:global.relay.metered.ca:80",
+            username: "6bbdc504f633a03f4e2c6955",
+            credential: "VGh0HxagORPuDB2R",
+          },
+          {
+            urls: "turn:global.relay.metered.ca:80?transport=tcp",
+            username: "6bbdc504f633a03f4e2c6955",
+            credential: "VGh0HxagORPuDB2R",
+          },
+          {
+            urls: "turn:global.relay.metered.ca:443",
+            username: "6bbdc504f633a03f4e2c6955",
+            credential: "VGh0HxagORPuDB2R",
+          },
+          {
+            urls: "turns:global.relay.metered.ca:443?transport=tcp",
+            username: "6bbdc504f633a03f4e2c6955",
+            credential: "VGh0HxagORPuDB2R",
+          },
+        ];
         pc = new RTCPeerConnection({
-          iceServers: [
-            {
-              urls: ["stun:stun.l.google.com:19302"],
-            },
-          ],
+          iceServers: iceServers,
         });
         //pc = new RTCPeerConnection({ iceServers: [] });
         pc.onicecandidate = (e) => {
