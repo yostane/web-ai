@@ -20,9 +20,16 @@
         />
         <button id="sendBtn" type="button" disabled>Send</button>
       </div>
-      <p id="current-language">Current language used:</p>
-      <button id="reloadBtn" type="button">Reload</button>
-      <p id="translator-status">Translator status: waiting</p>
+      <div>
+        <p id="current-language">Current language used:</p>
+        <p id="translator-status">Translator status: waiting</p>
+        <p>
+          <button id="reloadBtn" type="button">Reload</button>
+          <button id="forceLoadTranslatorBtn" type="button">
+            Force Load Translator
+          </button>
+        </p>
+      </div>
     </div>
     <script>
       // --- WebRTC Chat with public signaling server ---
@@ -33,6 +40,8 @@
         pc,
         dc,
         isInitiator = false;
+
+      let translator = null;
       const status = document.getElementById("status");
       const messages = document.getElementById("messages");
       const input = document.getElementById("messageInput");
@@ -61,29 +70,31 @@
       }
 
       function setupWebRTC() {
+        const username = "";
+        const code = "";
         const iceServers = [
           {
             urls: "stun:stun.relay.metered.ca:80",
           },
           {
             urls: "turn:global.relay.metered.ca:80",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turn:global.relay.metered.ca:80?transport=tcp",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turn:global.relay.metered.ca:443",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turns:global.relay.metered.ca:443?transport=tcp",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
         ];
         pc = new RTCPeerConnection({
@@ -217,12 +228,30 @@
         connectSignaling();
       });
 
+      forceLoadTranslatorBtn.addEventListener("click", async () => {
+        try {
+          await updateTranslator();
+        } catch (e) {
+          console.error("Error forcing translator load: ", e);
+        }
+      });
+
       async function onMessageReceived(msg) {
         const logElement = log("Peer: " + msg);
         const detectedLanguage = await detectLanguage(msg, logElement);
-        if (detectedLanguage !== lastLanguageReceived) {
+        if (
+          translator == null ||
+          detectedLanguage !== translator.sourceLanguage
+        ) {
           lastLanguageReceived = detectedLanguage;
-          await updateTranslator();
+          try {
+            await updateTranslator();
+          } catch (e) {
+            console.error("Error updating translator: ", e);
+            const translatorStatusElm =
+              document.getElementById("translator-status");
+            translatorStatusElm.textContent = `Translator status: Translation from ${lastLanguageReceived} to ${currentLanguageSpoken} is unavailable`;
+          }
         }
         if (translator && detectedLanguage !== currentLanguageSpoken) {
           translateMessage(msg, logElement);
@@ -283,10 +312,10 @@
         }
       }
 
-      let translator = null;
       async function updateTranslator() {
         const translatorStatusElm =
           document.getElementById("translator-status");
+        lastLanguageReceived = lastLanguageReceived ?? "de";
         if (lastLanguageReceived == null || currentLanguageSpoken == null)
           return;
         const availability = await Translator.availability({
@@ -303,6 +332,11 @@
           translator = await Translator.create({
             sourceLanguage: lastLanguageReceived,
             targetLanguage: currentLanguageSpoken,
+            monitor(m) {
+              m.addEventListener("downloadprogress", (e) => {
+                console.log(`Downloaded ${e.loaded * 100}%`);
+              });
+            },
           });
           translatorStatusElm.textContent = `Translator status: Translation from ${lastLanguageReceived} to ${currentLanguageSpoken} is ready`;
           return translator;
