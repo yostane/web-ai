@@ -70,29 +70,31 @@
       }
 
       function setupWebRTC() {
+        const username = "";
+        const code = "";
         const iceServers = [
           {
             urls: "stun:stun.relay.metered.ca:80",
           },
           {
             urls: "turn:global.relay.metered.ca:80",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turn:global.relay.metered.ca:80?transport=tcp",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turn:global.relay.metered.ca:443",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
           {
             urls: "turns:global.relay.metered.ca:443?transport=tcp",
-            username: "6bbdc504f633a03f4e2c6955",
-            credential: "VGh0HxagORPuDB2R",
+            username: username,
+            credential: code,
           },
         ];
         pc = new RTCPeerConnection({
