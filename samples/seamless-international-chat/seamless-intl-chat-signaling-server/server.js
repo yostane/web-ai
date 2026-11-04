@@ -58,10 +58,10 @@ wss.on("connection", (ws) => {
       console.log(
         `[Leave] Client left room: ${room} (Remaining: ${rooms[room].length})`,
       );
-      if (rooms[room].length === 0) {
-        delete rooms[room];
-        console.log(`[Room Deleted] ${room}`);
-      }
+      // if (rooms[room].length === 0) {
+      //   delete rooms[room];
+      //   console.log(`[Room Deleted] ${room}`);
+      // }
     }
   });
 });
