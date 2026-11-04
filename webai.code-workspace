@@ -66,6 +66,9 @@
     {
       "path": "slides/texger2026",
     },
+    {
+      "path": ".",
+    },
   ],
   "settings": {},
 }
