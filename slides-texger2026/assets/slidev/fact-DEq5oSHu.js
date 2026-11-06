@@ -1,0 +1,1 @@
+import{B as e,U as t,_ as n,b as r}from"../modules/shiki-DyaLTTWP.js";import{rt as i}from"../index-D65AlUPx.js";var a={class:`slidev-layout fact`},o={class:`my-auto`},s={__name:`fact`,setup(s){let{$slidev:c,$nav:l,$clicksContext:u,$clicks:d,$page:f,$renderContext:p,$frontmatter:m}=i();return(i,s)=>(e(),r(`div`,a,[n(`div`,o,[t(i.$slots,`default`)])]))}};export{s as t};
