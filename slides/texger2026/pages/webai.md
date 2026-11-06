@@ -5,10 +5,9 @@ layout: center
 
 # Web AI
 
-- Web standards
-- W3C WebML Working Group
-- APIs spécialisées
-- En expérimentation sur Chrome: Gemini Nano
+- JavaScript APIs embedded in the browser
+- Calls the AI model **embedded** in the browser
+- Already available in Chrome and Opera
 
 ---
 layout: center
@@ -20,7 +19,7 @@ layout: center
 layout: two-cols-header
 ---
 
-# Web AI APIs
+# List of Web AI APIs 
 
 ::left::
 
@@ -41,6 +40,13 @@ li {
   font-size: 2em;
 }
 </style>
+
+---
+
+# How to get started
+
+- Opera: enable WebAI in the settings and manage model from the sidebar
+- Chrome: [Install WebAI extension](https://chromewebstore.google.com/detail/lmjgpcigjcffnphimblhcoccjfefamcp?utm_source=item-share-cb)
 
 ---
 
@@ -103,7 +109,14 @@ layout: center
 
 ---
 
-# The downside
+# Status of the project
+
+- Still in development
+- Not a W3C standard (yet)
+
+---
+
+# The downside of local AI
 
 Source: [Awesome](https://www.youtube.com/watch?v=seKv8ZyTiOU)
 

@@ -10,3 +10,4 @@ components.d.ts
 
 # Built Visual Studio Code Extensions
 *.vsix
+.vscode

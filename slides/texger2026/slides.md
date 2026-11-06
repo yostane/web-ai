@@ -18,6 +18,7 @@ duration: 20min
 layout: default
 defaults:
   hideInToc: true
+routerMode: hash
 ---
 
 <div class="grid grid-rows-2">

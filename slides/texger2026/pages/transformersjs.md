@@ -7,8 +7,8 @@ hideInToc: false
 
 <div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
 
-- Développé par [Joshua Lochner](https://www.linkedin.com/in/xenova/) (alias Xenova) de <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/).
-- Run AI models in the browser or a JavaScript runtime (Node.js, Bun, Deno).
+- By <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/) ().
+- Runs AI models in the browser or a JS runtime (Node.js, Bun, Deno).
 - Models use the [ONNX](https://onnx.ai/) format (conversion tools are available).
 - Many models are available on the [Hugging Face model hub](https://huggingface.co/models?library=transformers.js).
 
@@ -30,7 +30,7 @@ const modelId = "Xenova/bert-base-multilingual-uncased-sentiment";
 // (optional) options: logging, device, etc.
 const options = { device: "webgpu" };
 const model = await pipeline(task, modelId, options);
-const result = (await model("I love transformers!")) as any;
+const result = await model("I love transformers!");
 console.log(result);
 // # [{'label': 'POSITIVE', 'score': 0.999806941}]
 ```
