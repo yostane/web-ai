@@ -10,15 +10,15 @@ hideInToc: false
 <div class="grid grid-cols-3 gap-10 text-center">
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-browser.svg" />
-    <p>New possibilities for web applications</p>
-  </div>
-  <div v-click class="flex flex-col items-center">
-    <img src="../assets/local-vs-server.svg" />
-    <p>Client-side vs. server-side: rendering and AI</p> 
+    <p>Running AI in the browser is already possible</p>
   </div>
   <div v-click class="flex flex-col items-center">
     <img src="../assets/excalidraw-conclusion-webai.svg" />
-    <p>JavaScript libraries are available, and Web AI will be revolutionary</p>
+    <p>Standard Web AI will be revolutionary</p>
+  </div>
+    <div v-click class="flex flex-col items-center">
+    <img src="../assets/local-vs-server.svg" />
+    <p>Similar to client-side rendering, client-side AI may be the future</p> 
   </div>
 </div>
 
