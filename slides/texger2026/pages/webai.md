@@ -6,7 +6,7 @@ hideInToc: false
 
 - **First-party** JavaScript APIs (no external library required)
 - AI model **embedded** in, and **managed** by the browser
-- Already **available** in Chrome and Opera
+- Already **available** in <logos-chrome /> and <logos-opera />
 
 <img border="rounded" src="../assets/built-in-infra.jpg" />
 
@@ -31,15 +31,19 @@ layout: two-cols-header
 - [Language Detection](https://developer.chrome.com/docs/ai/language-detection)
 - [Translator](https://developer.chrome.com/docs/ai/translator-api)
 - [Prompt](https://developer.chrome.com/docs/ai/prompt-api)
-- [Writer](https://developer.chrome.com/docs/ai/writer-api) <game-icons-vial />
-- [Rewriter](https://developer.chrome.com/docs/ai/rewriter-api) <game-icons-vial />
-- [Proofreader](https://developer.chrome.com/docs/ai/proofreader-api) <game-icons-vial />
+- [Writer](https://developer.chrome.com/docs/ai/writer-api)
+- [Rewriter](https://developer.chrome.com/docs/ai/rewriter-api)
+- [Proofreader](https://developer.chrome.com/docs/ai/proofreader-api)
 
 ::right::
 
 ## Decision models (System )
 
-- [Decision](https://developer.chrome.com/docs/ai/decision-api) <game-icons-vial />
+- [Decision](https://developer.chrome.com/docs/ai/decision-api)
+
+## <logos-opera /> only
+
+- [Semantic Embeddings](https://next.opera.com/web-ai/)
 
 <style>
 
@@ -50,10 +54,33 @@ li {
 
 ---
 
-# How to get started
+# How to get started in <logos-opera />
 
-- Opera: enable WebAI in the settings and manage model from the sidebar
+- enable WebAI in the settings and manage model from the sidebar
+
+<img src="../assets/webai-opera-setup.gif" />
+
+<style>
+img {
+  height: 40dvh;
+  margin: auto;
+}
+</style>
+
+---
+
+# How to get started in <logos-chrome />
+
 - Chrome: [Install WebAI extension](https://chromewebstore.google.com/detail/lmjgpcigjcffnphimblhcoccjfefamcp?utm_source=item-share-cb)
+
+<img src="../assets/webai-chrome-setup.gif" />
+
+<style>
+img {
+  height: 40dvh;
+  margin: auto;
+}
+</style>
 
 ---
 
@@ -112,34 +139,21 @@ layout: center
 
 - [My demos](https://yostane.github.io/web-ai/)
 - [Chrome demos](https://chrome.dev/web-ai-demos/)
-- [Model information in chrome://on-device-internals/](chrome://on-device-internals/)
+- [Semantic Embeddings](https://next.opera.com/web-ai/semantic-embedder/) and [demos](https://next.opera.com/web-ai/apps/#embeddings)
+- [Experimental Opera extensions](https://blogs.opera.com/news/2026/10/webai-local-ai-for-the-web-now-in-opera/)
 
 ---
+layout: center
+---
 
-# Status of the project
+# Promising, but not without caveats
 
-- Still in development
 - Not a W3C standard (yet)
-
----
-
-# The downside of local AI
-
-Source: [Awesome](https://www.youtube.com/watch?v=seKv8ZyTiOU)
+- Status of support of other browsers unknown / not clear
 
 ![](../assets/awesome-4gb-install.png)
 
----
-layout: full
----
-
-![](../assets/awesome-oppose-webai.png)
-
-<style>
-  img{
-    height: 500px;
-  }
-</style>
+Source: [Awesome](https://www.youtube.com/watch?v=seKv8ZyTiOU)
 
 ---
 layout: center
@@ -156,3 +170,19 @@ layout: center
 ---
 
 <Youtube id="seKv8ZyTiOU" style="width:100%;height:100%;" />
+
+---
+layout: full
+---
+
+![](../assets/awesome-oppose-webai.png)
+
+<style>
+  img{
+    height: 500px;
+  }
+</style>
+
+---
+
+<Tweet url="https://x.com/jaffathecake/status/2051962549545963951" />
