@@ -10,7 +10,7 @@ Server-side AI inference
 
 1. The web application sends a **request** to the backend server.
 1. If AI inference is needed, it is delegated to a separate **AI service**.
-1. The server processes the AI output and sends the final response back to the web application.
+1. The server responds back to the web application.
 
 <style>
 

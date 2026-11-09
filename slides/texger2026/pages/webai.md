@@ -23,7 +23,7 @@ layout: two-cols-header
 
 # List of Web AI APIs
 
-## Text-related APIs
+## Language models
 
 ::left::
 
@@ -31,12 +31,15 @@ layout: two-cols-header
 - [Language Detection](https://developer.chrome.com/docs/ai/language-detection)
 - [Translator](https://developer.chrome.com/docs/ai/translator-api)
 - [Prompt](https://developer.chrome.com/docs/ai/prompt-api)
-
-::right::
-
 - [Writer](https://developer.chrome.com/docs/ai/writer-api) <game-icons-vial />
 - [Rewriter](https://developer.chrome.com/docs/ai/rewriter-api) <game-icons-vial />
 - [Proofreader](https://developer.chrome.com/docs/ai/proofreader-api) <game-icons-vial />
+
+::right::
+
+## Decision models (System )
+
+- [Decision](https://developer.chrome.com/docs/ai/decision-api) <game-icons-vial />
 
 <style>
 

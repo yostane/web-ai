@@ -28,8 +28,8 @@ jobs:
           cd ../../samples/language-detector-demo && bun install && bun run build
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
-          cd ../../samples/seamless-international-chat/seamless-intl-chat-webapp && bun install && bun run build
           cd ../../samples/decisions-api-demo && bun install && bun run build
+          cd ../../samples/seamless-international-chat/seamless-intl-chat-webapp && bun install && bun run build
           cd $START_DIR
           cd samples/opencvjs/opencvjs-demo && bun install && bun run build
           cd $START_DIR
