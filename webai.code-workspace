@@ -1,73 +1,96 @@
 {
   "folders": [
     {
+      "name": ".github",
       "path": ".github",
     },
     {
+      "name": "translator_api",
       "path": "samples/translator_api",
     },
     {
+      "name": "writer-api-demo",
       "path": "samples/writer-api-demo",
     },
     {
+      "name": "public",
       "path": "public",
     },
     {
+      "name": "rewriter-api-demo",
       "path": "samples/rewriter-api-demo",
     },
     {
+      "name": "language-detector-demo",
       "path": "samples/language-detector-demo",
     },
     {
+      "name": "summarizer-demo",
       "path": "samples/summarizer-demo",
     },
     {
+      "name": "prompt-demo",
       "path": "samples/prompt-demo",
     },
     {
+      "name": "decisions-api-demo",
+      "path": "samples/decisions-api-demo",
+    },
+    {
+      "name": "misc",
       "path": "samples/misc",
     },
     {
+      "name": "transformersjs-demos",
       "path": "samples/transformersjs/transformersjs-demos",
     },
     {
+      "name": "transformersjs-audio-chat",
       "path": "samples/transformersjs/transformersjs-audio-chat",
     },
     {
+      "name": "seamless-intl-chat-webapp",
       "path": "samples/seamless-international-chat/seamless-intl-chat-webapp",
     },
     {
+      "name": "seamless-intl-chat-signaling-server",
       "path": "samples/seamless-international-chat/seamless-intl-chat-signaling-server",
     },
     {
+      "name": "ollama-express-demo",
       "path": "samples/ollama/ollama-express-demo",
     },
     {
+      "name": "streamlit-ai-chat-demo",
       "path": "samples/streamlit/streamlit-ai-chat-demo",
     },
     {
+      "name": "opencvjs-demo",
       "path": "samples/opencvjs/opencvjs-demo",
     },
     {
+      "name": "mail-assistant",
       "path": "samples/mail-assistant",
     },
     {
+      "name": "draft",
       "path": "slides/draft",
     },
     {
+      "name": "genaiparis2025",
       "path": "slides/genaiparis2025",
     },
     {
+      "name": "forkittunis2026",
       "path": "slides/forkittunis2026",
     },
     {
+      "name": "fblillemeetup2026",
       "path": "slides/fblillemeetup2026",
     },
     {
+      "name": "texger2026",
       "path": "slides/texger2026",
-    },
-    {
-      "path": "samples/decisions-api-demo",
     },
   ],
   "settings": {},
