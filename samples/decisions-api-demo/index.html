@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decisions API demo</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Decisions API demo</h1>
+      <p>
+        Describe your stay to convert your request into hotel search filters.
+      </p>
+      <form id="search-form">
+        <div class="form-row">
+          <label for="search-input"
+            >What kind of stay are you looking for?</label
+          >
+        </div>
+        <div class="form-row">
+          <input
+            type="text"
+            id="search-input"
+            name="query"
+            placeholder="A dog-friendly hotel downtown that won't break the bank"
+            value="A dog-friendly hotel downtown that won't break the bank"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <button type="submit" id="search-button">Find filters</button>
+        </div>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <section
+        id="results"
+        class="card"
+        aria-labelledby="results-heading"
+        hidden
+      >
+        <h2>Human readable response</h2>
+        <ul>
+          <li>
+            Is pet friendly
+            <div id="pet-friendly"></div>
+          </li>
+          <li>
+            Most Probable property type
+            <div id="property-type"></div>
+          </li>
+          <li>
+            Most Probable price tier (1 budget, 4 luxury)
+            <div id="price-tier"></div>
+          </li>
+        </ul>
+
+        <h2 id="results-heading">Suggested search filters</h2>
+        <pre id="result-output"></pre>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

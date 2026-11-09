@@ -29,6 +29,7 @@ jobs:
           cd ../../samples/summarizer-demo && bun install && bun run build
           cd ../../samples/prompt-demo && bun install && bun run build
           cd ../../samples/seamless-international-chat/seamless-intl-chat-webapp && bun install && bun run build
+          cd ../../samples/decisions-api-demo && bun install && bun run build
           cd $START_DIR
           cd samples/opencvjs/opencvjs-demo && bun install && bun run build
           cd $START_DIR
@@ -56,6 +57,7 @@ jobs:
           mv samples/opencvjs/opencvjs-demo/dist public/opencvjs-demo
           mv samples/transformersjs/transformersjs-demos/dist public/transformersjs-demos
           mv samples/transformersjs/transformersjs-audio-chat/dist public/transformersjs-audio-chat
+          mv samples/decisions-api-demo/dist public/decisions-api-demo
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:

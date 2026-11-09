@@ -1,25 +1,29 @@
 ---
 hideInToc: false
-layout: center
 ---
 
 # Web AI
 
-- JavaScript APIs embedded in the browser
-- Calls the AI model **embedded** in the browser
-- Already available in Chrome and Opera
+- **First-party** JavaScript APIs (no external library required)
+- AI model **embedded** in, and **managed** by the browser
+- Already **available** in Chrome and Opera
 
----
-layout: center
----
+<img border="rounded" src="../assets/built-in-infra.jpg" />
 
-<img style="width: 600px;" border="rounded" src="../assets/built-in-infra.jpg" />
+<style>
+img {
+  height: 30dvh;
+  margin: auto;
+}
+</style>
 
 ---
 layout: two-cols-header
 ---
 
-# List of Web AI APIs 
+# List of Web AI APIs
+
+## Text-related APIs
 
 ::left::
 

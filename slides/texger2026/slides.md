@@ -77,8 +77,6 @@ li::before {
 }
 
 img {
-  height: 300px;
-  width: 600px;
   object-fit: contain;
   display: inline-block;
   border-radius: 15px;
@@ -99,14 +97,26 @@ layout: center
 <img border="rounded" src="./assets/server.jpg" />
 
 ---
-layout: center
+layout: cover
 ---
 
 # The future of AI (is) in the browser
 
-TechForum Germany 2026
+<img id="tf-logo" src="./assets/tex-2026-germany-white.svg" /> / 📅 November 11
 
-November 11
+<img src="./assets/sponsors-2026.svg" />
+
+<style>
+img {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tf-logo {
+  width: 20%;
+}
+</style>
 
 ---
 src: ./pages/bio.md
@@ -136,19 +146,17 @@ hideInToc: false
 
 <img border="rounded" src="./assets/webapp-04-browser-ai.svg" />
 
-<br>
-
-**Libraries**: Transformers.js, OpenCV.js, built-in Web AI APIs.
+- The Browser **downloads** the AI model
+- Inference is done **locally** in the browser
 
 <style>
-  img {
-  height: 300px;
-  object-fit: contain;
-  display: inline-block;
+img {
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 15px;
   border: 4px solid var(--slidev-theme-primary);
   background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 </style>
 

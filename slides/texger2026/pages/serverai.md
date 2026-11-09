@@ -6,21 +6,13 @@ hideInToc: false
 
 Server-side AI inference
 
-<img class="svgimg" v-click.hide="4" border="rounded" src="../assets/webapp-02-serverai.svg" />
-<img class="svgimg" v-click="4" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
-
-<v-clicks>
+<img class="svgimg" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
 
 1. The web application sends a **request** to the backend server.
 1. If AI inference is needed, it is delegated to a separate **AI service**.
 1. The server processes the AI output and sends the final response back to the web application.
 
-</v-clicks>
-
 <style>
-.slidev-vclick-hidden {
-display: none;
-}
 
 .svgimg {
   width: 100%;
@@ -59,7 +51,7 @@ img {
 <br>
 <br>
 
-- **Outils** : Ollama, Jan AI, LM Studio, etc.
+- **Tools** : Ollama, Jan AI, LM Studio, etc.
 
 <style>
 img {
@@ -146,12 +138,12 @@ hideInToc: true
 layout: fact
 ---
 
-# What if we could do without a server?
+# Is a server required?
 
 ---
 layout: fact
 ---
 
-# What if we could do without a server?*
+# Is a server required? (Spoilers) No*
 
-\*In some use cases.
+*In some use cases.

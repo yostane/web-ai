@@ -4,10 +4,8 @@ hideInToc: false
 
 # OpenCV.js <logos-opencv style="background:white; border-radius: 5px; padding: 1px;" />
 
-- Open-source computer vision library
-- Written in <logos-c /> and <logos-c-plusplus />
-- Ported to <logos-javascript /> and <logos-webassembly />
-- Image and video processing: filtering, object detection, etc.
+- Open-source computer vision library: filtering, object detection, etc.
+- Written in <logos-c /> and <logos-c-plusplus /> and ported to <logos-javascript /> and <logos-webassembly />
 
 ```js
 let faceCascade = new cv.CascadeClassifier();

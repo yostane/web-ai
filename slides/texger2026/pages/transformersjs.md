@@ -7,10 +7,12 @@ hideInToc: false
 
 <div style="display: flex; flex-direction: column; justify-content: center; height: 80%;">
 
-- By <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/) ().
-- Runs AI models in the browser or a JS runtime (Node.js, Bun, Deno).
-- Models use the [ONNX](https://onnx.ai/) format (conversion tools are available).
-- Many models are available on the [Hugging Face model hub](https://huggingface.co/models?library=transformers.js).
+- Developed by [Joshua Lochner (@Xenova)](https://www.linkedin.com/in/xenova/)
+- Provided and hosted by <logos-hugging-face-icon /> [Hugging Face](https://huggingface.co/docs/transformers.js)
+- Runs models in the browser or a JS runtime (Node.js, Bun, Deno)
+- Models use the [ONNX format](https://onnx.ai/)
+  - Other formats can be converted [to ONNX](https://github.com/huggingface/optimum#onnx--onnx-runtime)
+  - Many ONNX models can be found in the <logos-hugging-face-icon /> [model hub](https://huggingface.co/models?library=transformers.js)
 
 </div>
 
@@ -18,8 +20,8 @@ hideInToc: false
 
 # Transformers.js Pipeline
 
-- High-level API for common tasks (text generation, sentiment analysis, etc.).
-- Some tasks require additional configuration (for example, embeddings for text-to-speech).
+- High-level API for common tasks (text generation, sentiment analysis, etc.)
+- Some tasks require additional configuration
 
 ```ts
 import { pipeline } from "@huggingface/transformers.js";
