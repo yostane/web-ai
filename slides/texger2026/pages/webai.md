@@ -37,7 +37,9 @@ layout: two-cols-header
 
 ::right::
 
-## Decision models (System )
+## Decision models
+
+Also called System 1, live Jev.
 
 - [Decision](https://developer.chrome.com/docs/ai/decision-api)
 
