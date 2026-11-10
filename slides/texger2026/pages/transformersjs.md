@@ -41,20 +41,9 @@ console.log(result);
 
 # Demos
 
-## From Xenova
-
-- [AI Code Playground](https://huggingface.co/spaces/Xenova/ai-code-playground)
-- [Doodle Dash sketch recognition](https://huggingface.co/spaces/Xenova/doodle-dash)
-- [MusicGen Web](https://huggingface.co/spaces/Xenova/musicgen-web)
-
-[And many more!](https://huggingface.co/collections/Xenova/transformersjs-demos)
-
-## Audio chat
-
-| Task identifier              | Model                    |
-| ---------------------------- | ------------------------ |
-| automatic-speech-recognition | `Xenova/whisper-tiny.en` |
-| Text-to-Speech               | `Xenova/speecht5_tts`    |
-| text-generation              | `Xenova/distilgpt2`      |
-
-- [Launch the demo](https://yostane.github.io/web-ai/transformersjs-audio-chat/)
+- By Xenova
+  - [AI Code Playground](https://huggingface.co/spaces/Xenova/ai-code-playground)
+  - [Doodle Dash sketch recognition](https://huggingface.co/spaces/Xenova/doodle-dash)
+  - [MusicGen Web](https://huggingface.co/spaces/Xenova/musicgen-web)
+  - [And many more!](https://huggingface.co/collections/Xenova/transformersjs-demos)
+- [Audio Chat](https://yostane.github.io/web-ai/transformersjs-audio-chat/)
