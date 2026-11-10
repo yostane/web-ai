@@ -134,6 +134,12 @@ srcLeft: ./pages/webai-demo.md
 </style>
 
 ---
+
+# Backup demo recording
+
+<img border="rounded" src="../assets/intl-chat-demo.gif" />
+
+---
 layout: center
 ---
 
