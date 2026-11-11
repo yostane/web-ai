@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/web-ai/writer-mail-assistant/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mail-assistant</title>
+    <script type="module" crossorigin src="/web-ai/writer-mail-assistant/assets/index-FX43F655.js"></script>
+    <link rel="stylesheet" crossorigin href="/web-ai/writer-mail-assistant/assets/index-oKlL3VPA.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Mail Assistant 💻</h1>
+      <section>
+        <button id="start-button" class="counter">Start demo</button>
+      </section>
+      <p id="loading" style="display: none">Loading...</p>
+      <div id="mail-form" style="display: none">
+        <section>
+          <p><label for="username">User name</label></p>
+          <input name="username" type="text" id="username" value="yostane" />
+        </section>
+        <section>
+          <p><label for="title">Title</label></p>
+          <input
+            name="title"
+            type="text"
+            id="title"
+            value="How to turn on the coffee machine"
+          />
+        </section>
+        <section>
+          <p><label for="order-id">Order ID</label></p>
+          <input name="order-id" type="text" id="order-id" value="1234567890" />
+        </section>
+        <section>
+          <button class="counter" id="generate-btn">Generate</button>
+        </section>
+        <section>
+          <p><label for="content">Content</label></p>
+          <textarea id="content" name="content"></textarea>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
