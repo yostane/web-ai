@@ -173,24 +173,6 @@ src: ./pages/webai.md
 ---
 
 ---
-layout: center
----
-
-# Summary
-
-- Computer vision: OpenCV.js
-- Specific Web AI tasks: Web AI APIs
-- Small models (my own or third-party): Transformers.js
-- Everything else: an AI server
-
-<style>
-
-li {
-  font-size: 2em;
-}
-</style>
-
----
 src: ./pages/conclusion.md
 ---
 

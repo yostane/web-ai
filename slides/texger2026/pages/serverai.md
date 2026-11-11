@@ -2,31 +2,10 @@
 hideInToc: false
 ---
 
-# Introduction
-
-Server-side AI inference
-
-<img class="svgimg" border="rounded" src="../assets/webapp-02b-serverai-question.svg" />
-
-1. The web application sends a **request** to the backend server.
-1. If AI inference is needed, it is delegated to a separate **AI service**.
-1. The server responds back to the web application.
-
-<style>
-
-.svgimg {
-  width: 100%;
-  height: 250px;
-}
-</style>
-
----
-
 # AI inference through a third-party provider
 
 <img class="svgimg" border="rounded" src="../assets/webapp-02-01-cloudai.svg" />
 
-<br>
 <br>
 <br>
 
@@ -59,31 +38,6 @@ img {
   width: auto;
 }
 </style>
-
----
-
-# Demo: Ollama
-
-Start the Ollama server locally with the gemma3 model:
-
-```bash
-ollama serve
-ollama pull gemma3
-```
-
-<logos-javascript /> backend server code that queries the local Ollama server:
-
-```ts
-const ollama = new Ollama({ host: "http://localhost:11434" });
-app.post("/chat", async (req, res) => {
-  const question = req.body.question;
-  const response = await ollama.chat({
-    model: "gemma3",
-    messages: [{ role: "user", content: question }],
-  });
-  res.json({ answer: response.message.content });
-});
-```
 
 ---
 layout: center
